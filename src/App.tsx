@@ -71,7 +71,11 @@ function App() {
       <tbody>
         {results.map((r) => {
           return (
-            <tr key={r.key} {...r.events} style={{ cursor: "grab" }}>
+            <tr
+              key={r.key}
+              {...r.events}
+              style={{ cursor: "grab", touchAction: "none" }}
+            >
               <th style={{ padding: "10px" }}>{r.value}</th>
               <td>td 1</td>
               <td>td 2</td>
