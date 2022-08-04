@@ -178,8 +178,8 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
           state.dragElement = { key, value, element, position };
 
           // mousemove, mouseupイベントをwindowに登録する
-          window.addEventListener("pointerup", onMouseUp);
-          window.addEventListener("pointermove", onMouseMove);
+          window.onpointerup = onMouseUp;
+          window.onpointermove = onMouseMove;
         },
       },
     };
