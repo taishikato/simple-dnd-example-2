@@ -12,6 +12,7 @@ const Body = ({ items }: { items: any }) => {
               cursor: grab;
               position: relative;
               touch-action: none;
+              isolation: isolate;
             `}
           >
             <th
