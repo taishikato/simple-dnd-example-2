@@ -92,6 +92,7 @@ Error generating stack: `+i.message+`
               cursor: grab;
               position: relative;
               touch-action: none;
+              isolation: isolate;
             `,children:[Z("th",{className:ce`
                 min-width: 130px;
                 vertical-align: middle;
