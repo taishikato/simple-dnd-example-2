@@ -163,6 +163,8 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
 
           // ドラッグしている要素のスタイルを上書き
           element.style.transition = ""; // アニメーションを無効にする
+          element.style.transform = "translate(0, 0) scale(1.1)";
+          element.style.boxShadow = "rgba(0, 0, 0, 0.15) 0px 15px 30px 0px";
           element.style.cursor = "grabbing"; // カーソルのデザインを変更
 
           const { left: x, top: y } = element.getBoundingClientRect();
