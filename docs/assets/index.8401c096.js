@@ -69,6 +69,7 @@ Error generating stack: `+i.message+`
               background-color: #ffffff;
             `,children:"Th3"})]})}),Be("tbody",{children:e.map(n=>ki("tr",{...n.events,className:un`
                 cursor: grab;
+                position: relative;
                 touch-action: none;
               `,children:[Be("th",{className:un`
                   min-width: 130px;
