@@ -30,7 +30,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     // ドラッグ要素の座標とスタイルを更新
     dragStyle.transition = "";
     dragStyle.cursor = "grabbing";
-    dragStyle.transform = `translate(${0}px, ${y}px) scale(1.1)`;
+    dragStyle.transform = `translate3d(${0}px, ${y}px, 100px) scale(1.1)`;
 
     if (!state.canCheckHovered) return;
 
@@ -166,7 +166,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
 
           // ドラッグしている要素のスタイルを上書き
           element.style.transition = "transform 300ms"; // アニメーションを無効にする
-          element.style.transform = "translate(0, 0) scale(1.1)";
+          element.style.transform = "translate3d(0, 0, 100px) scale(1.1)";
           element.style.boxShadow = "rgba(0, 0, 0, 0.15) 0px 15px 30px 0px";
           element.style.cursor = "grabbing"; // カーソルのデザインを変更
           element.style.zIndex = "100";
