@@ -30,7 +30,7 @@ function App() {
               background-color: #ffffff;
             `}
           >
-            Th
+            Th1
           </th>
           <th
             className={css`
@@ -57,6 +57,45 @@ function App() {
             `}
           >
             Th3
+          </th>
+          <th
+            className={css`
+              vertical-align: middle;
+              padding: 10px;
+              border-bottom: 1px solid #0b1424;
+              position: sticky;
+              top: 0;
+              z-index: 10;
+              background-color: #ffffff;
+            `}
+          >
+            Th4
+          </th>
+          <th
+            className={css`
+              vertical-align: middle;
+              padding: 10px;
+              border-bottom: 1px solid #0b1424;
+              position: sticky;
+              top: 0;
+              z-index: 10;
+              background-color: #ffffff;
+            `}
+          >
+            Th5
+          </th>
+          <th
+            className={css`
+              vertical-align: middle;
+              padding: 10px;
+              border-bottom: 1px solid #0b1424;
+              position: sticky;
+              top: 0;
+              z-index: 10;
+              background-color: #ffffff;
+            `}
+          >
+            Th6
           </th>
         </tr>
       </thead>
@@ -125,6 +164,60 @@ function App() {
                 `}
               >
                 td 2
+              </td>
+              <td
+                className={css`
+                  padding: 10px;
+                  vertical-align: middle;
+                  background-color: #ffffff;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: 600;
+                  user-select: none;
+                  box-sizing: border-box;
+                  border-bottom: 1px solid rgb(203 213 225);
+                  &:not(:last-child) {
+                    border-right: 1px solid rgb(203 213 225);
+                  }
+                `}
+              >
+                td 3
+              </td>
+              <td
+                className={css`
+                  padding: 10px;
+                  vertical-align: middle;
+                  background-color: #ffffff;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: 600;
+                  user-select: none;
+                  box-sizing: border-box;
+                  border-bottom: 1px solid rgb(203 213 225);
+                  &:not(:last-child) {
+                    border-right: 1px solid rgb(203 213 225);
+                  }
+                `}
+              >
+                td 4
+              </td>
+              <td
+                className={css`
+                  padding: 10px;
+                  vertical-align: middle;
+                  background-color: #ffffff;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: 600;
+                  user-select: none;
+                  box-sizing: border-box;
+                  border-bottom: 1px solid rgb(203 213 225);
+                  &:not(:last-child) {
+                    border-right: 1px solid rgb(203 213 225);
+                  }
+                `}
+              >
+                td 5
               </td>
             </tr>
           );
