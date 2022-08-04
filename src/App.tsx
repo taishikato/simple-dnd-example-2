@@ -1,7 +1,9 @@
 import { useDnDSort } from "./useDnDSort";
 import { css } from "@emotion/css";
 
-const itemList: string[] = ["Row header 1", "Row header 2", "Row header 3"];
+const itemList: string[] = Array.from(Array(100)).map((_, index) => {
+  return `Row header ${index}`;
+});
 
 // ドラッグ＆ドロップ並び替えサンプルのコンポーネント
 function App() {
