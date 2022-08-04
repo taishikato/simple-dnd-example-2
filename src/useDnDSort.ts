@@ -80,13 +80,10 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     dragStyle.transform = "";
     dragStyle.boxShadow = "";
 
-    dragElement.element.onpointermove = null;
-    dragElement.element.onpointerup = null;
-
     state.dragElement = null;
 
-    // window.removeEventListener("pointerup", onMouseUp);
-    // window.removeEventListener("pointermove", onMouseMove);
+    window.removeEventListener("pointerup", onMouseUp);
+    window.removeEventListener("pointermove", onMouseMove);
   };
 
   return items.map((value: T): DnDSortResult<T> => {
@@ -180,11 +177,8 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
           state.dragElement = { key, value, element, position };
 
           // mousemove, mouseupイベントをwindowに登録する
-          element.onpointerup = onMouseUp;
-          element.onpointermove = onMouseMove;
-
-          // window.addEventListener("pointerup", onMouseUp);
-          // window.addEventListener("pointermove", onMouseMove);
+          window.addEventListener("pointerup", onMouseUp);
+          window.addEventListener("pointermove", onMouseMove);
         },
       },
     };
