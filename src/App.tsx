@@ -68,6 +68,7 @@ function App() {
               {...r.events}
               className={css`
                 cursor: grab;
+                position: relative;
                 touch-action: none;
               `}
             >
