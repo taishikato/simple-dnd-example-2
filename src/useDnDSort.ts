@@ -78,6 +78,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     dragStyle.zIndex = "";
     dragStyle.cursor = "";
     dragStyle.transform = "";
+    dragStyle.boxShadow = "";
 
     state.dragElement = null;
 
