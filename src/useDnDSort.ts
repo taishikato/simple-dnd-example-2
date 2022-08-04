@@ -30,7 +30,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     // ドラッグ要素の座標とスタイルを更新
     dragStyle.zIndex = "100";
     dragStyle.cursor = "grabbing";
-    dragStyle.transform = `translate(${0}px, ${y}px)`;
+    dragStyle.transform = `translate(${0}px, ${y}px) scale(1.1)`;
 
     if (!state.canCheckHovered) return;
 
