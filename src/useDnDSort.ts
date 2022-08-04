@@ -152,6 +152,8 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
         },
 
         onPointerDown: (event: React.PointerEvent<HTMLElement>) => {
+          event.preventDefault();
+
           // ドラッグする要素
           const element = event.currentTarget;
 
