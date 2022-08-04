@@ -158,6 +158,8 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
           // ドラッグする要素
           const element = event.currentTarget;
 
+          element.setPointerCapture(event.pointerId);
+
           // マウスポインターの座標を保持しておく
           state.pointerPosition.x = event.clientX;
           state.pointerPosition.y = event.clientY;
