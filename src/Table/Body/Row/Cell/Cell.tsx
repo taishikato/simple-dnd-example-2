@@ -4,6 +4,7 @@ const Cell = ({ children }: { children: string | number | JSX.Element }) => {
   return (
     <td
       className={css`
+        word-break: break-all;
         padding: 10px;
         vertical-align: middle;
         background-color: #ffffff;
