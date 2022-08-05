@@ -82,15 +82,15 @@ Error generating stack: `+o.message+`
         &:not(:last-child) {
           border-right: 1px solid rgb(203 213 225);
         }
-      `,children:e}),Yd=({item:e,columns:n})=>d0("tr",{...e.events,className:te`
+      `,children:e}),Yd=({data:e,columns:n})=>d0("tr",{...e.events,className:te`
         cursor: grab;
         position: relative;
         touch-action: none;
-      `,children:n.map((t,r)=>{if(r===0)return d0(Hd,{children:e.value.name});if(t.dataIndex!=null)return d0(jd,{children:e.value.values[t.dataIndex]})})}),Vd=({items:e,columns:n})=>d0("tbody",{children:e.map(t=>d0(Yd,{item:t,columns:n},t.key))}),Gd=({data:e,columns:n})=>{const t=Ed(e);return xd("table",{className:te`
+      `,children:n.map((t,r)=>{if(r===0)return d0(Hd,{children:e.value.name},t.key);if(t.dataIndex!=null)return d0(jd,{children:e.value.values[t.dataIndex]},t.key)})}),Vd=({data:e,columns:n})=>d0("tbody",{children:e.map(t=>d0(Yd,{data:t,columns:n},t.key))}),Gd=({data:e,columns:n})=>{const t=Ed(e);return xd("table",{className:te`
         border-collapse: separate;
         border-spacing: 0px 0px;
         width: 100%;
-      `,children:[d0(Fd,{columns:n}),d0(Vd,{items:t,columns:n})]})};//! moment.js
+      `,children:[d0(Fd,{columns:n}),d0(Vd,{data:t,columns:n})]})};//! moment.js
 //! version : 2.29.4
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
