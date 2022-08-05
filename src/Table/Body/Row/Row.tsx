@@ -3,10 +3,10 @@ import FirstCell from "./FirstCell/FirstCell";
 import Cell from "./Cell/Cell";
 import type { ColumnProps } from "../../../types";
 
-const Row = ({ item, columns }: { item: any; columns: ColumnProps[] }) => {
+const Row = ({ data, columns }: { data: any; columns: ColumnProps[] }) => {
   return (
     <tr
-      {...item.events}
+      {...data.events}
       className={css`
         cursor: grab;
         position: relative;
@@ -15,12 +15,12 @@ const Row = ({ item, columns }: { item: any; columns: ColumnProps[] }) => {
     >
       {columns.map((column, index) => {
         if (index === 0)
-          return <FirstCell key={column.key}>{item.value.name}</FirstCell>;
+          return <FirstCell key={column.key}>{data.value.name}</FirstCell>;
 
         if (column.dataIndex == null) return;
 
         return (
-          <Cell key={column.key}>{item.value.values[column.dataIndex]}</Cell>
+          <Cell key={column.key}>{data.value.values[column.dataIndex]}</Cell>
         );
       })}
     </tr>

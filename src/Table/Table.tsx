@@ -22,7 +22,7 @@ const Table = <T,>({
       `}
     >
       <Header columns={columns} />
-      <Body items={results} columns={columns} />
+      <Body data={results} columns={columns} />
     </table>
   );
 };

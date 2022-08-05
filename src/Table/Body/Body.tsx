@@ -1,11 +1,17 @@
-import { ColumnProps } from "../../types";
+import { ColumnProps, DnDSortResult } from "../../types";
 import Row from "./Row/Row";
 
-const Body = ({ items, columns }: { items: any; columns: ColumnProps[] }) => {
+const Body = <T,>({
+  data,
+  columns,
+}: {
+  data: DnDSortResult<T>[];
+  columns: ColumnProps[];
+}) => {
   return (
     <tbody>
-      {items.map((r: any) => (
-        <Row key={r.key} item={r} columns={columns} />
+      {data.map((r: any) => (
+        <Row key={r.key} data={r} columns={columns} />
       ))}
     </tbody>
   );
