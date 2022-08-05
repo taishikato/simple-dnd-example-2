@@ -10,12 +10,6 @@ export type BanyanValueType =
   | "temperature_c_below_max"
   | "temperature_inversion";
 
-// const valueToRowRendererMapper: Record<BanyanValueType, React.FC<CellProps>> = {
-//   temperature_c_above_max: CellTemperatureCAboveMax,
-//   temperature_c_in_max: CellTemperatureCInMax,
-//   temperature_c_below_max: CellTemperatureCBelowMax,
-// };
-
 const dates = [
   "2022-07-20T08:00:00.000Z",
   "2022-07-21T08:00:00.000Z",
@@ -93,10 +87,6 @@ const timezone = "America/Los_Angeles";
 
 const columns: ColumnProps[] = [
   (() => {
-    // const render = (title: string) => {
-    //   return <CustomBodyThContent title={title} />;
-    // };
-
     return {
       key: "valueName",
       dataIndex: "valueName",
@@ -117,33 +107,11 @@ const columns: ColumnProps[] = [
     if (todayMoment.isSame(momentOfDate, "day"))
       cellCSS = { background: "blue", color: "#ffffff" };
 
-    // const render = (
-    //   val: string,
-    //   row: DataProps<BanyanValueType>,
-    //   cellCSS: any,
-    //   width: string
-    // ) => {
-    //   const ComponentToUse = valueToRowRendererMapper[row.valueName];
-
-    //   if (!ComponentToUse) return null;
-
-    //   return (
-    //     <ComponentToUse
-    //       val={val}
-    //       row={row}
-    //       key={d}
-    //       cellCSS={cellCSS}
-    //       width={width}
-    //     />
-    //   );
-    // };
-
     return {
       key: d,
       dataIndex: d,
       title: momentOfDate.format("MMM D"),
       cellCSS,
-      // render,
       width,
     };
   }),
