@@ -10,8 +10,8 @@ const Body = <T,>({
 }) => {
   return (
     <tbody>
-      {data.map((r: any) => (
-        <Row key={r.key} data={r} columns={columns} />
+      {data.map((d: DnDSortResult<T>) => (
+        <Row key={d.key} data={d} columns={columns} />
       ))}
     </tbody>
   );
