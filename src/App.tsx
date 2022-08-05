@@ -1,11 +1,5 @@
-import { useDnDSort } from "./hooks/useDnDSort";
 import { css } from "@emotion/css";
-import Header from "./Header/Header";
-import Body from "./Body/Body";
-
-// const itemList: string[] = Array.from(Array(100)).map((_, index) => {
-//   return `Row header ${index}`;
-// });
+import Table from "./Table/Table";
 
 const itemList = [
   { header: "Header 1", value: "Hello" },
@@ -42,10 +36,7 @@ const itemList = [
   },
 ];
 
-// ドラッグ＆ドロップ並び替えサンプルのコンポーネント
 function App() {
-  const results = useDnDSort(itemList);
-
   return (
     <div
       className={css`
@@ -53,16 +44,7 @@ function App() {
         margin: 0 auto;
       `}
     >
-      <table
-        className={css`
-          border-collapse: separate;
-          border-spacing: 0px 0px;
-          width: 100%;
-        `}
-      >
-        <Header />
-        <Body items={results} />
-      </table>
+      <Table itemList={itemList} />
     </div>
   );
 }
