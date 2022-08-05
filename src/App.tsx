@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import Table from "./Table/Table";
-import type { ColumnProps } from "./types";
+import type { ColumnProps, DataProps } from "./types";
 import moment from "moment";
 import "moment-timezone";
 
@@ -58,41 +58,41 @@ const dates = [
   "2022-07-24T08:00:00.000Z",
 ];
 
-// const tableDataRaw: DataProps<BanyanValueType>[] = [
-//   {
-//     name: "Temperature - Above Canopy Max",
-//     valueName: "temperature_c_above_max",
-//     values: {
-//       "2022-07-20T08:00:00.000Z": "85.5°F",
-//       "2022-07-21T08:00:00.000Z": "85.5°F",
-//       "2022-07-22T08:00:00.000Z": "89.5°F",
-//       "2022-07-23T08:00:00.000Z": "83.5°F",
-//       "2022-07-24T08:00:00.000Z": "82.5°F",
-//     },
-//   },
-//   {
-//     name: "Temperature - In Canopy Max",
-//     valueName: "temperature_c_in_max",
-//     values: {
-//       "2022-07-20T08:00:00.000Z": "86.3°F",
-//       "2022-07-21T08:00:00.000Z": "85.5°F",
-//       "2022-07-22T08:00:00.000Z": "86.2°F",
-//       "2022-07-23T08:00:00.000Z": "87.5°F",
-//       "2022-07-24T08:00:00.000Z": "83.2°F",
-//     },
-//   },
-//   {
-//     name: "Temperature - Below Canopy Max",
-//     valueName: "temperature_c_below_max",
-//     values: {
-//       "2022-07-20T08:00:00.000Z": "88.3°F",
-//       "2022-07-21T08:00:00.000Z": "89.5°F",
-//       "2022-07-22T08:00:00.000Z": "87.2°F",
-//       "2022-07-23T08:00:00.000Z": "87.5°F",
-//       "2022-07-24T08:00:00.000Z": "84.2°F",
-//     },
-//   },
-// ];
+const tableDataRaw: DataProps<BanyanValueType>[] = [
+  {
+    name: "Temperature - Above Canopy Max",
+    valueName: "temperature_c_above_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "85.5°F",
+      "2022-07-21T08:00:00.000Z": "85.5°F",
+      "2022-07-22T08:00:00.000Z": "89.5°F",
+      "2022-07-23T08:00:00.000Z": "83.5°F",
+      "2022-07-24T08:00:00.000Z": "82.5°F",
+    },
+  },
+  {
+    name: "Temperature - In Canopy Max",
+    valueName: "temperature_c_in_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "86.3°F",
+      "2022-07-21T08:00:00.000Z": "85.5°F",
+      "2022-07-22T08:00:00.000Z": "86.2°F",
+      "2022-07-23T08:00:00.000Z": "87.5°F",
+      "2022-07-24T08:00:00.000Z": "83.2°F",
+    },
+  },
+  {
+    name: "Temperature - Below Canopy Max",
+    valueName: "temperature_c_below_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "88.3°F",
+      "2022-07-21T08:00:00.000Z": "89.5°F",
+      "2022-07-22T08:00:00.000Z": "87.2°F",
+      "2022-07-23T08:00:00.000Z": "87.5°F",
+      "2022-07-24T08:00:00.000Z": "84.2°F",
+    },
+  },
+];
 
 const timezone = "America/Los_Angeles";
 
@@ -162,7 +162,7 @@ function App() {
         margin: 0 auto;
       `}
     >
-      <Table itemList={itemList} columns={columns} />
+      <Table data={tableDataRaw} columns={columns} />
     </div>
   );
 }

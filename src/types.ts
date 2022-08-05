@@ -38,3 +38,9 @@ export type ColumnProps = Readonly<{
   cellCSS?: Record<string, string | number>;
   width: string | number;
 }>;
+
+export type DataProps<VN> = Readonly<{
+  name: string;
+  valueName: VN;
+  values: { [timestamp: string]: string };
+}>;

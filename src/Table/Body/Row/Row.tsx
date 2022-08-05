@@ -1,8 +1,9 @@
 import { css } from "@emotion/css";
 import FirstCell from "./FirstCell/FirstCell";
 import Cell from "./Cell/Cell";
+import type { ColumnProps } from "../../../types";
 
-const Row = ({ item }: { item: any }) => {
+const Row = ({ item, columns }: { item: any; columns: ColumnProps[] }) => {
   return (
     <tr
       {...item.events}
@@ -12,12 +13,13 @@ const Row = ({ item }: { item: any }) => {
         touch-action: none;
       `}
     >
-      <FirstCell>{item.value.header}</FirstCell>
-      <Cell>td 1</Cell>
-      <Cell>{item.value.value}</Cell>
-      <Cell>td 3</Cell>
-      <Cell>td 4</Cell>
-      <Cell>td 5</Cell>
+      {columns.map((column, index) => {
+        if (index === 0) return <FirstCell>{item.value.name}</FirstCell>;
+
+        if (column.dataIndex == null) return;
+
+        return <Cell>{item.value.values[column.dataIndex]}</Cell>;
+      })}
     </tr>
   );
 };

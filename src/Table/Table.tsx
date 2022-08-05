@@ -2,16 +2,16 @@ import { css } from "@emotion/css";
 import { useDnDSort } from "./hooks/useDnDSort";
 import Header from "./Header/Header";
 import Body from "./Body/Body";
-import type { ColumnProps } from "../types";
+import type { ColumnProps, DataProps } from "../types";
 
-const Table = ({
-  itemList,
+const Table = <T,>({
+  data,
   columns,
 }: {
-  itemList: any;
+  data: DataProps<T>[];
   columns: ColumnProps[];
 }) => {
-  const results = useDnDSort(itemList);
+  const results = useDnDSort(data);
 
   return (
     <table
@@ -22,7 +22,7 @@ const Table = ({
       `}
     >
       <Header columns={columns} />
-      <Body items={results} />
+      <Body items={results} columns={columns} />
     </table>
   );
 };
