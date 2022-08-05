@@ -30,7 +30,7 @@ const Body = ({ items }: { items: any }) => {
                 background-color: #ffffff;
               `}
             >
-              {r.value}
+              {r.value.header}
             </th>
             <td
               className={css`
@@ -84,7 +84,7 @@ const Body = ({ items }: { items: any }) => {
                 }
               `}
             >
-              td 3
+              {r.value.value}
             </td>
             <td
               className={css`
