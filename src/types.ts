@@ -29,3 +29,12 @@ export interface DnDSortResult<T> {
     onPointerDown: (event: React.PointerEvent<HTMLElement>) => void;
   };
 }
+
+export type ColumnProps = Readonly<{
+  key: string;
+  dataIndex?: string;
+  title: string;
+  render?: (...params: any[]) => any;
+  cellCSS?: Record<string, string | number>;
+  width: string | number;
+}>;

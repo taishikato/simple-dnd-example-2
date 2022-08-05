@@ -1,16 +1,17 @@
+import { ColumnProps } from "../../types";
 import Cell from "./Cell/Cell";
 import FirstCell from "./FirstCell/FirstCell";
 
-const Header = () => {
+const Header = ({ columns }: { columns: ColumnProps[] }) => {
   return (
     <thead>
       <tr>
-        <FirstCell>Th1</FirstCell>
-        <Cell>Th2</Cell>
-        <Cell>Th3</Cell>
-        <Cell>Th4</Cell>
-        <Cell>Th5</Cell>
-        <Cell>Th6</Cell>
+        {columns.map((column, index) => {
+          if (index === 0)
+            return <FirstCell key={column.key}>{column.title}</FirstCell>;
+
+          return <Cell key={column.key}>{column.title}</Cell>;
+        })}
       </tr>
     </thead>
   );

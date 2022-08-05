@@ -2,8 +2,15 @@ import { css } from "@emotion/css";
 import { useDnDSort } from "./hooks/useDnDSort";
 import Header from "./Header/Header";
 import Body from "./Body/Body";
+import type { ColumnProps } from "../types";
 
-const Table = ({ itemList }: { itemList: any }) => {
+const Table = ({
+  itemList,
+  columns,
+}: {
+  itemList: any;
+  columns: ColumnProps[];
+}) => {
   const results = useDnDSort(itemList);
 
   return (
@@ -14,7 +21,7 @@ const Table = ({ itemList }: { itemList: any }) => {
         width: 100%;
       `}
     >
-      <Header />
+      <Header columns={columns} />
       <Body items={results} />
     </table>
   );
