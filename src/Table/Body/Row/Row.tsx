@@ -14,11 +14,14 @@ const Row = ({ item, columns }: { item: any; columns: ColumnProps[] }) => {
       `}
     >
       {columns.map((column, index) => {
-        if (index === 0) return <FirstCell>{item.value.name}</FirstCell>;
+        if (index === 0)
+          return <FirstCell key={column.key}>{item.value.name}</FirstCell>;
 
         if (column.dataIndex == null) return;
 
-        return <Cell>{item.value.values[column.dataIndex]}</Cell>;
+        return (
+          <Cell key={column.key}>{item.value.values[column.dataIndex]}</Cell>
+        );
       })}
     </tr>
   );
