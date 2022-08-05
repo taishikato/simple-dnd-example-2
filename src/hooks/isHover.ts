@@ -1,4 +1,4 @@
-export const isHover = (event: MouseEvent, element: HTMLElement): boolean => {
+export const isHover = (event: PointerEvent, element: HTMLElement): boolean => {
   // マウスポインターの座標を取得
   const clientX = event.clientX;
   const clientY = event.clientY;

@@ -15,7 +15,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     pointerPosition: { x: 0, y: 0 },
   }).current;
 
-  const onMouseMove = (event: MouseEvent) => {
+  const onPointerMove = (event: PointerEvent) => {
     const { clientX, clientY } = event;
     const { dndItems, dragElement, pointerPosition } = state;
 
@@ -67,7 +67,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     }
   };
 
-  const onMouseUp = (event: MouseEvent) => {
+  const onPointerUp = () => {
     const { dragElement } = state;
 
     if (!dragElement) return;
@@ -178,8 +178,8 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
           state.dragElement = { key, value, element, position };
 
           // mousemove, mouseupイベントをwindowに登録する
-          window.onpointerup = onMouseUp;
-          window.onpointermove = onMouseMove;
+          window.onpointerup = onPointerUp;
+          window.onpointermove = onPointerMove;
         },
       },
     };
