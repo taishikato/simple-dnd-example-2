@@ -56,20 +56,7 @@ Error generating stack: `+i.message+`
         left: 0;
         z-index: 20;
         background-color: #ffffff;
-      `,children:e}),yh=()=>F("thead",{children:vu("tr",{children:[F(vh,{children:"Th1"}),F(Mt,{children:"Th2"}),F(Mt,{children:"Th3"}),F(Mt,{children:"Th4"}),F(Mt,{children:"Th5"}),F(Mt,{children:"Th6"})]})}),It=({children:e})=>F("td",{className:ln`
-        padding: 10px;
-        vertical-align: middle;
-        background-color: #ffffff;
-        padding: 10px;
-        text-align: center;
-        font-weight: 600;
-        user-select: none;
-        box-sizing: border-box;
-        border-bottom: 1px solid rgb(203 213 225);
-        &:not(:last-child) {
-          border-right: 1px solid rgb(203 213 225);
-        }
-      `,children:e}),gh=({children:e})=>F("th",{className:ln`
+      `,children:e}),yh=()=>F("thead",{children:vu("tr",{children:[F(vh,{children:"Th1"}),F(Mt,{children:"Th2"}),F(Mt,{children:"Th3"}),F(Mt,{children:"Th4"}),F(Mt,{children:"Th5"}),F(Mt,{children:"Th6"})]})}),gh=({children:e})=>F("th",{className:ln`
         min-width: 130px;
         vertical-align: middle;
         padding: 10px 10px 10px 0;
@@ -82,22 +69,35 @@ Error generating stack: `+i.message+`
         left: 0;
         box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
-      `,children:e}),wh=({items:e})=>F("tbody",{children:e.map(n=>vu("tr",{...n.events,className:ln`
-              cursor: grab;
-              position: relative;
-              touch-action: none;
-            `,children:[F(gh,{children:n.value.header}),F(It,{children:"td 1"}),F(It,{children:n.value.value}),F(It,{children:"td 3"}),F(It,{children:"td 4"}),F(It,{children:"td 5"})]},n.key))}),kh=({itemList:e})=>{const n=ah(e);return vu("table",{className:ln`
+      `,children:e}),It=({children:e})=>F("td",{className:ln`
+        padding: 10px;
+        vertical-align: middle;
+        background-color: #ffffff;
+        padding: 10px;
+        text-align: center;
+        font-weight: 600;
+        user-select: none;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgb(203 213 225);
+        &:not(:last-child) {
+          border-right: 1px solid rgb(203 213 225);
+        }
+      `,children:e}),wh=({item:e})=>vu("tr",{...e.events,className:ln`
+        cursor: grab;
+        position: relative;
+        touch-action: none;
+      `,children:[F(gh,{children:e.value.header}),F(It,{children:"td 1"}),F(It,{children:e.value.value}),F(It,{children:"td 3"}),F(It,{children:"td 4"}),F(It,{children:"td 5"})]}),kh=({items:e})=>F("tbody",{children:e.map(n=>F(wh,{item:n},n.key))}),Sh=({itemList:e})=>{const n=ah(e);return vu("table",{className:ln`
         border-collapse: separate;
         border-spacing: 0px 0px;
         width: 100%;
-      `,children:[F(yh,{}),F(wh,{items:n})]})},Sh=[{header:"Header 1",value:"Hello"},{header:"header 2",value:F("img",{src:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bbyoda-1575303784.jpeg?resize=480:*",className:ln`
+      `,children:[F(yh,{}),F(kh,{items:n})]})},xh=[{header:"Header 1",value:"Hello"},{header:"header 2",value:F("img",{src:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bbyoda-1575303784.jpeg?resize=480:*",className:ln`
           border-radius: 10px;
         `})},{header:"Header 3",value:"Hola"},{header:"Header 4",value:F("div",{className:ln`
           padding: 20px;
           background-color: green;
           border-radius: 10px;
           color: white;
-        `,children:"div element"})},{header:"Header 5",value:47247318}];function xh(){return F("div",{className:ln`
+        `,children:"div element"})},{header:"Header 5",value:47247318}];function Eh(){return F("div",{className:ln`
         width: 600px;
         margin: 0 auto;
-      `,children:F(kh,{itemList:Sh})})}xi.createRoot(document.getElementById("root")).render(F(wf.StrictMode,{children:F(xh,{})}));
+      `,children:F(Sh,{itemList:xh})})}xi.createRoot(document.getElementById("root")).render(F(wf.StrictMode,{children:F(Eh,{})}));
