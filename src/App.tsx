@@ -7,7 +7,8 @@ import "moment-timezone";
 export type BanyanValueType =
   | "temperature_c_above_max"
   | "temperature_c_in_max"
-  | "temperature_c_below_max";
+  | "temperature_c_below_max"
+  | "temperature_inversion";
 
 // const valueToRowRendererMapper: Record<BanyanValueType, React.FC<CellProps>> = {
 //   temperature_c_above_max: CellTemperatureCAboveMax,
@@ -63,6 +64,17 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       "2022-07-22T08:00:00.000Z": "87.2°F",
       "2022-07-23T08:00:00.000Z": "87.5°F",
       "2022-07-24T08:00:00.000Z": "84.2°F",
+    },
+  },
+  {
+    name: "Inversion",
+    valueName: "temperature_inversion",
+    values: {
+      "2022-07-20T08:00:00.000Z": "-2.6°F",
+      "2022-07-21T08:00:00.000Z": "-2.6°F",
+      "2022-07-22T08:00:00.000Z": "-2.6°F",
+      "2022-07-23T08:00:00.000Z": "-2.6°F",
+      "2022-07-24T08:00:00.000Z": "-2.6°F",
     },
   },
 ];
