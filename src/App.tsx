@@ -8,7 +8,13 @@ export type BanyanValueType =
   | "temperature_c_above_max"
   | "temperature_c_in_max"
   | "temperature_c_below_max"
-  | "temperature_inversion";
+  | "temperature_inversion"
+  | "humidity_c_above_max"
+  | "humidity_c_below_max"
+  | "humidity_c_in_max"
+  | "wetbulb_c_above_max"
+  | "wetbulb_c_in_max"
+  | "wetbulb_c_below_max";
 
 const dates = [
   "2022-07-20T08:00:00.000Z",
@@ -79,6 +85,101 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       "2022-07-22T08:00:00.000Z": "-2.6°F",
       "2022-07-23T08:00:00.000Z": "-2.6°F",
       "2022-07-24T08:00:00.000Z": "-2.6°F",
+    },
+  },
+  {
+    name: "Humidity - Above Canopy Max",
+    valueName: "humidity_c_above_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "85.5°F",
+      "2022-07-21T08:00:00.000Z": "dfjsdk",
+      "2022-07-22T08:00:00.000Z": "89.5°F",
+      "2022-07-23T08:00:00.000Z": "83.5°F",
+      "2022-07-24T08:00:00.000Z": "82.5°F",
+    },
+  },
+  {
+    name: "Humidity - In Canopy Max",
+    valueName: "humidity_c_in_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "86.3°F",
+      "2022-07-21T08:00:00.000Z": "85.5°F",
+      "2022-07-22T08:00:00.000Z": "86.2°F",
+      "2022-07-23T08:00:00.000Z": (
+        <div
+          className={css`
+            padding: 20px;
+            border-radius: 10px;
+            background-color: green;
+            width: 100px;
+            color: white;
+          `}
+        >
+          div test
+        </div>
+      ),
+      "2022-07-24T08:00:00.000Z": "hello",
+    },
+  },
+  {
+    name: "Humidity - Below Canopy Max",
+    valueName: "humidity_c_below_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "88.3°F",
+      "2022-07-21T08:00:00.000Z": "89.5°F",
+      "2022-07-22T08:00:00.000Z": "87.2°F",
+      "2022-07-23T08:00:00.000Z": 478237,
+      "2022-07-24T08:00:00.000Z": "84.2°F",
+    },
+  },
+  {
+    name: "WetBulb - Above Canopy Max",
+    valueName: "wetbulb_c_above_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "85.5°F",
+      "2022-07-21T08:00:00.000Z":
+        "testfhdshfjkdshfjshfdsjfhdjshfjdshfjdshfjdshfkjhsdjkfhsdkjahfkjdsahfjdksahfjksdhfjksdahfjkdsahfjksdah",
+      "2022-07-22T08:00:00.000Z": (
+        <img
+          src="https://img.devrant.com/devrant/rant/r_3015646_HZCi4.jpg"
+          className={css`
+            width: 200px;
+            border-radius: 10px;
+          `}
+        />
+      ),
+      "2022-07-23T08:00:00.000Z": "83.5°F",
+      "2022-07-24T08:00:00.000Z": "82.5°F",
+    },
+  },
+  {
+    name: "WetBulb - In Canopy Max",
+    valueName: "wetbulb_c_in_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": (
+        <img
+          src="https://res.cloudinary.com/practicaldev/image/fetch/s--iaqAI9Jj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://i.imgur.com/Q3cUg29.gif"
+          className={css`
+            width: 150px;
+            border-radius: 10px;
+          `}
+        />
+      ),
+      "2022-07-21T08:00:00.000Z": "85.5°F",
+      "2022-07-22T08:00:00.000Z": "86.2°F",
+      "2022-07-23T08:00:00.000Z": "87.5°F",
+      "2022-07-24T08:00:00.000Z": 47328,
+    },
+  },
+  {
+    name: "WetBulb - Below Canopy Max",
+    valueName: "wetbulb_c_below_max",
+    values: {
+      "2022-07-20T08:00:00.000Z": "88.3°F",
+      "2022-07-21T08:00:00.000Z": "89.5°F",
+      "2022-07-22T08:00:00.000Z": "87.2°F",
+      "2022-07-23T08:00:00.000Z": 478237,
+      "2022-07-24T08:00:00.000Z": "84.2°F",
     },
   },
 ];
