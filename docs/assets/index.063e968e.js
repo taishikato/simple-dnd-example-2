@@ -70,6 +70,7 @@ Error generating stack: `+o.message+`
         box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
       `,children:e}),jd=({children:e})=>i0("td",{className:u1`
+        word-break: break-all;
         padding: 10px;
         vertical-align: middle;
         background-color: #ffffff;
