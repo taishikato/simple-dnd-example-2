@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import Cell from "./Cell/Cell";
 
 const Header = () => {
   return (
@@ -20,71 +21,11 @@ const Header = () => {
         >
           Th1
         </th>
-        <th
-          className={css`
-            vertical-align: middle;
-            padding: 10px;
-            border-bottom: 1px solid #0b1424;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: #ffffff;
-          `}
-        >
-          Th2
-        </th>
-        <th
-          className={css`
-            vertical-align: middle;
-            padding: 10px;
-            border-bottom: 1px solid #0b1424;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: #ffffff;
-          `}
-        >
-          Th3
-        </th>
-        <th
-          className={css`
-            vertical-align: middle;
-            padding: 10px;
-            border-bottom: 1px solid #0b1424;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: #ffffff;
-          `}
-        >
-          Th4
-        </th>
-        <th
-          className={css`
-            vertical-align: middle;
-            padding: 10px;
-            border-bottom: 1px solid #0b1424;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: #ffffff;
-          `}
-        >
-          Th5
-        </th>
-        <th
-          className={css`
-            vertical-align: middle;
-            padding: 10px;
-            border-bottom: 1px solid #0b1424;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: #ffffff;
-          `}
-        >
-          Th6
-        </th>
+        <Cell>Th2</Cell>
+        <Cell>Th3</Cell>
+        <Cell>Th4</Cell>
+        <Cell>Th5</Cell>
+        <Cell>Th6</Cell>
       </tr>
     </thead>
   );
