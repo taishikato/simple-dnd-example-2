@@ -64,7 +64,15 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
     valueName: "temperature_c_above_max",
     values: {
       "2022-07-20T08:00:00.000Z": "85.5°F",
-      "2022-07-21T08:00:00.000Z": "85.5°F",
+      "2022-07-21T08:00:00.000Z": (
+        <img
+          src="https://media.npr.org/assets/img/2022/07/14/lofi-girl-picture_custom-27a34c6d0ca36f828940156e7bd3c964140cff9c.jpg"
+          className={css`
+            width: 300px;
+            border-radius: 10px;
+          `}
+        />
+      ),
       "2022-07-22T08:00:00.000Z": "89.5°F",
       "2022-07-23T08:00:00.000Z": "83.5°F",
       "2022-07-24T08:00:00.000Z": "82.5°F",

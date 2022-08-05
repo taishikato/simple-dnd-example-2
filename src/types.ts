@@ -42,5 +42,5 @@ export type ColumnProps = Readonly<{
 export type DataProps<VN> = Readonly<{
   name: string;
   valueName: VN;
-  values: { [timestamp: string]: string };
+  values: { [index: string]: string | number | JSX.Element };
 }>;
