@@ -1,5 +1,6 @@
 import { css } from "@emotion/css";
 import Cell from "./Cell/Cell";
+import FirstCell from "./FirstCell/FirstCell";
 
 const Body = ({ items }: { items: any }) => {
   return (
@@ -15,24 +16,7 @@ const Body = ({ items }: { items: any }) => {
               touch-action: none;
             `}
           >
-            <th
-              className={css`
-                min-width: 130px;
-                vertical-align: middle;
-                padding: 10px 10px 10px 0;
-                text-align: left;
-                font-weight: 600;
-                user-select: none;
-                box-sizing: border-box;
-                border-bottom: 1px solid rgb(203 213 225);
-                position: sticky;
-                left: 0;
-                box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.1);
-                background-color: #ffffff;
-              `}
-            >
-              {r.value.header}
-            </th>
+            <FirstCell>{r.value.header}</FirstCell>
             <Cell>td 1</Cell>
             <Cell>{r.value.value}</Cell>
             <Cell>td 3</Cell>
