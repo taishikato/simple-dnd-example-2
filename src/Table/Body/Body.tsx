@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import Cell from "./Cell/Cell";
 
 const Body = ({ items }: { items: any }) => {
   return (
@@ -32,96 +33,11 @@ const Body = ({ items }: { items: any }) => {
             >
               {r.value.header}
             </th>
-            <td
-              className={css`
-                padding: 10px;
-                vertical-align: middle;
-                background-color: #ffffff;
-                padding: 10px;
-                text-align: center;
-                font-weight: 600;
-                user-select: none;
-                box-sizing: border-box;
-                border-bottom: 1px solid rgb(203 213 225);
-                &:not(:last-child) {
-                  border-right: 1px solid rgb(203 213 225);
-                }
-              `}
-            >
-              td 1
-            </td>
-            <td
-              className={css`
-                padding: 10px;
-                vertical-align: middle;
-                background-color: #ffffff;
-                padding: 10px;
-                text-align: center;
-                font-weight: 600;
-                user-select: none;
-                box-sizing: border-box;
-                border-bottom: 1px solid rgb(203 213 225);
-                &:not(:last-child) {
-                  border-right: 1px solid rgb(203 213 225);
-                }
-              `}
-            >
-              td 2
-            </td>
-            <td
-              className={css`
-                padding: 10px;
-                vertical-align: middle;
-                background-color: #ffffff;
-                padding: 10px;
-                text-align: center;
-                font-weight: 600;
-                user-select: none;
-                box-sizing: border-box;
-                border-bottom: 1px solid rgb(203 213 225);
-                &:not(:last-child) {
-                  border-right: 1px solid rgb(203 213 225);
-                }
-              `}
-            >
-              {r.value.value}
-            </td>
-            <td
-              className={css`
-                padding: 10px;
-                vertical-align: middle;
-                background-color: #ffffff;
-                padding: 10px;
-                text-align: center;
-                font-weight: 600;
-                user-select: none;
-                box-sizing: border-box;
-                border-bottom: 1px solid rgb(203 213 225);
-                &:not(:last-child) {
-                  border-right: 1px solid rgb(203 213 225);
-                }
-              `}
-            >
-              td 4
-            </td>
-            <td
-              className={css`
-                padding: 10px;
-                vertical-align: middle;
-                background-color: #ffffff;
-                padding: 10px;
-                text-align: center;
-                font-weight: 600;
-                user-select: none;
-                box-sizing: border-box;
-                border-bottom: 1px solid rgb(203 213 225);
-                &:not(:last-child) {
-                  border-right: 1px solid rgb(203 213 225);
-                }
-              `}
-            >
-              td 5
-            </td>
+            <Cell>td 1</Cell>
+            <Cell>{r.value.value}</Cell>
+            <Cell>td 3</Cell>
+            <Cell>td 4</Cell>
+            <Cell>td 5</Cell>
           </tr>
         );
       })}
