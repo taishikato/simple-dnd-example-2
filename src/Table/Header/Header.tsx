@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import Cell from "./Cell/Cell";
 import FirstCell from "./FirstCell/FirstCell";
 
