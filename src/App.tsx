@@ -193,7 +193,7 @@ const columns: ColumnProps[] = [
       dataIndex: "valueName",
       title: "Last Update: June 14th, 10:00 AM",
       // render,
-      width: "300px",
+      width: "150px",
       cellCSS: { padding: "12px" },
     };
   })(),

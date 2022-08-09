@@ -8,9 +8,23 @@ const Header = ({ columns }: { columns: ColumnProps[] }) => {
       <tr>
         {columns.map((column, index) => {
           if (index === 0)
-            return <FirstCell key={column.key}>{column.title}</FirstCell>;
+            return (
+              <FirstCell
+                key={column.key}
+                {...(column.width && { width: column.width })}
+              >
+                {column.title}
+              </FirstCell>
+            );
 
-          return <Cell key={column.key}>{column.title}</Cell>;
+          return (
+            <Cell
+              key={column.key}
+              {...(column.width && { width: column.width })}
+            >
+              {column.title}
+            </Cell>
+          );
         })}
       </tr>
     </thead>

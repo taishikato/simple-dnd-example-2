@@ -36,7 +36,7 @@ export type ColumnProps = Readonly<{
   title: string;
   render?: (...params: any[]) => any;
   cellCSS?: Record<string, string | number>;
-  width: string | number;
+  width?: string;
 }>;
 
 export type DataProps<VN> = Readonly<{

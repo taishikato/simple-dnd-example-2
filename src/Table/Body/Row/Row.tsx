@@ -15,12 +15,21 @@ const Row = ({ data, columns }: { data: any; columns: ColumnProps[] }) => {
     >
       {columns.map((column, index) => {
         if (index === 0)
-          return <FirstCell key={column.key}>{data.value.name}</FirstCell>;
+          return (
+            <FirstCell
+              key={column.key}
+              {...(column.width && { width: column.width })}
+            >
+              {data.value.name}
+            </FirstCell>
+          );
 
         if (column.dataIndex == null) return;
 
         return (
-          <Cell key={column.key}>{data.value.values[column.dataIndex]}</Cell>
+          <Cell key={column.key} {...(column.width && { width: column.width })}>
+            {data.value.values[column.dataIndex]}
+          </Cell>
         );
       })}
     </tr>

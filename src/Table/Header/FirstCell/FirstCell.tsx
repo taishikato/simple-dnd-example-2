@@ -2,8 +2,10 @@ import { css } from "@emotion/css";
 
 const FirstCell = ({
   children,
+  width,
 }: {
   children: string | number | JSX.Element;
+  width?: string;
 }) => {
   return (
     <th
@@ -18,6 +20,7 @@ const FirstCell = ({
         left: 0;
         z-index: 20;
         background-color: #ffffff;
+        ${width ? `min-width: ${width}` : ""}
       `}
     >
       {children}

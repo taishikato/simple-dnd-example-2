@@ -1,6 +1,12 @@
 import { css } from "@emotion/css";
 
-const Cell = ({ children }: { children: string | number | JSX.Element }) => {
+const Cell = ({
+  children,
+  width,
+}: {
+  children: string | number | JSX.Element;
+  width?: string;
+}) => {
   return (
     <td
       className={css`
@@ -17,6 +23,7 @@ const Cell = ({ children }: { children: string | number | JSX.Element }) => {
         &:not(:last-child) {
           border-right: 1px solid rgb(203 213 225);
         }
+        ${width ? `min-width: ${width}` : ""}
       `}
     >
       {children}

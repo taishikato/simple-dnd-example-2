@@ -1,6 +1,12 @@
 import { css } from "@emotion/css";
 
-const Cell = ({ children }: { children: string | number | JSX.Element }) => {
+const Cell = ({
+  children,
+  width,
+}: {
+  children: string | number | JSX.Element;
+  width?: string;
+}) => {
   return (
     <th
       className={css`
@@ -11,6 +17,7 @@ const Cell = ({ children }: { children: string | number | JSX.Element }) => {
         top: 0;
         z-index: 10;
         background-color: #ffffff;
+        ${width ? `min-width: ${width}` : ""}
       `}
     >
       {children}
