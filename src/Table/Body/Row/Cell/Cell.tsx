@@ -1,35 +1,35 @@
-import { css, cx } from "@emotion/css";
+import { css } from "@emotion/css";
 
 type Props = {
   children: string | number | JSX.Element;
   width?: string;
-  customClasses?: string[];
+  cellCSS?: Record<string, string | number>;
 };
 
-const getDefaultStyle = (width: Props["width"]) => css`
-  word-break: break-all;
-  padding: 10px;
-  vertical-align: middle;
-  background-color: #ffffff;
-  padding: 10px;
-  text-align: center;
-  font-weight: 600;
-  user-select: none;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgb(203 213 225);
-  &:not(:last-child) {
-    border-right: 1px solid rgb(203 213 225);
-  }
-  ${width ? `min-width: ${width}` : ""}
-`;
+const getStyle = (width: Props["width"], cellCSS: Props["cellCSS"]) =>
+  css([
+    {
+      wordBreak: "break-all",
+      padding: "10px",
+      textAlign: "center",
+      verticalAlign: "middle",
+      backgroundColor: "#ffffff",
+      fontWeight: 600,
+      userSelect: "none",
+      boxSizing: "border-box",
+      borderBottom: "1px solid rgb(203 213 225)",
+      "&:not(:last-child)": {
+        borderRight: "1px solid rgb(203 213 225)",
+      },
+    },
+    width && { minWidth: width },
+    cellCSS && cellCSS,
+  ]);
 
-const Cell = ({ children, width, customClasses }: Props) => {
-  const defaultStyle = getDefaultStyle(width);
-  const StyleToUse = customClasses
-    ? cx(defaultStyle, ...[customClasses])
-    : defaultStyle;
+const Cell = ({ children, width, cellCSS }: Props) => {
+  const styleToUse = getStyle(width, cellCSS);
 
-  return <td className={StyleToUse}>{children}</td>;
+  return <td className={styleToUse}>{children}</td>;
 };
 
 export default Cell;

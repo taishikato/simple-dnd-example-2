@@ -27,7 +27,7 @@ const Row = ({
             <FirstCell
               key={column.key}
               width={column.width}
-              customClasses={column.customClasses}
+              cellCSS={column.cellCSS}
               isFirstColumnSticky={isFirstColumnSticky}
             >
               {data.value.name}
@@ -37,11 +37,7 @@ const Row = ({
         if (column.dataIndex == null) return;
 
         return (
-          <Cell
-            key={column.key}
-            width={column.width}
-            customClasses={column.customClasses}
-          >
+          <Cell key={column.key} width={column.width} cellCSS={column.cellCSS}>
             {data.value.values[column.dataIndex]}
           </Cell>
         );

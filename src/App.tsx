@@ -203,19 +203,20 @@ const columns: ColumnProps[] = [
 
     const width = "55px";
 
-    let customClasses = [];
+    let cellCSS;
 
     // if (todayMoment.isSame(momentOfDate, "day")) customClass = "blueBg";
-    if (index === 1) {
-      customClasses.push("blueBg");
-      customClasses.push("whiteText");
-    }
+    if (index === 1)
+      cellCSS = {
+        backgroundColor: "blue",
+        color: "white",
+      };
 
     return {
       key: d,
       dataIndex: d,
       title: momentOfDate.format("MMM D"),
-      customClasses,
+      cellCSS,
       width,
     };
   }),
