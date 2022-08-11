@@ -197,22 +197,22 @@ const columns: ColumnProps[] = [
       cellCSS: { padding: "12px" },
     };
   })(),
-  ...dates.map((d) => {
+  ...dates.map((d, index) => {
     const momentOfDate = moment.tz(d, timezone);
     const todayMoment = moment.tz(timezone);
 
     const width = "55px";
 
-    let cellCSS;
+    let customClass;
 
-    if (todayMoment.isSame(momentOfDate, "day"))
-      cellCSS = { background: "blue", color: "#ffffff" };
+    // if (todayMoment.isSame(momentOfDate, "day")) customClass = "blueBg";
+    if (index === 1) customClass = "blueBg";
 
     return {
       key: d,
       dataIndex: d,
       title: momentOfDate.format("MMM D"),
-      cellCSS,
+      customClass,
       width,
     };
   }),

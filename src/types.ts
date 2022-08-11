@@ -35,7 +35,7 @@ export type ColumnProps = Readonly<{
   dataIndex?: string;
   title: string;
   render?: (...params: any[]) => any;
-  cellCSS?: Record<string, string | number>;
+  customClass?: string;
   width?: string;
 }>;
 

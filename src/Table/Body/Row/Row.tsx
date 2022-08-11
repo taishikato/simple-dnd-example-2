@@ -19,6 +19,10 @@ const Row = ({ data, columns }: { data: any; columns: ColumnProps[] }) => {
             <FirstCell
               key={column.key}
               {...(column.width && { width: column.width })}
+              {...(column.customClass &&
+                column.customClass.length > 0 && {
+                  customClass: column.customClass,
+                })}
             >
               {data.value.name}
             </FirstCell>
@@ -27,7 +31,14 @@ const Row = ({ data, columns }: { data: any; columns: ColumnProps[] }) => {
         if (column.dataIndex == null) return;
 
         return (
-          <Cell key={column.key} {...(column.width && { width: column.width })}>
+          <Cell
+            key={column.key}
+            {...(column.width && { width: column.width })}
+            {...(column.customClass &&
+              column.customClass.length > 0 && {
+                customClass: column.customClass,
+              })}
+          >
             {data.value.values[column.dataIndex]}
           </Cell>
         );
