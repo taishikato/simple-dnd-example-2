@@ -7,9 +7,13 @@ import type { ColumnProps, DataProps } from "../types";
 const Table = <T,>({
   data,
   columns,
+  isFirstColumnSticky,
+  isHeaderSticky,
 }: {
   data: DataProps<T>[];
   columns: ColumnProps[];
+  isFirstColumnSticky: boolean;
+  isHeaderSticky: boolean;
 }) => {
   const results = useDnDSort(data);
 
@@ -21,7 +25,11 @@ const Table = <T,>({
         width: 100%;
       `}
     >
-      <Header columns={columns} />
+      <Header
+        columns={columns}
+        isFirstColumnSticky={isFirstColumnSticky}
+        isHeaderSticky={isHeaderSticky}
+      />
       <Body data={results} columns={columns} />
     </table>
   );

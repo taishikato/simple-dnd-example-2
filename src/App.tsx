@@ -229,7 +229,12 @@ function App() {
         margin: 0 auto;
       `}
     >
-      <Table data={tableDataRaw} columns={columns} />
+      <Table
+        data={tableDataRaw}
+        columns={columns}
+        isFirstColumnSticky
+        isHeaderSticky
+      />
     </div>
   );
 }
