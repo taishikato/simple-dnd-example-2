@@ -3,7 +3,7 @@ import { css, cx } from "@emotion/css";
 type Props = {
   children: string | number | JSX.Element;
   width?: string;
-  customClass?: string;
+  customClasses?: string[];
 };
 
 const getDefaultStyle = (width: Props["width"]) => css`
@@ -23,9 +23,11 @@ const getDefaultStyle = (width: Props["width"]) => css`
   ${width ? `min-width: ${width}` : ""}
 `;
 
-const Cell = ({ children, width, customClass }: Props) => {
+const Cell = ({ children, width, customClasses }: Props) => {
   const defaultStyle = getDefaultStyle(width);
-  const StyleToUse = customClass ? cx(defaultStyle, customClass) : defaultStyle;
+  const StyleToUse = customClasses
+    ? cx(defaultStyle, ...[customClasses])
+    : defaultStyle;
 
   return <td className={StyleToUse}>{children}</td>;
 };
