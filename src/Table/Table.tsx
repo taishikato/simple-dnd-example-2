@@ -30,7 +30,11 @@ const Table = <T,>({
         isFirstColumnSticky={isFirstColumnSticky}
         isHeaderSticky={isHeaderSticky}
       />
-      <Body data={results} columns={columns} />
+      <Body
+        data={results}
+        columns={columns}
+        isFirstColumnSticky={isFirstColumnSticky}
+      />
     </table>
   );
 };

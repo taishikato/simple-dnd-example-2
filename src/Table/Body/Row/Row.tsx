@@ -3,7 +3,15 @@ import FirstCell from "./FirstCell/FirstCell";
 import Cell from "./Cell/Cell";
 import type { ColumnProps } from "../../../types";
 
-const Row = ({ data, columns }: { data: any; columns: ColumnProps[] }) => {
+const Row = ({
+  data,
+  columns,
+  isFirstColumnSticky,
+}: {
+  data: any;
+  columns: ColumnProps[];
+  isFirstColumnSticky: boolean;
+}) => {
   return (
     <tr
       {...data.events}
@@ -20,6 +28,7 @@ const Row = ({ data, columns }: { data: any; columns: ColumnProps[] }) => {
               key={column.key}
               width={column.width}
               customClasses={column.customClasses}
+              isFirstColumnSticky={isFirstColumnSticky}
             >
               {data.value.name}
             </FirstCell>
