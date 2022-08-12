@@ -18,7 +18,7 @@ const Header = ({
           return (
             <FirstCell
               key={column.key}
-              {...(column.width && { width: column.width })}
+              width={column.width}
               isFirstColumnSticky={isFirstColumnSticky}
               isHeaderSticky={isHeaderSticky}
             >
@@ -29,7 +29,7 @@ const Header = ({
         return (
           <Cell
             key={column.key}
-            {...(column.width && { width: column.width })}
+            width={column.width}
             isHeaderSticky={isHeaderSticky}
           >
             {column.title}

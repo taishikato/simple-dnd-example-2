@@ -1,38 +1,49 @@
 import { css } from "@emotion/css";
 
+type Props = {
+  children: string | number | JSX.Element;
+  width?: string;
+  isFirstColumnSticky: boolean;
+  isHeaderSticky: boolean;
+};
+
+const getStyle = (
+  width: Props["width"],
+  isFirstColumnSticky: Props["isFirstColumnSticky"],
+  isHeaderSticky: Props["isHeaderSticky"]
+) =>
+  css([
+    {
+      minWidth: "auto",
+      verticalAlign: "middle",
+      padding: "10px 10px 10px 0",
+      textAlign: "left",
+      borderBottom: "1px solid #0b1424",
+      backgroundColor: "#ffffff",
+    },
+    isHeaderSticky &&
+      isFirstColumnSticky && {
+        position: "sticky",
+        top: 0,
+        left: 0,
+        zIndex: 20,
+      },
+    isHeaderSticky &&
+      !isFirstColumnSticky && { position: "sticky", top: 0, zIndex: 20 },
+    !isHeaderSticky &&
+      isFirstColumnSticky && { position: "sticky", left: 0, zIndex: 20 },
+    width && { minWidth: width },
+  ]);
+
 const FirstCell = ({
   children,
   width,
   isFirstColumnSticky,
   isHeaderSticky,
-}: {
-  children: string | number | JSX.Element;
-  width?: string;
-  isFirstColumnSticky: boolean;
-  isHeaderSticky: boolean;
-}) => (
-  <th
-    className={css`
-      min-width: 150px;
-      vertical-align: middle;
-      padding: 10px 10px 10px 0;
-      text-align: left;
-      border-bottom: 1px solid #0b1424;
-      background-color: #ffffff;
-      ${isHeaderSticky && isFirstColumnSticky
-        ? "position: sticky; top: 0px; left: 0; z-index: 20;"
-        : ""}
-      ${isHeaderSticky && !isFirstColumnSticky
-        ? "position: sticky; top: 0px; z-index: 20;"
-        : ""}
-		    ${!isHeaderSticky && isFirstColumnSticky
-        ? "position: sticky; left: 0; z-index: 20;"
-        : ""}
-        ${width ? `min-width: ${width}` : ""}
-    `}
-  >
-    {children}
-  </th>
-);
+}: Props) => {
+  const styleToUse = getStyle(width, isFirstColumnSticky, isHeaderSticky);
+
+  return <th className={styleToUse}>{children}</th>;
+};
 
 export default FirstCell;
