@@ -1,23 +1,20 @@
 import { css } from "@emotion/css";
 import FirstCell from "../../BodyCells/FirstCell/FirstCell";
 import Cell from "../../BodyCells/Cell/Cell";
-import type { ColumnProps, DataProps, DnDSortResult } from "../../../types";
+import type { ColumnProps, DataProps } from "../../../types";
 
 const Row = <T extends string>({
   data,
   columns,
   isFirstColumnSticky,
 }: {
-  data: DnDSortResult<DataProps<T>>;
+  data: DataProps<T>;
   columns: ColumnProps[];
   isFirstColumnSticky: boolean;
 }) => (
   <tr
-    {...data.events}
     className={css`
-      cursor: grab;
       position: relative;
-      touch-action: none;
     `}
   >
     {columns.map((column, index) => {
@@ -29,7 +26,7 @@ const Row = <T extends string>({
             cellCSS={column.cellCSS}
             isFirstColumnSticky={isFirstColumnSticky}
           >
-            {data.value.name}
+            {data.name}
           </FirstCell>
         );
 
@@ -37,7 +34,7 @@ const Row = <T extends string>({
 
       return (
         <Cell key={column.key} width={column.width} cellCSS={column.cellCSS}>
-          {data.value.values[column.dataIndex]}
+          {data.values[column.dataIndex]}
         </Cell>
       );
     })}
