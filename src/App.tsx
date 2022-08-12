@@ -3,6 +3,7 @@ import Table from "./Table/Table";
 import type { ColumnProps, DataProps } from "./types";
 import moment from "moment";
 import "moment-timezone";
+import { useState } from "react";
 
 export type BanyanValueType =
   | "temperature_c_above_max"
@@ -232,6 +233,8 @@ const columns: ColumnProps[] = [
 ];
 
 function App() {
+  const [isDraggable, setIsDraggable] = useState(false);
+
   return (
     <div
       className={css`
@@ -239,10 +242,40 @@ function App() {
         margin: 0 auto;
       `}
     >
+      <div
+        className={css`
+          margin: 10px 0;
+        `}
+      >
+        It's{" "}
+        <span
+          className={css`
+            font-weight: 900;
+          `}
+        >
+          {isDraggable ? "draggable" : "not draggable"}
+        </span>
+      </div>
+      <button
+        className={css`
+          padding: 5px;
+          background-color: rgb(226 232 240);
+          border-radius: 5px;
+          border: 1px solid rgb(148 163 184);
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(203 213 225);
+          }
+        `}
+        onClick={() => setIsDraggable(!isDraggable)}
+      >
+        Toggle
+      </button>
+
       <Table
         data={tableDataRaw}
         columns={columns}
-        isDraggable
+        isDraggable={isDraggable}
         isFirstColumnSticky
         isHeaderSticky
       />
