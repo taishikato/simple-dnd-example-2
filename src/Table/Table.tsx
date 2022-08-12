@@ -1,5 +1,4 @@
 import { css } from "@emotion/css";
-import { useDnDSort } from "./hooks/useDnDSort";
 import Header from "./Header/Header";
 import Body from "./Body/Body";
 import type { ColumnProps, DataProps } from "../types";
@@ -15,8 +14,6 @@ const Table = <T,>({
   isFirstColumnSticky: boolean;
   isHeaderSticky: boolean;
 }) => {
-  const results = useDnDSort(data);
-
   return (
     <table
       className={css`
@@ -31,7 +28,7 @@ const Table = <T,>({
         isHeaderSticky={isHeaderSticky}
       />
       <Body
-        data={results}
+        data={data}
         columns={columns}
         isFirstColumnSticky={isFirstColumnSticky}
       />

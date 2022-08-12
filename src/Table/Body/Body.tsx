@@ -1,4 +1,5 @@
-import { ColumnProps, DnDSortResult } from "../../types";
+import { ColumnProps, DataProps } from "../../types";
+import { useDnDSort } from "../hooks/useDnDSort";
 import Row from "./Row/Row";
 
 const Body = <T,>({
@@ -6,13 +7,15 @@ const Body = <T,>({
   columns,
   isFirstColumnSticky,
 }: {
-  data: DnDSortResult<T>[];
+  data: DataProps<T>[];
   columns: ColumnProps[];
   isFirstColumnSticky: boolean;
 }) => {
+  const result = useDnDSort(data);
+
   return (
     <tbody>
-      {data.map((d: DnDSortResult<T>) => (
+      {result.map((d) => (
         <Row
           key={d.key}
           data={d}
