@@ -1,14 +1,14 @@
 import { css } from "@emotion/css";
 import FirstCell from "./FirstCell/FirstCell";
 import Cell from "./Cell/Cell";
-import type { ColumnProps } from "../../../types";
+import type { ColumnProps, DataProps } from "../../../types";
 
-const Row = ({
+const Row = <T extends string>({
   data,
   columns,
   isFirstColumnSticky,
 }: {
-  data: any;
+  data: DataProps<T>;
   columns: ColumnProps[];
   isFirstColumnSticky: boolean;
 }) => {
