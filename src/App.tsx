@@ -242,6 +242,7 @@ function App() {
       <Table
         data={tableDataRaw}
         columns={columns}
+        isDraggable
         isFirstColumnSticky
         isHeaderSticky
       />

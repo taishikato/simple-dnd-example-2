@@ -1,18 +1,21 @@
 import { css } from "@emotion/css";
 import Header from "./Header/Header";
-import Body from "./Body/Body";
+import BodyWithDraggableRow from "./BodyWithDraggableRow/BodyWithDraggableRow";
 import type { ColumnProps, DataProps } from "../types";
+import Body from "./Body/Body";
 
-const Table = <T,>({
+const Table = <T extends string>({
   data,
   columns,
   isFirstColumnSticky,
   isHeaderSticky,
+  isDraggable = false,
 }: {
   data: DataProps<T>[];
   columns: ColumnProps[];
   isFirstColumnSticky: boolean;
   isHeaderSticky: boolean;
+  isDraggable?: boolean;
 }) => {
   return (
     <table
@@ -27,11 +30,19 @@ const Table = <T,>({
         isFirstColumnSticky={isFirstColumnSticky}
         isHeaderSticky={isHeaderSticky}
       />
-      <Body
-        data={data}
-        columns={columns}
-        isFirstColumnSticky={isFirstColumnSticky}
-      />
+      {isDraggable ? (
+        <BodyWithDraggableRow
+          data={data}
+          columns={columns}
+          isFirstColumnSticky={isFirstColumnSticky}
+        />
+      ) : (
+        <Body<T>
+          data={data}
+          isFirstColumnSticky={isFirstColumnSticky}
+          columns={columns}
+        />
+      )}
     </table>
   );
 };

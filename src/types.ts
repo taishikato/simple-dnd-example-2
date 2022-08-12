@@ -40,7 +40,7 @@ export type ColumnProps = Readonly<{
   width?: string;
 }>;
 
-export type DataProps<VN> = Readonly<{
+export type DataProps<VN extends string> = Readonly<{
   name: string;
   valueName: VN;
   values: { [index: string]: string | number | JSX.Element };

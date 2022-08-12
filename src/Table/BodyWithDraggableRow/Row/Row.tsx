@@ -14,6 +14,7 @@ const Row = ({
 }) => {
   return (
     <tr
+      {...data.events}
       className={css`
         cursor: grab;
         position: relative;
@@ -29,7 +30,7 @@ const Row = ({
               cellCSS={column.cellCSS}
               isFirstColumnSticky={isFirstColumnSticky}
             >
-              {data.name}
+              {data.value.name}
             </FirstCell>
           );
 
@@ -37,7 +38,7 @@ const Row = ({
 
         return (
           <Cell key={column.key} width={column.width} cellCSS={column.cellCSS}>
-            {data.values[column.dataIndex]}
+            {data.value.values[column.dataIndex]}
           </Cell>
         );
       })}

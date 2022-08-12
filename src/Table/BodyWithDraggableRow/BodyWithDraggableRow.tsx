@@ -1,7 +1,8 @@
 import { ColumnProps, DataProps } from "../../types";
+import { useDnDSort } from "../hooks/useDnDSort";
 import Row from "./Row/Row";
 
-const Body = <T extends string>({
+const BodyWithDraggableRow = <T extends string>({
   data,
   columns,
   isFirstColumnSticky,
@@ -10,11 +11,13 @@ const Body = <T extends string>({
   columns: ColumnProps[];
   isFirstColumnSticky: boolean;
 }) => {
+  const results = useDnDSort(data);
+
   return (
     <tbody>
-      {data.map((d) => (
+      {results.map((d) => (
         <Row
-          key={d.valueName}
+          key={d.key}
           data={d}
           columns={columns}
           isFirstColumnSticky={isFirstColumnSticky}
@@ -24,4 +27,4 @@ const Body = <T extends string>({
   );
 };
 
-export default Body;
+export default BodyWithDraggableRow;
