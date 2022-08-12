@@ -1,4 +1,4 @@
-import type { Position, DnDRef, DnDSortResult } from "../../types";
+import type { Position, DnDRef, DnDSortResult } from "../types";
 import React, { useRef, useState } from "react";
 import { isHover } from "./isHover";
 

@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import Header from "./Header/Header";
 import BodyWithDraggableRow from "./BodyWithDraggableRow/BodyWithDraggableRow";
 import BodyWithNonDraggableRow from "./BodyWithNonDraggableRow/BodyWithNonDraggableRow";
-import type { ColumnProps, DataProps } from "../types";
+import type { ColumnProps, DataProps } from "./types";
 
 const Table = <T extends string>({
   data,

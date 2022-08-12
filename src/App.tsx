@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import Table from "./Table/Table";
-import type { ColumnProps, DataProps } from "./types";
+import type { ColumnProps, DataProps } from "./Table/types";
 import moment from "moment";
 import "moment-timezone";
 import { useState } from "react";

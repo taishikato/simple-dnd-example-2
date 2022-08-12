@@ -1,4 +1,4 @@
-import { ColumnProps } from "../../types";
+import { ColumnProps } from "../types";
 import Cell from "./Cell/Cell";
 import FirstCell from "./FirstCell/FirstCell";
 

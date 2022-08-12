@@ -1,4 +1,4 @@
-import { ColumnProps, DataProps } from "../../types";
+import { ColumnProps, DataProps } from "../types";
 import { useDnDSort } from "../hooks/useDnDSort";
 import Row from "./Row/Row";
 

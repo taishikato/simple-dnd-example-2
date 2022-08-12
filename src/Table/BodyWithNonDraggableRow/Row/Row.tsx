@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import FirstCell from "../../BodyCells/FirstCell/FirstCell";
 import Cell from "../../BodyCells/Cell/Cell";
-import type { ColumnProps, DataProps } from "../../../types";
+import type { ColumnProps, DataProps } from "../../types";
 
 const Row = <T extends string>({
   data,

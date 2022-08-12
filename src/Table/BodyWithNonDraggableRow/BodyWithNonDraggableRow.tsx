@@ -1,4 +1,4 @@
-import { ColumnProps, DataProps } from "../../types";
+import { ColumnProps, DataProps } from "../types";
 import Row from "./Row/Row";
 
 const BodyWithNonDraggableRow = <T extends string>({
