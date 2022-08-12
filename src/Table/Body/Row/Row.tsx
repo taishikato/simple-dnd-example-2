@@ -15,9 +15,7 @@ const Row = ({
   return (
     <tr
       className={css`
-        cursor: grab;
         position: relative;
-        touch-action: none;
       `}
     >
       {columns.map((column, index) => {
