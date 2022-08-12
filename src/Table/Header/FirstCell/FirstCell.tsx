@@ -3,6 +3,7 @@ import { css } from "@emotion/css";
 type Props = {
   children: string | number | JSX.Element;
   width?: string;
+  headerCellCSS?: Record<string, string | number>;
   isFirstColumnSticky: boolean;
   isHeaderSticky: boolean;
 };
@@ -10,7 +11,8 @@ type Props = {
 const getStyle = (
   width: Props["width"],
   isFirstColumnSticky: Props["isFirstColumnSticky"],
-  isHeaderSticky: Props["isHeaderSticky"]
+  isHeaderSticky: Props["isHeaderSticky"],
+  headerCellCSS: Props["headerCellCSS"]
 ) =>
   css([
     {
@@ -21,6 +23,7 @@ const getStyle = (
       borderBottom: "1px solid #0b1424",
       backgroundColor: "#ffffff",
     },
+    headerCellCSS && headerCellCSS,
     isHeaderSticky &&
       isFirstColumnSticky && {
         position: "sticky",
@@ -38,10 +41,16 @@ const getStyle = (
 const FirstCell = ({
   children,
   width,
+  headerCellCSS,
   isFirstColumnSticky,
   isHeaderSticky,
 }: Props) => {
-  const styleToUse = getStyle(width, isFirstColumnSticky, isHeaderSticky);
+  const styleToUse = getStyle(
+    width,
+    isFirstColumnSticky,
+    isHeaderSticky,
+    headerCellCSS
+  );
 
   return <th className={styleToUse}>{children}</th>;
 };

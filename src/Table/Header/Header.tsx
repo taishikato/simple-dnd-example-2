@@ -19,6 +19,7 @@ const Header = ({
             <FirstCell
               key={column.key}
               width={column.width}
+              headerCellCSS={column.headerCellCSS}
               isFirstColumnSticky={isFirstColumnSticky}
               isHeaderSticky={isHeaderSticky}
             >
@@ -30,6 +31,7 @@ const Header = ({
           <Cell
             key={column.key}
             width={column.width}
+            headerCellCSS={column.headerCellCSS}
             isHeaderSticky={isHeaderSticky}
           >
             {column.title}

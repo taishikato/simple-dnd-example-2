@@ -212,11 +212,20 @@ const columns: ColumnProps[] = [
         color: "white",
       };
 
+    let headerCellCSS;
+
+    if (index === 2)
+      headerCellCSS = {
+        color: "white",
+        backgroundColor: "purple",
+      };
+
     return {
       key: d,
       dataIndex: d,
       title: momentOfDate.format("MMM D"),
       cellCSS,
+      headerCellCSS,
       width,
     };
   }),

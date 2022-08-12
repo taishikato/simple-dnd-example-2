@@ -32,10 +32,11 @@ export interface DnDSortResult<T> {
 
 export type ColumnProps = Readonly<{
   key: string;
-  dataIndex?: string;
   title: string;
-  render?: (...params: any[]) => any;
   cellCSS?: Record<string, string | number>;
+  headerCellCSS?: Record<string, string | number>;
+  dataIndex?: string;
+  render?: (...params: any[]) => any;
   width?: string;
 }>;
 
