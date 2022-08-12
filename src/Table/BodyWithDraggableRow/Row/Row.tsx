@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
-import FirstCell from "./FirstCell/FirstCell";
-import Cell from "./Cell/Cell";
+import FirstCell from "../../BodyCells/FirstCell/FirstCell";
+import Cell from "../../BodyCells/Cell/Cell";
 import type { ColumnProps, DataProps, DnDSortResult } from "../../../types";
 
 const Row = <T extends string>({
