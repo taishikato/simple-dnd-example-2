@@ -1,15 +1,16 @@
+import { useContext } from "react";
 import { css } from "@emotion/css";
+import { StickyStatusContext } from "../../context/StickyStatusContext";
 
 type Props = {
   children: string | number | JSX.Element;
   width?: string;
   headerCellCSS?: Record<string, string | number>;
-  isHeaderSticky: boolean;
 };
 
 const getStyle = (
   width: Props["width"],
-  isHeaderSticky: Props["isHeaderSticky"],
+  isHeaderSticky: boolean,
   headerCellCSS: Props["headerCellCSS"]
 ) =>
   css([
@@ -24,7 +25,8 @@ const getStyle = (
     width && { minWidth: width },
   ]);
 
-const Cell = ({ children, width, isHeaderSticky, headerCellCSS }: Props) => {
+const Cell = ({ children, width, headerCellCSS }: Props) => {
+  const { isHeaderSticky } = useContext(StickyStatusContext);
   const styleToUse = getStyle(width, isHeaderSticky, headerCellCSS);
 
   return <th className={styleToUse}>{children}</th>;

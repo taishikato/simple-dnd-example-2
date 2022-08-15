@@ -8,14 +8,14 @@ import type { ColumnProps, DataProps } from "./types";
 const Table = <T extends string>({
   data,
   columns,
-  isFirstColumnSticky = false,
   isHeaderSticky = false,
+  isFirstColumnSticky = false,
   isDraggable = false,
 }: {
   data: DataProps<T>[];
   columns: ColumnProps[];
-  isFirstColumnSticky?: boolean;
   isHeaderSticky?: boolean;
+  isFirstColumnSticky?: boolean;
   isDraggable?: boolean;
 }) => {
   return (
@@ -30,7 +30,7 @@ const Table = <T extends string>({
             width: 100%;
           `}
         >
-          <Header columns={columns} isHeaderSticky={isHeaderSticky} />
+          <Header columns={columns} />
           <Body data={data} columns={columns} />
         </table>
       </StickyStatusContextProvider>

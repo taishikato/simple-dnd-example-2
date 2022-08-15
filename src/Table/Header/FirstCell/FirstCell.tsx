@@ -6,13 +6,12 @@ type Props = {
   children: string | number | JSX.Element;
   width?: string;
   headerCellCSS?: Record<string, string | number>;
-  isHeaderSticky: boolean;
 };
 
 const getStyle = (
   width: Props["width"],
   isFirstColumnSticky: boolean,
-  isHeaderSticky: Props["isHeaderSticky"],
+  isHeaderSticky: boolean,
   headerCellCSS: Props["headerCellCSS"]
 ) =>
   css([
@@ -39,13 +38,9 @@ const getStyle = (
     width && { minWidth: width },
   ]);
 
-const FirstCell = ({
-  children,
-  width,
-  headerCellCSS,
-  isHeaderSticky,
-}: Props) => {
-  const { isFirstColumnSticky } = useContext(StickyStatusContext);
+const FirstCell = ({ children, width, headerCellCSS }: Props) => {
+  const { isHeaderSticky, isFirstColumnSticky } =
+    useContext(StickyStatusContext);
 
   const styleToUse = getStyle(
     width,
