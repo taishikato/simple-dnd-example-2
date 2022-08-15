@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { css } from "@emotion/css";
+import { DraggableStatusContext } from "../../../context/DraggableStatusContext";
+import { StickyStatusContext } from "../../../context/StickyStatusContext";
 import FirstCell from "../../Cells/FirstCell";
 import Cell from "../../Cells/Cell";
 import type { ColumnProps, DataProps } from "../../../types";
-import { DraggableStatusContext } from "../../../context/DraggableStatusContext";
 
 // This function creates style for <tr> and <th> inside the <tr>
 const getStyle = (
@@ -38,13 +39,12 @@ const getStyle = (
 const Row = <T extends string>({
   data,
   columns,
-  isFirstColumnSticky,
 }: {
   data: DataProps<T>;
   columns: ColumnProps[];
-  isFirstColumnSticky: boolean;
 }) => {
   const draggableStatus = useContext(DraggableStatusContext);
+  const { isFirstColumnSticky } = useContext(StickyStatusContext);
 
   return (
     <tr

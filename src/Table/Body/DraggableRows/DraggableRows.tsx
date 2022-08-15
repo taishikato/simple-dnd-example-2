@@ -5,23 +5,16 @@ import Row from "./Row/Row";
 const DraggableRows = <T extends string>({
   data,
   columns,
-  isFirstColumnSticky,
 }: {
   data: DataProps<T>[];
   columns: ColumnProps[];
-  isFirstColumnSticky: boolean;
 }) => {
   const results = useDnDSort(data);
 
   return (
     <>
       {results.map((d) => (
-        <Row
-          key={d.key}
-          data={d}
-          columns={columns}
-          isFirstColumnSticky={isFirstColumnSticky}
-        />
+        <Row key={d.key} data={d} columns={columns} />
       ))}
     </>
   );

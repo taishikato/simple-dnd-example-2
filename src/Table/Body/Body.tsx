@@ -7,28 +7,18 @@ import type { ColumnProps, DataProps } from "../types";
 const Body = <T extends string>({
   data,
   columns,
-  isFirstColumnSticky,
 }: {
   data: DataProps<T>[];
   columns: ColumnProps[];
-  isFirstColumnSticky: boolean;
 }) => {
   const isDraggable = useContext(DraggableStatusContext);
 
   return (
     <tbody>
       {isDraggable ? (
-        <DraggableRows
-          data={data}
-          columns={columns}
-          isFirstColumnSticky={isFirstColumnSticky}
-        />
+        <DraggableRows data={data} columns={columns} />
       ) : (
-        <NonDraggableRows<T>
-          data={data}
-          isFirstColumnSticky={isFirstColumnSticky}
-          columns={columns}
-        />
+        <NonDraggableRows<T> data={data} columns={columns} />
       )}
     </tbody>
   );

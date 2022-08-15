@@ -4,11 +4,9 @@ import FirstCell from "./FirstCell/FirstCell";
 
 const Header = ({
   columns,
-  isFirstColumnSticky,
   isHeaderSticky,
 }: {
   columns: ColumnProps[];
-  isFirstColumnSticky: boolean;
   isHeaderSticky: boolean;
 }) => (
   <thead>
@@ -20,7 +18,6 @@ const Header = ({
               key={column.key}
               width={column.width}
               headerCellCSS={column.headerCellCSS}
-              isFirstColumnSticky={isFirstColumnSticky}
               isHeaderSticky={isHeaderSticky}
             >
               {column.title}

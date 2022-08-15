@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { css } from "@emotion/css";
+import { StickyStatusContext } from "../../../context/StickyStatusContext";
 import FirstCell from "../../Cells/FirstCell";
 import Cell from "../../Cells/Cell";
 import type { ColumnProps, DataProps, DnDSortResult } from "../../../types";
@@ -37,36 +39,38 @@ const getStyle = (
 const Row = <T extends string>({
   data,
   columns,
-  isFirstColumnSticky,
 }: {
   data: DnDSortResult<DataProps<T>>;
   columns: ColumnProps[];
-  isFirstColumnSticky: boolean;
-}) => (
-  <tr
-    {...data.events}
-    className={getStyle(
-      columns[0].width,
-      columns[0].cellCSS,
-      isFirstColumnSticky
-    )}
-  >
-    {columns.map((column, index) => {
-      if (column.renderCell)
-        return column.renderCell(column.key, column.width, column.cellCSS);
+}) => {
+  const { isFirstColumnSticky } = useContext(StickyStatusContext);
 
-      if (index === 0)
-        return <FirstCell key={column.key}>{data.value.name}</FirstCell>;
+  return (
+    <tr
+      {...data.events}
+      className={getStyle(
+        columns[0].width,
+        columns[0].cellCSS,
+        isFirstColumnSticky
+      )}
+    >
+      {columns.map((column, index) => {
+        if (column.renderCell)
+          return column.renderCell(column.key, column.width, column.cellCSS);
 
-      if (column.dataIndex == null) return;
+        if (index === 0)
+          return <FirstCell key={column.key}>{data.value.name}</FirstCell>;
 
-      return (
-        <Cell key={column.key} width={column.width} cellCSS={column.cellCSS}>
-          {data.value.values[column.dataIndex]}
-        </Cell>
-      );
-    })}
-  </tr>
-);
+        if (column.dataIndex == null) return;
+
+        return (
+          <Cell key={column.key} width={column.width} cellCSS={column.cellCSS}>
+            {data.value.values[column.dataIndex]}
+          </Cell>
+        );
+      })}
+    </tr>
+  );
+};
 
 export default Row;

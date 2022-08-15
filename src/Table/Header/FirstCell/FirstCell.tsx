@@ -1,16 +1,17 @@
 import { css } from "@emotion/css";
+import { useContext } from "react";
+import { StickyStatusContext } from "../../context/StickyStatusContext";
 
 type Props = {
   children: string | number | JSX.Element;
   width?: string;
   headerCellCSS?: Record<string, string | number>;
-  isFirstColumnSticky: boolean;
   isHeaderSticky: boolean;
 };
 
 const getStyle = (
   width: Props["width"],
-  isFirstColumnSticky: Props["isFirstColumnSticky"],
+  isFirstColumnSticky: boolean,
   isHeaderSticky: Props["isHeaderSticky"],
   headerCellCSS: Props["headerCellCSS"]
 ) =>
@@ -42,9 +43,10 @@ const FirstCell = ({
   children,
   width,
   headerCellCSS,
-  isFirstColumnSticky,
   isHeaderSticky,
 }: Props) => {
+  const { isFirstColumnSticky } = useContext(StickyStatusContext);
+
   const styleToUse = getStyle(
     width,
     isFirstColumnSticky,
