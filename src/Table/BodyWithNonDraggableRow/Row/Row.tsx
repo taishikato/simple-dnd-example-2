@@ -1,13 +1,16 @@
+import { useContext } from "react";
 import { css } from "@emotion/css";
 import FirstCell from "../../BodyCells/FirstCell/FirstCell";
 import Cell from "../../BodyCells/Cell/Cell";
 import type { ColumnProps, DataProps } from "../../types";
+import { DraggableStatusContext } from "../../context/DraggableStatusContext";
 
 // This function creates style for <tr> and <th> inside the <tr>
 const getStyle = (
   width: ColumnProps["width"],
   cellCSS: ColumnProps["cellCSS"],
-  isFirstColumnSticky: boolean
+  isFirstColumnSticky: boolean,
+  isDraggable: boolean
 ) =>
   css([
     {
@@ -17,7 +20,6 @@ const getStyle = (
         padding: "10px 10px 10px 0",
         textAlign: "left",
         fontWeight: 600,
-        userSelect: "none",
         boxSizing: "border-box",
         borderBottom: "1px solid rgb(203 213 225)",
         backgroundColor: "#ffffff",
@@ -28,6 +30,7 @@ const getStyle = (
         }),
         ...(width && { minWidth: width }),
         ...(cellCSS && cellCSS),
+        ...(isDraggable && { userSelect: "none" }),
       },
     },
   ]);
@@ -40,30 +43,35 @@ const Row = <T extends string>({
   data: DataProps<T>;
   columns: ColumnProps[];
   isFirstColumnSticky: boolean;
-}) => (
-  <tr
-    className={getStyle(
-      columns[0].width,
-      columns[0].cellCSS,
-      isFirstColumnSticky
-    )}
-  >
-    {columns.map((column, index) => {
-      if (column.renderCell)
-        return column.renderCell(column.key, column.width, column.cellCSS);
+}) => {
+  const draggableStatus = useContext(DraggableStatusContext);
 
-      if (index === 0)
-        return <FirstCell key={column.key}>{data.name}</FirstCell>;
+  return (
+    <tr
+      className={getStyle(
+        columns[0].width,
+        columns[0].cellCSS,
+        isFirstColumnSticky,
+        draggableStatus
+      )}
+    >
+      {columns.map((column, index) => {
+        if (column.renderCell)
+          return column.renderCell(column.key, column.width, column.cellCSS);
 
-      if (column.dataIndex == null) return;
+        if (index === 0)
+          return <FirstCell key={column.key}>{data.name}</FirstCell>;
 
-      return (
-        <Cell key={column.key} width={column.width} cellCSS={column.cellCSS}>
-          {data.values[column.dataIndex]}
-        </Cell>
-      );
-    })}
-  </tr>
-);
+        if (column.dataIndex == null) return;
+
+        return (
+          <Cell key={column.key} width={column.width} cellCSS={column.cellCSS}>
+            {data.values[column.dataIndex]}
+          </Cell>
+        );
+      })}
+    </tr>
+  );
+};
 
 export default Row;

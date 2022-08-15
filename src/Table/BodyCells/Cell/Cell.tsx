@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { css } from "@emotion/css";
+import { DraggableStatusContext } from "../../context/DraggableStatusContext";
 
 type Props = {
   children: string | number | JSX.Element;
@@ -6,7 +8,11 @@ type Props = {
   cellCSS?: Record<string, string | number>;
 };
 
-const getStyle = (width: Props["width"], cellCSS: Props["cellCSS"]) =>
+const getStyle = (
+  width: Props["width"],
+  cellCSS: Props["cellCSS"],
+  isDraggable: boolean
+) =>
   css([
     {
       wordBreak: "break-all",
@@ -15,7 +21,6 @@ const getStyle = (width: Props["width"], cellCSS: Props["cellCSS"]) =>
       verticalAlign: "middle",
       backgroundColor: "#ffffff",
       fontWeight: 600,
-      userSelect: "none",
       boxSizing: "border-box",
       borderBottom: "1px solid rgb(203 213 225)",
       "&:not(:last-child)": {
@@ -24,10 +29,12 @@ const getStyle = (width: Props["width"], cellCSS: Props["cellCSS"]) =>
     },
     width && { minWidth: width },
     cellCSS && cellCSS,
+    isDraggable && { userSelect: "none" },
   ]);
 
 const Cell = ({ children, width, cellCSS }: Props) => {
-  const styleToUse = getStyle(width, cellCSS);
+  const draggableStatus = useContext(DraggableStatusContext);
+  const styleToUse = getStyle(width, cellCSS, draggableStatus);
 
   return <td className={styleToUse}>{children}</td>;
 };
