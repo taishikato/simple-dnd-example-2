@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
-import FirstCell from "../../BodyCells/FirstCell/FirstCell";
-import Cell from "../../BodyCells/Cell/Cell";
-import type { ColumnProps, DataProps, DnDSortResult } from "../../types";
+import FirstCell from "../../Cells/FirstCell";
+import Cell from "../../Cells/Cell";
+import type { ColumnProps, DataProps, DnDSortResult } from "../../../types";
 
 // This function creates style for <tr> and <th> inside the <tr>
 const getStyle = (

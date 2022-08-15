@@ -1,8 +1,8 @@
-import { ColumnProps, DataProps } from "../types";
-import { useDnDSort } from "../hooks/useDnDSort";
+import { ColumnProps, DataProps } from "../../types";
+import { useDnDSort } from "../../hooks/useDnDSort";
 import Row from "./Row/Row";
 
-const BodyWithDraggableRow = <T extends string>({
+const DraggableRows = <T extends string>({
   data,
   columns,
   isFirstColumnSticky,
@@ -27,4 +27,4 @@ const BodyWithDraggableRow = <T extends string>({
   );
 };
 
-export default BodyWithDraggableRow;
+export default DraggableRows;

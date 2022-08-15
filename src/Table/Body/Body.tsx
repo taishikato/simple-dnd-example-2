@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DraggableStatusContext } from "../context/DraggableStatusContext";
-import BodyWithDraggableRow from "../BodyWithDraggableRow/BodyWithDraggableRow";
-import BodyWithNonDraggableRow from "../BodyWithNonDraggableRow/BodyWithNonDraggableRow";
+import DraggableRows from "./DraggableRows/DraggableRows";
+import NonDraggableRows from "./NonDraggableRows/NonDraggableRows";
 import type { ColumnProps, DataProps } from "../types";
 
 const Body = <T extends string>({
@@ -18,13 +18,13 @@ const Body = <T extends string>({
   return (
     <tbody>
       {isDraggable ? (
-        <BodyWithDraggableRow
+        <DraggableRows
           data={data}
           columns={columns}
           isFirstColumnSticky={isFirstColumnSticky}
         />
       ) : (
-        <BodyWithNonDraggableRow<T>
+        <NonDraggableRows<T>
           data={data}
           isFirstColumnSticky={isFirstColumnSticky}
           columns={columns}

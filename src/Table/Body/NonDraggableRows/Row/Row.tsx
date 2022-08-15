@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { css } from "@emotion/css";
-import FirstCell from "../../BodyCells/FirstCell/FirstCell";
-import Cell from "../../BodyCells/Cell/Cell";
-import type { ColumnProps, DataProps } from "../../types";
-import { DraggableStatusContext } from "../../context/DraggableStatusContext";
+import FirstCell from "../../Cells/FirstCell";
+import Cell from "../../Cells/Cell";
+import type { ColumnProps, DataProps } from "../../../types";
+import { DraggableStatusContext } from "../../../context/DraggableStatusContext";
 
 // This function creates style for <tr> and <th> inside the <tr>
 const getStyle = (

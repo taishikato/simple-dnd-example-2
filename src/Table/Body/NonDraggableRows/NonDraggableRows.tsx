@@ -1,7 +1,7 @@
-import { ColumnProps, DataProps } from "../types";
+import { ColumnProps, DataProps } from "../../types";
 import Row from "./Row/Row";
 
-const BodyWithNonDraggableRow = <T extends string>({
+const NonDraggableRows = <T extends string>({
   data,
   columns,
   isFirstColumnSticky,
@@ -22,4 +22,4 @@ const BodyWithNonDraggableRow = <T extends string>({
   </>
 );
 
-export default BodyWithNonDraggableRow;
+export default NonDraggableRows;
