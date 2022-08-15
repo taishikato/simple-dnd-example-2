@@ -1,9 +1,8 @@
 import { css } from "@emotion/css";
 import Header from "./Header/Header";
-import BodyWithDraggableRow from "./BodyWithDraggableRow/BodyWithDraggableRow";
-import BodyWithNonDraggableRow from "./BodyWithNonDraggableRow/BodyWithNonDraggableRow";
 import type { ColumnProps, DataProps } from "./types";
 import { DraggableStatusContextProvider } from "./context/DraggableStatusContext";
+import Body from "./Body/Body";
 
 const Table = <T extends string>({
   data,
@@ -32,19 +31,11 @@ const Table = <T extends string>({
           isFirstColumnSticky={isFirstColumnSticky}
           isHeaderSticky={isHeaderSticky}
         />
-        {isDraggable ? (
-          <BodyWithDraggableRow
-            data={data}
-            columns={columns}
-            isFirstColumnSticky={isFirstColumnSticky}
-          />
-        ) : (
-          <BodyWithNonDraggableRow<T>
-            data={data}
-            isFirstColumnSticky={isFirstColumnSticky}
-            columns={columns}
-          />
-        )}
+        <Body
+          data={data}
+          columns={columns}
+          isFirstColumnSticky={isFirstColumnSticky}
+        />
       </table>
     </DraggableStatusContextProvider>
   );

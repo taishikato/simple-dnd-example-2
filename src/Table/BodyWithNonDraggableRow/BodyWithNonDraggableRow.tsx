@@ -10,7 +10,7 @@ const BodyWithNonDraggableRow = <T extends string>({
   columns: ColumnProps[];
   isFirstColumnSticky: boolean;
 }) => (
-  <tbody>
+  <>
     {data.map((d) => (
       <Row
         key={d.valueName}
@@ -19,7 +19,7 @@ const BodyWithNonDraggableRow = <T extends string>({
         isFirstColumnSticky={isFirstColumnSticky}
       />
     ))}
-  </tbody>
+  </>
 );
 
 export default BodyWithNonDraggableRow;

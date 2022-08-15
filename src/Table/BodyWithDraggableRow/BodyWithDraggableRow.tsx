@@ -14,7 +14,7 @@ const BodyWithDraggableRow = <T extends string>({
   const results = useDnDSort(data);
 
   return (
-    <tbody>
+    <>
       {results.map((d) => (
         <Row
           key={d.key}
@@ -23,7 +23,7 @@ const BodyWithDraggableRow = <T extends string>({
           isFirstColumnSticky={isFirstColumnSticky}
         />
       ))}
-    </tbody>
+    </>
   );
 };
 
