@@ -7,14 +7,14 @@ import Body from "./Body/Body";
 const Table = <T extends string>({
   data,
   columns,
-  isFirstColumnSticky,
-  isHeaderSticky,
+  isFirstColumnSticky = false,
+  isHeaderSticky = false,
   isDraggable = false,
 }: {
   data: DataProps<T>[];
   columns: ColumnProps[];
-  isFirstColumnSticky: boolean;
-  isHeaderSticky: boolean;
+  isFirstColumnSticky?: boolean;
+  isHeaderSticky?: boolean;
   isDraggable?: boolean;
 }) => {
   return (
