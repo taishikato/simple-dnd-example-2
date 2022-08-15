@@ -193,7 +193,21 @@ const columns: ColumnProps[] = [
       key: "valueName",
       dataIndex: "valueName",
       title: "Last Update: June 14th, 10:00 AM",
-      // render,
+      renderCell: (key, width, cellCSS) => (
+        <th
+          key={key}
+          className={css([
+            {
+              backgroundColor: "gray !important",
+              padding: "10px !important",
+            },
+            cellCSS && cellCSS,
+            width && { minWidth: width },
+          ])}
+        >
+          Custom component
+        </th>
+      ),
       width: "150px",
       cellCSS: { padding: "12px" },
     };

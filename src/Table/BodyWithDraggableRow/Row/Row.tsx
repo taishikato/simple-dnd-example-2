@@ -52,6 +52,9 @@ const Row = <T extends string>({
     )}
   >
     {columns.map((column, index) => {
+      if (column.renderCell)
+        return column.renderCell(column.key, column.width, column.cellCSS);
+
       if (index === 0)
         return <FirstCell key={column.key}>{data.value.name}</FirstCell>;
 
