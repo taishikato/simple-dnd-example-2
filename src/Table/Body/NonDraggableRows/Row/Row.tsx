@@ -60,6 +60,7 @@ const Row = <T extends string>({
           return column.renderCell(column.key, column.width, column.cellCSS);
 
         if (index === 0)
+          // The width and cellCSS for the FirstCell component are not passed to the FirstCell component, since they are used in the getStyle function described above.
           return <FirstCell key={column.key}>{data.name}</FirstCell>;
 
         if (column.dataIndex == null) return;

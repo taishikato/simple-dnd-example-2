@@ -17,25 +17,23 @@ const Table = <T extends string>({
   isHeaderSticky?: boolean;
   isFirstColumnSticky?: boolean;
   isDraggable?: boolean;
-}) => {
-  return (
-    <DraggableStatusContextProvider value={isDraggable}>
-      <StickyStatusContextProvider
-        value={{ isHeaderSticky, isFirstColumnSticky }}
+}) => (
+  <DraggableStatusContextProvider value={isDraggable}>
+    <StickyStatusContextProvider
+      value={{ isHeaderSticky, isFirstColumnSticky }}
+    >
+      <table
+        className={css`
+          border-collapse: separate;
+          border-spacing: 0px 0px;
+          width: 100%;
+        `}
       >
-        <table
-          className={css`
-            border-collapse: separate;
-            border-spacing: 0px 0px;
-            width: 100%;
-          `}
-        >
-          <Header columns={columns} />
-          <Body data={data} columns={columns} />
-        </table>
-      </StickyStatusContextProvider>
-    </DraggableStatusContextProvider>
-  );
-};
+        <Header columns={columns} />
+        <Body data={data} columns={columns} />
+      </table>
+    </StickyStatusContextProvider>
+  </DraggableStatusContextProvider>
+);
 
 export default Table;
