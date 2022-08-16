@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { css } from "@emotion/css";
 import Table from "./Table/Table";
 import type { ColumnProps, DataProps } from "./Table/types";
@@ -256,6 +257,13 @@ function App() {
         margin: 0 auto;
       `}
     >
+      <div
+        className={css`
+          margin: 10px 0;
+        `}
+      >
+        <Link to="/collapse">Go to the collapsible table</Link>
+      </div>
       <div
         className={css`
           margin: 10px 0;
