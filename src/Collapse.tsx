@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { css } from "@emotion/css";
-import Table from "./Table/Table";
+import CollapseTable from "./CollapseTable/CollapseTable";
 import type { ColumnProps, DataProps } from "./Table/types";
 import moment from "moment";
 import "moment-timezone";
@@ -262,7 +262,7 @@ function Collapse() {
         <Link to="/">Go to the draggable table</Link>
       </div>
 
-      <Table
+      <CollapseTable
         data={tableDataRaw}
         columns={columns}
         isFirstColumnSticky
