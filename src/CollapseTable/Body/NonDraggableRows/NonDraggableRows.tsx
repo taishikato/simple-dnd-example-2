@@ -18,6 +18,9 @@ const NonDraggableRows = <T extends string>({
           className={css({
             backgroundColor: "#e2e2e2",
             transition: "height 1s ease",
+            "&[open] > summary > img": {
+              transform: "rotate(360deg)",
+            },
           })}
         >
           <summary
@@ -37,7 +40,10 @@ const NonDraggableRows = <T extends string>({
               },
             })}
           >
-            <img src={CollapseArrow} />
+            <img
+              src={CollapseArrow}
+              className={css({ transform: "rotate(180deg)" })}
+            />
             Temperature
           </summary>
           <table
