@@ -26,9 +26,13 @@ const NonDraggableRows = <T extends string>({
               listStyle: "none",
               cursor: "pointer",
               display: "flex",
+              flexDirection: "row",
               alignItems: "center",
               columnGap: "0.75rem",
               "&::marker": {
+                display: "none",
+              },
+              "&::-webkit-details-marker": {
                 display: "none",
               },
             })}
