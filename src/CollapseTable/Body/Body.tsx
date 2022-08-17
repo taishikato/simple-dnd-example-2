@@ -1,4 +1,4 @@
-import NonDraggableRows from "./NonDraggableRows/NonDraggableRows";
+import Rows from "./Rows/Rows";
 import type { ColumnProps, DataProps } from "../types";
 
 const Body = <T extends string>({
@@ -10,7 +10,7 @@ const Body = <T extends string>({
 }) => {
   return (
     <tbody>
-      <NonDraggableRows<T> data={data} columns={columns} />
+      <Rows<T> data={data} columns={columns} />
     </tbody>
   );
 };

@@ -4,7 +4,7 @@ import CollapseContainer from "../../CollapseContainer/CollapseContainer";
 import Row from "./Row/Row";
 import Cell from "../Cells/Cell";
 
-const NonDraggableRows = <T extends string>({
+const Rows = <T extends string>({
   data,
   columns,
 }: {
@@ -90,4 +90,4 @@ const NonDraggableRows = <T extends string>({
   </>
 );
 
-export default NonDraggableRows;
+export default Rows;
