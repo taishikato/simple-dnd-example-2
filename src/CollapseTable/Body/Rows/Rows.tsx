@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import { ColumnProps, DataProps } from "../../types";
-import CollapseContainer from "../../CollapseContainer/CollapseContainer";
+import CollapseContainer from "../CollapseContainer/CollapseContainer";
 import Row from "./Row/Row";
 import Cell from "../Cells/Cell";
 

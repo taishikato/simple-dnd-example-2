@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import CollapseArrow from "../assets/CollapseArrow.svg";
+import CollapseArrow from "../../assets/CollapseArrow.svg";
 
 const CollapseContainer = ({
   children,
