@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { css } from "@emotion/css";
 import { open } from "./open";
 import { close } from "./close";
+import CollapseArrow from "../../assets/CollapseArrow.svg";
 
 const CollapseContainer2 = ({
   title,
@@ -22,6 +23,11 @@ const CollapseContainer2 = ({
     <tr>
       <td colSpan={colSpan}>
         <details
+          className={css({
+            "&[open] > summary > img": {
+              transform: "rotate(0)",
+            },
+          })}
           onClick={(e) => {
             e.preventDefault();
 
@@ -50,12 +56,24 @@ const CollapseContainer2 = ({
           <summary
             ref={summaryRef}
             className={css({
+              listStyle: "none",
               cursor: "pointer",
               background: "#e2e2e2",
               padding: "10px 15px",
               outline: "none",
+              "&::marker, &::-webkit-details-marker": {
+                display: "none",
+              },
             })}
           >
+            <img
+              src={CollapseArrow}
+              className={css({
+                transform: "rotate(180deg)",
+                transition: "all 300ms",
+                marginRight: "17px",
+              })}
+            />
             {title}
           </summary>
           <div ref={contentRef} className="content">
