@@ -1,5 +1,5 @@
 import { css, cx } from "@emotion/css";
-import { ColumnProps, DataProps } from "../../types";
+import { ColumnProps, DataProp } from "../../types";
 import CollapseContainer from "../CollapseContainer/CollapseContainer";
 import CollapseContainer2 from "../CollapseContainer2/CollapseContainer2";
 import Row from "./Row/Row";
@@ -9,7 +9,7 @@ const Rows = <T extends string>({
   data,
   columns,
 }: {
-  data: DataProps<T>[];
+  data: DataProp<T>[];
   columns: ColumnProps[];
 }) => {
   return (

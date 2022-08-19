@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import { StickyStatusContextProvider } from "./context/StickyStatusContext";
 import Body from "./Body/Body";
 import Header from "./Header/Header";
-import type { ColumnProps, DataProps } from "./types";
+import type { ColumnProps, DataProp } from "./types";
 
 const CollapseTable = <T extends string>({
   data,
@@ -10,7 +10,7 @@ const CollapseTable = <T extends string>({
   isHeaderSticky = false,
   isFirstColumnSticky = false,
 }: {
-  data: DataProps<T>[];
+  data: DataProp<T>[];
   columns: ColumnProps[];
   isHeaderSticky?: boolean;
   isFirstColumnSticky?: boolean;
