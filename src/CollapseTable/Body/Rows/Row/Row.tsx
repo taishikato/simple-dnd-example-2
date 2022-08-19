@@ -3,7 +3,7 @@ import { css } from "@emotion/css";
 import { StickyStatusContext } from "../../../context/StickyStatusContext";
 import FirstCell from "../../Cells/FirstCell";
 import Cell from "../../Cells/Cell";
-import type { ColumnProps, DataProps } from "../../../types";
+import type { ColumnProps, DataValuesProps } from "../../../types";
 
 // This function creates style for <tr> and <th> inside the <tr>
 const getStyle = (
@@ -37,7 +37,7 @@ const Row = <T extends string>({
   data,
   columns,
 }: {
-  data: DataProps<T>;
+  data: DataValuesProps<T>;
   columns: ColumnProps[];
 }) => {
   const { isFirstColumnSticky } = useContext(StickyStatusContext);

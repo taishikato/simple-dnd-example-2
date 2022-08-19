@@ -77,7 +77,15 @@ const CollapseContainer2 = ({
             {title}
           </summary>
           <div ref={contentRef} className="content">
-            {children}
+            <table
+              className={css({
+                borderCollapse: "separate",
+                borderSpacing: "0px 0px",
+                width: "100%",
+              })}
+            >
+              <tbody>{children}</tbody>
+            </table>
           </div>
         </details>
       </td>

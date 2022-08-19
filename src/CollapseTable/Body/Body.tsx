@@ -1,11 +1,11 @@
 import Rows from "./Rows/Rows";
-import type { ColumnProps, DataProps } from "../types";
+import type { ColumnProps, DataProp } from "../types";
 
 const Body = <T extends string>({
   data,
   columns,
 }: {
-  data: DataProps<T>[];
+  data: DataProp<T>[];
   columns: ColumnProps[];
 }) => {
   return (

@@ -1,5 +1,5 @@
 import { css, cx } from "@emotion/css";
-import { ColumnProps, DataProps } from "../../types";
+import { ColumnProps, DataProp } from "../../types";
 import CollapseContainer from "../CollapseContainer/CollapseContainer";
 import CollapseContainer2 from "../CollapseContainer2/CollapseContainer2";
 import Row from "./Row/Row";
@@ -9,12 +9,27 @@ const Rows = <T extends string>({
   data,
   columns,
 }: {
-  data: DataProps<T>[];
+  data: DataProp<T>[];
   columns: ColumnProps[];
 }) => {
   return (
     <>
-      <CollapseContainer2 title="Temperature" colSpan={columns.length}>
+      {data.map((d) => {
+        return (
+          <CollapseContainer2
+            title={d.name}
+            colSpan={columns.length}
+            key={d.name}
+          >
+            <>
+              {d.values.map((v) => {
+                return <Row key={v.valueName} data={v} columns={columns} />;
+              })}
+            </>
+          </CollapseContainer2>
+        );
+      })}
+      {/* <CollapseContainer2 title="Temperature" colSpan={columns.length}>
         <table
           className={css({
             borderCollapse: "separate",
@@ -49,7 +64,7 @@ const Rows = <T extends string>({
             </tr>
           </tbody>
         </table>
-      </CollapseContainer2>
+      </CollapseContainer2> */}
       {/*<CollapseContainer title="Humidity" colSpan={columns.length}>
         <table
           className={css({
@@ -86,9 +101,9 @@ const Rows = <T extends string>({
           </tbody>
         </table>
       </CollapseContainer> */}
-      {data.map((d) => (
+      {/* {data.map((d) => (
         <Row key={d.valueName} data={d} columns={columns} />
-      ))}
+      ))} */}
     </>
   );
 };
