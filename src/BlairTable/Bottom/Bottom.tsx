@@ -1,18 +1,11 @@
 import { css } from "@emotion/css";
-
-const numberOfCols = 30;
-const numberOfRows = 300;
-const cols = Array.from({ length: numberOfCols }, (_, i) => ({
-  text: `col ${i + 1}`,
-  width: 100, // i % 2 === 0 ? 300 : 150,
-}));
-const rowLabelWidth = 180;
-const totalColLabelsWidth = cols.reduce((a, b) => a + b.width, 0);
-const baseZIndex = 1;
-const rows = Array.from({ length: numberOfRows }, (_, i) => ({
-  text: `row ${i + 1}`,
-  height: i % 5 === 0 ? 30 : 100,
-}));
+import {
+  cols,
+  rowLabelWidth,
+  totalColLabelsWidth,
+  baseZIndex,
+  rows,
+} from "../consts";
 
 const Bottom = () => {
   return (

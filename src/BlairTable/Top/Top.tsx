@@ -1,13 +1,10 @@
 import { css } from "@emotion/css";
-
-const numberOfCols = 30;
-const cols = Array.from({ length: numberOfCols }, (_, i) => ({
-  text: `col ${i + 1}`,
-  width: 100, // i % 2 === 0 ? 300 : 150,
-}));
-const baseZIndex = 1;
-const rowLabelWidth = 180;
-const totalColLabelsWidth = cols.reduce((a, b) => a + b.width, 0);
+import {
+  cols,
+  baseZIndex,
+  rowLabelWidth,
+  totalColLabelsWidth,
+} from "../consts";
 
 const Top = () => {
   return (
