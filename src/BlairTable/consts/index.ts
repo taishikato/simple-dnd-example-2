@@ -14,5 +14,5 @@ export const rows = Array.from({ length: numberOfRows }, (_, i) => ({
 
 export const totalColLabelsWidth = cols.reduce((a, b) => a + b.width, 0);
 export const baseZIndex = 1;
-export const containerWidth = 500;
-export const containerHeight = 300;
+export const containerWidth = 600;
+export const containerHeight = 600;

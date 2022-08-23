@@ -2,6 +2,7 @@ import { css } from "@emotion/css";
 import Bottom from "./Bottom/Bottom";
 import Top from "./Top/Top";
 import { containerHeight, containerWidth } from "./consts";
+import "./styles/style.css";
 
 const BlairTable = () => {
   /**
