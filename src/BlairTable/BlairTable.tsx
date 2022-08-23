@@ -19,6 +19,7 @@ const BlairTable = () => {
         width: containerWidth,
         height: containerHeight,
         overflow: "auto",
+        fontSize: "14px",
       })}
     >
       <Top />

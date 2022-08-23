@@ -30,8 +30,10 @@ const Top = () => {
             width: rowLabelWidth,
             float: "left",
             zIndex: baseZIndex,
-            backgroundColor: "yellow", // TODO
+            backgroundColor: "rgb(232 121 249)", // TODO
             boxSizing: "border-box",
+            padding: "5px 0",
+            border: "1px solid red",
           })}
         >
           TOP LEFT
@@ -42,13 +44,22 @@ const Top = () => {
           className={css({
             width: totalColLabelsWidth,
             float: "left",
-            backgroundColor: "aqua", // TODO
+            backgroundColor: "rgb(245 208 254)", // TODO
             boxSizing: "border-box",
           })}
         >
           <div className={css({ display: "flex" })}>
             {cols.map((c, i) => (
-              <div key={i} className={css({ width: c.width })}>
+              <div
+                key={i}
+                className={css({
+                  width: c.width,
+                  textAlign: "center",
+                  boxSizing: "border-box",
+                  padding: "5px 0",
+                  border: "1px solid red",
+                })}
+              >
                 Label {c.text}
               </div>
             ))}
