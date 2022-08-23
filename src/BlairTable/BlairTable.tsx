@@ -1,4 +1,6 @@
 import { css } from "@emotion/css";
+import Bottom from "./Bottom/Bottom";
+import Top from "./Top/Top";
 
 const BlairTable = () => {
   /**
@@ -36,120 +38,8 @@ const BlairTable = () => {
         overflow: "auto",
       })}
     >
-      <div
-        className={css({
-          position: "sticky",
-          top: 0,
-          zIndex: baseZIndex + 1,
-        })}
-      >
-        <div
-          className={css({
-            clear: "both",
-            width: rowLabelWidth + totalColLabelsWidth,
-          })}
-        >
-          {/*region TOP LEFT*/}
-          <div
-            className={css({
-              left: "0",
-              top: "0",
-              position: "sticky",
-              width: rowLabelWidth,
-              float: "left",
-              zIndex: baseZIndex,
-              backgroundColor: "yellow", // TODO
-              boxSizing: "border-box",
-            })}
-          >
-            TOP LEFT
-          </div>
-          {/*endregion*/}
-          {/*region TOP RIGHT*/}
-          <div
-            className={css({
-              width: totalColLabelsWidth,
-              float: "left",
-              backgroundColor: "aqua", // TODO
-              boxSizing: "border-box",
-            })}
-          >
-            <div className={css({ display: "flex" })}>
-              {cols.map((c, i) => (
-                <div key={i} className={css({ width: c.width })}>
-                  Label {c.text}
-                </div>
-              ))}
-            </div>
-          </div>
-          {/*endregion*/}
-        </div>
-      </div>
-      <div
-        className={css({
-          clear: "both",
-          width: rowLabelWidth + totalColLabelsWidth,
-        })}
-      >
-        {/*region BOTTOM LEFT*/}
-        <div
-          className={css({
-            position: "sticky",
-            left: "0",
-            width: rowLabelWidth,
-            float: "left",
-            zIndex: baseZIndex,
-          })}
-        >
-          {rows.map((row, i) => (
-            <div
-              key={i}
-              className={css({
-                height: row.height,
-                border: "1px solid black", // TODO
-                backgroundColor: "rgba(134,132,41,0.5)", // TODO
-                boxSizing: "border-box",
-              })}
-            >
-              Label {row.text}
-            </div>
-          ))}
-        </div>
-        {/*endregion*/}
-        {/*region BOTTOM RIGHT*/}
-        <div
-          className={css({
-            width: totalColLabelsWidth,
-            float: "left",
-            backgroundColor: "white", // TODO
-          })}
-        >
-          {(() => {
-            return (
-              <div>
-                {rows.map((row, i) => (
-                  <div
-                    key={i}
-                    className={css({ height: row.height, display: "flex" })}
-                  >
-                    {cols.map((col, j) => (
-                      <div
-                        className={css({
-                          width: col.width,
-                          border: "1px solid red",
-                          boxSizing: "border-box",
-                        })}
-                        key={j}
-                      >{`${row.text} / ${col.text}`}</div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            );
-          })()}
-        </div>
-        {/*endregion*/}
-      </div>
+      <Top />
+      <Bottom />
     </div>
   );
 };
