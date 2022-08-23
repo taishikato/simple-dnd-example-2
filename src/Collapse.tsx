@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { css } from "@emotion/css";
-import CollapseTable from "./CollapseTable/CollapseTable";
 import type { ColumnProps, DataProps } from "./Table/types";
 import moment from "moment";
 import "moment-timezone";
+import BlairTable from "./BlairTable/BlairTable";
 
 export type BanyanValueType =
   | "temperature_c_above_max"
@@ -262,12 +262,7 @@ function Collapse() {
         <Link to="/">Go to the draggable table</Link>
       </div>
 
-      <CollapseTable
-        data={tableDataRaw}
-        columns={columns}
-        isFirstColumnSticky
-        isHeaderSticky
-      />
+      <BlairTable />
     </div>
   );
 }
