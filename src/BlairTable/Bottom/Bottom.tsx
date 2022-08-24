@@ -13,10 +13,13 @@ import CollapseRows from "./Right/CollapseRows/CollapseRows";
 const Bottom = ({ columns, data }: any) => {
   return (
     <div
-      className={css({
-        clear: "both",
-        width: rowLabelWidth + totalColLabelsWidth,
-      })}
+      className={cx([
+        css({
+          clear: "both",
+          width: rowLabelWidth + totalColLabelsWidth,
+        }),
+        "clearfix",
+      ])}
     >
       {/*region BOTTOM LEFT*/}
       <div
