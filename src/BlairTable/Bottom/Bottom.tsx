@@ -9,7 +9,7 @@ import {
 import CollapseArrow from "../assets/CollapseArrow.svg";
 import { useState } from "react";
 
-const Bottom = () => {
+const Bottom = ({ columns, data }: any) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleCollapse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -68,6 +68,34 @@ const Bottom = () => {
           zIndex: baseZIndex,
         })}
       >
+        {/* Left */}
+        {data.map((d: any) => {
+          return (
+            <div key={d.key}>
+              {/* <div>{d.name}</div> */}
+              {d.items.map((item: any) => {
+                return (
+                  <div
+                    className={css({
+                      height: "100px",
+                      borderLeft: "1px solid #e2e2e2",
+                      borderBottom: "1px solid #e2e2e2",
+                      backgroundColor: "#ffffff",
+                      boxShadow: "3px 0px 2px rgba(0, 0, 0, 0.1)",
+                      boxSizing: "border-box",
+                      padding: "0 15px",
+                      display: "flex",
+                      alignItems: "center",
+                      transition: "height 200ms, opacity 200ms",
+                    })}
+                  >
+                    {item.name}Taishi
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
         <div
           onClick={(e) => handleCollapse(e)}
           className={css({
@@ -148,6 +176,35 @@ const Bottom = () => {
         {(() => {
           return (
             <div>
+              {/* Right */}
+              {data.map((d: any) => {
+                return d.items.map((item: any) => {
+                  return (
+                    <div
+                      className={css({ height: 100, display: "flex" })}
+                      onClick={(e) => handleCollapse(e)}
+                    >
+                      {columns.map((c: any) => {
+                        return (
+                          <div
+                            key={item.valueName}
+                            className={css({
+                              width: "100px",
+                              border: "1px solid red",
+                              boxSizing: "border-box",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            })}
+                          >
+                            {item.values[c.dataIndex]}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                });
+              })}
               <div
                 className={css({ height: 30, display: "flex" })}
                 onClick={(e) => handleCollapse(e)}

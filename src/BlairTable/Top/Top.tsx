@@ -6,7 +6,7 @@ import {
   totalColLabelsWidth,
 } from "../consts";
 
-const Top = () => {
+const Top = ({ columns }: any) => {
   return (
     <div
       className={css({
@@ -36,7 +36,8 @@ const Top = () => {
             border: "1px solid red",
           })}
         >
-          TOP LEFT
+          {/* TOP LEFT */}
+          {columns[0].title}
         </div>
         {/*endregion*/}
         {/*region TOP RIGHT*/}
@@ -49,20 +50,25 @@ const Top = () => {
           })}
         >
           <div className={css({ display: "flex" })}>
-            {cols.map((c, i) => (
-              <div
-                key={i}
-                className={css({
-                  width: c.width,
-                  textAlign: "center",
-                  boxSizing: "border-box",
-                  padding: "5px 0",
-                  border: "1px solid red",
-                })}
-              >
-                Label {c.text}
-              </div>
-            ))}
+            {columns.map((c: any, i: number) => {
+              if (i === 0) return;
+
+              return (
+                <div
+                  key={c.key}
+                  className={css({
+                    width: c.width,
+                    textAlign: "center",
+                    boxSizing: "border-box",
+                    padding: "5px 0",
+                    border: "1px solid red",
+                  })}
+                >
+                  {/* Label {c.text} */}
+                  {c.title}
+                </div>
+              );
+            })}
           </div>
         </div>
         {/*endregion*/}

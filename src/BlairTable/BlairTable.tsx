@@ -4,7 +4,7 @@ import Top from "./Top/Top";
 import { containerHeight, containerWidth } from "./consts";
 import "./styles/style.css";
 
-const BlairTable = () => {
+const BlairTable = ({ columns, data }: any) => {
   /**
    * Think of this component like a 2 x 2 grid:
    * - The top left is a blank space
@@ -22,8 +22,8 @@ const BlairTable = () => {
         fontSize: "14px",
       })}
     >
-      <Top />
-      <Bottom />
+      <Top columns={columns} />
+      <Bottom columns={columns} data={data} />
     </div>
   );
 };
