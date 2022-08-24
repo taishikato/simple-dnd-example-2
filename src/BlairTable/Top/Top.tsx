@@ -21,6 +21,7 @@ const Top = ({ columns }: any) => {
       <div
         className={cx([
           css({
+            display: "flex",
             clear: "both",
             width: rowLabelWidth + totalColLabelsWidth,
           }),
@@ -53,6 +54,7 @@ const Top = ({ columns }: any) => {
             float: "left",
             backgroundColor: "rgb(245 208 254)", // TODO
             boxSizing: "border-box",
+            display: "flex",
           })}
         >
           <div className={css({ display: "flex" })}>
@@ -68,6 +70,9 @@ const Top = ({ columns }: any) => {
                     boxSizing: "border-box",
                     padding: "5px 0",
                     border: "1px solid red",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   })}
                 >
                   {/* Label {c.text} */}
