@@ -76,6 +76,56 @@ const tableDataRaw = [
       },
     ],
   },
+  {
+    name: "humidity",
+    items: [
+      {
+        name: "Humidity - Above Canopy Max",
+        valueName: "humidity_c_above_max",
+        values: {
+          "2022-07-20T08:00:00.000Z": "85.5°F",
+          "2022-07-21T08:00:00.000Z": "dfjsdk",
+          "2022-07-22T08:00:00.000Z": "89.5°F",
+          "2022-07-23T08:00:00.000Z": "83.5°F",
+          "2022-07-24T08:00:00.000Z": "82.5°F",
+        },
+      },
+      {
+        name: "Humidity - In Canopy Max",
+        valueName: "humidity_c_in_max",
+        values: {
+          "2022-07-20T08:00:00.000Z": "86.3°F",
+          "2022-07-21T08:00:00.000Z": "85.5°F",
+          "2022-07-22T08:00:00.000Z": "86.2°F",
+          "2022-07-23T08:00:00.000Z": (
+            <div
+              className={css`
+                padding: 20px;
+                border-radius: 10px;
+                background-color: green;
+                width: 100px;
+                color: white;
+              `}
+            >
+              div test
+            </div>
+          ),
+          "2022-07-24T08:00:00.000Z": "hello",
+        },
+      },
+      {
+        name: "Humidity - Below Canopy Max",
+        valueName: "humidity_c_below_max",
+        values: {
+          "2022-07-20T08:00:00.000Z": "88.3°F",
+          "2022-07-21T08:00:00.000Z": "89.5°F",
+          "2022-07-22T08:00:00.000Z": "87.2°F",
+          "2022-07-23T08:00:00.000Z": 478237,
+          "2022-07-24T08:00:00.000Z": "84.2°F",
+        },
+      },
+    ],
+  },
   // {
   //   name: "Temperature - Above Canopy Max",
   //   valueName: "temperature_c_above_max",
