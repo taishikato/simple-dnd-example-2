@@ -12,13 +12,6 @@ const Bottom = () => {
   const handleCollapse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
 
-    // const targets = document.getElementsByClassName(
-    //   "collapsible"
-    // )[0] as HTMLElement;
-
-    // targets.style.height = "0";
-    // targets.style.overflow = "hidden";
-
     const targets = document.getElementsByClassName(
       "collapsible"
     ) as HTMLCollectionOf<HTMLElement>;
@@ -41,8 +34,6 @@ const Bottom = () => {
     // Left
     Array.from(targets).forEach((e) => {
       e.classList.add("collapse-close");
-      // e.style.height = "0";
-      // e.style.overflow = "hidden";
     });
 
     // Right
@@ -52,8 +43,6 @@ const Bottom = () => {
 
     Array.from(containers).forEach((c) => {
       c.classList.add("collapse-close");
-      // c.style.height = "0";
-      // c.style.overflow = "hidden";
     });
   };
 
@@ -98,9 +87,12 @@ const Bottom = () => {
               className={cx([
                 css({
                   height: 100,
-                  border: "1px solid black", // TODO
-                  backgroundColor: "rgb(153 246 228)", // TODO
+                  borderLeft: "1px solid #e2e2e2",
+                  borderBottom: "1px solid #e2e2e2",
+                  backgroundColor: "#ffffff",
+                  boxShadow: "3px 0px 2px rgba(0, 0, 0, 0.1)",
                   boxSizing: "border-box",
+                  padding: "0 15px",
                   display: "flex",
                   alignItems: "center",
                   transition: "height 200ms",
@@ -117,9 +109,12 @@ const Bottom = () => {
             key={i}
             className={css({
               height: row.height,
-              border: "1px solid black", // TODO
-              backgroundColor: "rgb(153 246 228)", // TODO
+              borderLeft: "1px solid #e2e2e2",
+              borderBottom: "1px solid #e2e2e2",
+              backgroundColor: "#ffffff",
+              boxShadow: "3px 0px 2px rgba(0, 0, 0, 0.1)",
               boxSizing: "border-box",
+              padding: "0 15px",
               display: "flex",
               alignItems: "center",
               transition: "height 200ms",

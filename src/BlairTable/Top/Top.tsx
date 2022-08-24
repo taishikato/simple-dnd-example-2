@@ -32,7 +32,7 @@ const Top = () => {
             zIndex: baseZIndex,
             backgroundColor: "rgb(232 121 249)", // TODO
             boxSizing: "border-box",
-            padding: "5px 0",
+            padding: "5px 15px",
             border: "1px solid red",
           })}
         >
