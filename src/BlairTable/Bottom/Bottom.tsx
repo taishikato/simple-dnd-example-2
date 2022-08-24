@@ -6,54 +6,12 @@ import {
   baseZIndex,
   rows,
 } from "../consts";
-import CollapseArrow from "../assets/CollapseArrow.svg";
 import { useState } from "react";
 import Rows from "./Right/Rows/Rows";
 import CollapseLabel from "./Left/CollapseLabel/CollapseLabel";
 import CollapseRows from "./Right/CollapseRows/CollapseRows";
 
 const Bottom = ({ columns, data }: any) => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const handleCollapse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
-
-    setIsOpen(!isOpen);
-
-    const targets = document.getElementsByClassName(
-      "collapsible"
-    ) as HTMLCollectionOf<HTMLElement>;
-
-    if (targets[0].classList.contains("collapse-close")) {
-      // Left
-      Array.from(targets).forEach((e) => e.classList.remove("collapse-close"));
-
-      // Right
-      const containers = document.getElementsByClassName(
-        "collapse-container"
-      ) as HTMLCollectionOf<HTMLElement>;
-      Array.from(containers).forEach((c) =>
-        c.classList.remove("collapse-close")
-      );
-
-      return;
-    }
-
-    // Left
-    Array.from(targets).forEach((e) => {
-      e.classList.add("collapse-close");
-    });
-
-    // Right
-    const containers = document.getElementsByClassName(
-      "collapse-container"
-    ) as HTMLCollectionOf<HTMLElement>;
-
-    Array.from(containers).forEach((c) => {
-      c.classList.add("collapse-close");
-    });
-  };
-
   return (
     <div
       className={css({
