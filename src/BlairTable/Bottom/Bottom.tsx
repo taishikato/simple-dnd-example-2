@@ -10,7 +10,7 @@ import CollapseArrow from "../assets/CollapseArrow.svg";
 import { useState } from "react";
 import Rows from "./Right/Rows/Rows";
 import CollapseLabel from "./Left/CollapseLabel/CollapseLabel";
-import CollapseRow from "./Right/CollapseRow/CollapseRow";
+import CollapseRows from "./Right/CollapseRows/CollapseRows";
 
 const Bottom = ({ columns, data }: any) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -79,18 +79,21 @@ const Bottom = ({ columns, data }: any) => {
               {d.items.map((item: any) => {
                 return (
                   <div
-                    className={css({
-                      height: "100px",
-                      borderLeft: "1px solid #e2e2e2",
-                      borderBottom: "1px solid #e2e2e2",
-                      backgroundColor: "#ffffff",
-                      boxShadow: "3px 0px 2px rgba(0, 0, 0, 0.1)",
-                      boxSizing: "border-box",
-                      padding: "0 15px",
-                      display: "flex",
-                      alignItems: "center",
-                      transition: "height 200ms, opacity 200ms",
-                    })}
+                    className={cx([
+                      css({
+                        height: "100px",
+                        borderLeft: "1px solid #e2e2e2",
+                        borderBottom: "1px solid #e2e2e2",
+                        backgroundColor: "#ffffff",
+                        boxShadow: "3px 0px 2px rgba(0, 0, 0, 0.1)",
+                        boxSizing: "border-box",
+                        padding: "0 15px",
+                        display: "flex",
+                        alignItems: "center",
+                        transition: "height 200ms, opacity 200ms",
+                      }),
+                      `collapse-${d.name}`,
+                    ])}
                   >
                     {item.name}
                   </div>
@@ -183,20 +186,14 @@ const Bottom = ({ columns, data }: any) => {
               {data.map((d: any) => {
                 return (
                   <>
-                    <div
-                      className={css({ height: 30, display: "flex" })}
-                      onClick={(e) => handleCollapse(e)}
-                    >
-                      {cols.map((col, j) => (
-                        <CollapseRow key={j} />
-                      ))}
-                    </div>
+                    <CollapseRows columns={columns} collapseName={d.name} />
                     {d.items.map((item: any) => {
                       return (
                         <Rows
                           key={item.valueName}
                           columns={columns}
                           item={item}
+                          collapseName={d.name}
                         />
                       );
                     })}

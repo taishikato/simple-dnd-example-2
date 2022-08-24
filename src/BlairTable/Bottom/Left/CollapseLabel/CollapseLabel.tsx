@@ -11,36 +11,17 @@ const CollapseLabel = ({ name }: { name: string }) => {
     setIsOpen(!isOpen);
 
     const targets = document.getElementsByClassName(
-      "collapsible"
+      `collapse-${name}`
     ) as HTMLCollectionOf<HTMLElement>;
 
     if (targets[0].classList.contains("collapse-close")) {
-      // Left
       Array.from(targets).forEach((e) => e.classList.remove("collapse-close"));
-
-      // Right
-      const containers = document.getElementsByClassName(
-        "collapse-container"
-      ) as HTMLCollectionOf<HTMLElement>;
-      Array.from(containers).forEach((c) =>
-        c.classList.remove("collapse-close")
-      );
 
       return;
     }
 
-    // Left
     Array.from(targets).forEach((e) => {
       e.classList.add("collapse-close");
-    });
-
-    // Right
-    const containers = document.getElementsByClassName(
-      "collapse-container"
-    ) as HTMLCollectionOf<HTMLElement>;
-
-    Array.from(containers).forEach((c) => {
-      c.classList.add("collapse-close");
     });
   };
 
