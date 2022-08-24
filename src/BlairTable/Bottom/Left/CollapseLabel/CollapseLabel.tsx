@@ -53,7 +53,6 @@ const CollapseLabel = ({ name }: { name: string }) => {
         display: "flex",
         justifyItems: "center",
         alignItems: "center",
-        columnGap: "12px",
       })}
     >
       <img
@@ -64,7 +63,9 @@ const CollapseLabel = ({ name }: { name: string }) => {
           !isOpen && { transform: "rotate(0)" },
         ])}
       />
-      <span className={css({ fontSize: "14px" })}>{name}</span>
+      <span className={css({ fontSize: "14px", marginLeft: "12px" })}>
+        {name}
+      </span>
     </div>
   );
 };
