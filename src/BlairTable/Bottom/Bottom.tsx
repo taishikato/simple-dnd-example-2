@@ -136,10 +136,12 @@ const Bottom = () => {
         {(() => {
           return (
             <div>
-              <div className={css({ height: 30, display: "flex" })}>
+              <div
+                className={css({ height: 30, display: "flex" })}
+                onClick={(e) => handleCollapse(e)}
+              >
                 {cols.map((col, j) => (
                   <div
-                    onClick={(e) => handleCollapse(e)}
                     className={css({
                       width: col.width,
                       border: "none",
@@ -166,12 +168,14 @@ const Bottom = () => {
                   >
                     {cols.map((col, j) => (
                       <div
-                        onClick={(e) => handleCollapse(e)}
                         className={cx([
                           css({
                             width: col.width,
                             border: "1px solid red",
                             boxSizing: "border-box",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                           }),
                         ])}
                         key={j}
@@ -193,6 +197,9 @@ const Bottom = () => {
                         width: col.width,
                         border: "1px solid red",
                         boxSizing: "border-box",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       })}
                       key={j}
                     >{`${row.text} / ${col.text}`}</div>
