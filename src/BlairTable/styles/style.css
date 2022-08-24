@@ -1,0 +1,12 @@
+.collapse-close {
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	border: none;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
