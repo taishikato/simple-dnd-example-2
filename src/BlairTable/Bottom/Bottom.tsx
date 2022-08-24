@@ -7,10 +7,15 @@ import {
   rows,
 } from "../consts";
 import CollapseArrow from "../assets/CollapseArrow.svg";
+import { useState } from "react";
 
 const Bottom = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
   const handleCollapse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
+
+    setIsOpen(!isOpen);
 
     const targets = document.getElementsByClassName(
       "collapsible"
@@ -77,7 +82,14 @@ const Bottom = () => {
             columnGap: "12px",
           })}
         >
-          <img src={CollapseArrow} width="10px" />
+          <img
+            src={CollapseArrow}
+            width="10px"
+            className={css([
+              isOpen && { transform: "rotate(180deg)" },
+              !isOpen && { transform: "rotate(0)" },
+            ])}
+          />
           <span className={css({ fontSize: "14px" })}>Collapse bar</span>
         </div>
         {[...Array(10).keys()].map((_, i) => {
