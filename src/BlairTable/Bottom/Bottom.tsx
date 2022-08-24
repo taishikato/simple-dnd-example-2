@@ -95,7 +95,7 @@ const Bottom = () => {
                   padding: "0 15px",
                   display: "flex",
                   alignItems: "center",
-                  transition: "height 200ms",
+                  transition: "height 200ms, opacity 200ms",
                 }),
                 "collapsible",
               ])}
@@ -117,7 +117,7 @@ const Bottom = () => {
               padding: "0 15px",
               display: "flex",
               alignItems: "center",
-              transition: "height 200ms",
+              transition: "height 200ms, opacity 200ms",
             })}
           >
             Label {row.text}
@@ -159,7 +159,7 @@ const Bottom = () => {
                       css({
                         height: 100,
                         display: "flex",
-                        transition: "height 200ms",
+                        transition: "height 200ms, opacity 200ms",
                       }),
                       "collapse-container",
                     ])}
