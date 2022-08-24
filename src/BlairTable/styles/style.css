@@ -4,3 +4,9 @@
 	overflow: hidden;
 	border: none;
 }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

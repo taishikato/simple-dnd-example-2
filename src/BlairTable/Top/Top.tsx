@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import {
   cols,
   baseZIndex,
@@ -9,17 +9,23 @@ import {
 const Top = ({ columns }: any) => {
   return (
     <div
-      className={css({
-        position: "sticky",
-        top: 0,
-        zIndex: baseZIndex + 1,
-      })}
+      className={cx([
+        css({
+          position: "sticky",
+          top: 0,
+          zIndex: baseZIndex + 1,
+        }),
+        "clearfix",
+      ])}
     >
       <div
-        className={css({
-          clear: "both",
-          width: rowLabelWidth + totalColLabelsWidth,
-        })}
+        className={cx([
+          css({
+            clear: "both",
+            width: rowLabelWidth + totalColLabelsWidth,
+          }),
+          "clearfix",
+        ])}
       >
         {/*region TOP LEFT*/}
         <div
