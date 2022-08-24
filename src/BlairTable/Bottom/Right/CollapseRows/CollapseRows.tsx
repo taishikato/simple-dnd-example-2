@@ -24,18 +24,21 @@ const CollapseRows = ({ columns, collapseName }: any) => {
       className={css({ height: 30, display: "flex" })}
       onClick={(e) => handleCollapse(e)}
     >
-      {columns.map((col: any) => (
-        <div
-          key={col.key}
-          className={css({
-            width: "100px",
-            border: "none",
-            cursor: "pointer",
-            boxSizing: "border-box",
-            backgroundColor: "#e2e2e2", // TODO
-          })}
-        />
-      ))}
+      {columns.map((col: any, i: number) => {
+        if (i !== 0)
+          return (
+            <div
+              key={col.key}
+              className={css({
+                width: "100px",
+                border: "none",
+                cursor: "pointer",
+                boxSizing: "border-box",
+                backgroundColor: "#e2e2e2", // TODO
+              })}
+            />
+          );
+      })}
     </div>
   );
 };
