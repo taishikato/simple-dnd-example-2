@@ -2,7 +2,7 @@
 	height: 0 !important;
 	opacity: 0;
 	overflow: hidden;
-	border: none;
+	border-bottom: none !important;
 }
 
 .clearfix::after {
