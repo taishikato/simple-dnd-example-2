@@ -9,6 +9,8 @@ import {
 import CollapseArrow from "../assets/CollapseArrow.svg";
 import { useState } from "react";
 import Rows from "./Right/Rows/Rows";
+import CollapseLabel from "./Left/CollapseLabel/CollapseLabel";
+import CollapseRow from "./Right/CollapseRow/CollapseRow";
 
 const Bottom = ({ columns, data }: any) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -73,7 +75,7 @@ const Bottom = ({ columns, data }: any) => {
         {data.map((d: any) => {
           return (
             <div key={d.key}>
-              {/* <div>{d.name}</div> */}
+              <CollapseLabel name={d.name} />
               {d.items.map((item: any) => {
                 return (
                   <div
@@ -90,7 +92,7 @@ const Bottom = ({ columns, data }: any) => {
                       transition: "height 200ms, opacity 200ms",
                     })}
                   >
-                    {item.name}Taishi
+                    {item.name}
                   </div>
                 );
               })}
@@ -179,11 +181,27 @@ const Bottom = ({ columns, data }: any) => {
             <div>
               {/* Right */}
               {data.map((d: any) => {
-                return d.items.map((item: any) => {
-                  return (
-                    <Rows key={item.valueName} columns={columns} item={item} />
-                  );
-                });
+                return (
+                  <>
+                    <div
+                      className={css({ height: 30, display: "flex" })}
+                      onClick={(e) => handleCollapse(e)}
+                    >
+                      {cols.map((col, j) => (
+                        <CollapseRow key={j} />
+                      ))}
+                    </div>
+                    {d.items.map((item: any) => {
+                      return (
+                        <Rows
+                          key={item.valueName}
+                          columns={columns}
+                          item={item}
+                        />
+                      );
+                    })}
+                  </>
+                );
               })}
               <div
                 className={css({ height: 30, display: "flex" })}
