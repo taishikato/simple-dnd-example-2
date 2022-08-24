@@ -18,3 +18,5 @@ export const containerWidth = 600;
 export const containerHeight = 600;
 
 export const collapseClassPrefix = "collapse-";
+
+export const collapseCloseClass = "collapse-close";

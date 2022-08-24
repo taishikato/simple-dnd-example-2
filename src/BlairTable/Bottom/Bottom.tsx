@@ -6,7 +6,6 @@ import {
   baseZIndex,
   rows,
 } from "../consts";
-import { useState } from "react";
 import Rows from "./Right/Rows/Rows";
 import CollapseLabel from "./Left/CollapseLabel/CollapseLabel";
 import CollapseRows from "./Right/CollapseRows/CollapseRows";
@@ -97,7 +96,7 @@ const Bottom = ({ columns, data }: any) => {
               {data.map((d: any) => {
                 return (
                   <>
-                    <CollapseRows columns={columns} collapseName={d.name} />
+                    <CollapseRows columns={columns} name={d.name} />
                     {d.items.map((item: any) => {
                       return (
                         <Rows

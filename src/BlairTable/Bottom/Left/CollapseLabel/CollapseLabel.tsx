@@ -2,30 +2,11 @@ import { css } from "@emotion/css";
 import { useEffect, useState } from "react";
 import CollapseArrow from "../../../assets/CollapseArrow.svg";
 import { collapseClassPrefix } from "../../../consts";
+import { handleCollapse } from "../../../_utils/handleCollapse";
 
 const CollapseLabel = ({ name }: { name: string }) => {
   const [isOpen, setIsOpen] = useState(true);
   const collapseName = `${collapseClassPrefix}${name}`;
-
-  const handleCollapse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
-
-    setIsOpen(!isOpen);
-
-    const targets = document.getElementsByClassName(
-      collapseName
-    ) as HTMLCollectionOf<HTMLElement>;
-
-    if (targets[0].classList.contains("collapse-close")) {
-      Array.from(targets).forEach((e) => e.classList.remove("collapse-close"));
-
-      return;
-    }
-
-    Array.from(targets).forEach((e) => {
-      e.classList.add("collapse-close");
-    });
-  };
 
   useEffect(() => {
     const targetNode = document.getElementsByClassName(collapseName)[0];
@@ -55,9 +36,14 @@ const CollapseLabel = ({ name }: { name: string }) => {
     return () => observer.disconnect();
   }, []);
 
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    handleCollapse({ e, collapseClassName: collapseName });
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div
-      onClick={(e) => handleCollapse(e)}
+      onClick={(e) => handleClick(e)}
       className={css({
         height: 30,
         backgroundColor: "#e2e2e2", // TODO
