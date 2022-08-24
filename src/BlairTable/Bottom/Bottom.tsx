@@ -8,6 +8,7 @@ import {
 } from "../consts";
 import CollapseArrow from "../assets/CollapseArrow.svg";
 import { useState } from "react";
+import Rows from "./Right/Rows/Rows";
 
 const Bottom = ({ columns, data }: any) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -180,28 +181,7 @@ const Bottom = ({ columns, data }: any) => {
               {data.map((d: any) => {
                 return d.items.map((item: any) => {
                   return (
-                    <div
-                      className={css({ height: 100, display: "flex" })}
-                      onClick={(e) => handleCollapse(e)}
-                    >
-                      {columns.map((c: any) => {
-                        return (
-                          <div
-                            key={item.valueName}
-                            className={css({
-                              width: "100px",
-                              border: "1px solid red",
-                              boxSizing: "border-box",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            })}
-                          >
-                            {item.values[c.dataIndex]}
-                          </div>
-                        );
-                      })}
-                    </div>
+                    <Rows key={item.valueName} columns={columns} item={item} />
                   );
                 });
               })}
