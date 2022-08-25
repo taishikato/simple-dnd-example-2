@@ -35,7 +35,7 @@ const Top = ({ columns }: any) => {
             backgroundColor: "#ffffff",
             boxSizing: "border-box",
             padding: "5px 15px",
-            border: "1px solid red",
+            border: "1px solid #e2e2e2",
           })}
         >
           {/* TOP LEFT */}
@@ -64,7 +64,7 @@ const Top = ({ columns }: any) => {
                     textAlign: "center",
                     boxSizing: "border-box",
                     padding: "5px 0",
-                    border: "1px solid red",
+                    border: "1px solid #e2e2e2",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
