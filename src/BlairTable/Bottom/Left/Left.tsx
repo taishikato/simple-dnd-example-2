@@ -1,6 +1,6 @@
 import type { DataProps } from "../../types";
 import { cx, css } from "@emotion/css";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { baseZIndex } from "../../consts";
 import CollapseLabel from "./CollapseLabel/CollapseLabel";
 
@@ -31,7 +31,7 @@ const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
       })}
     >
       {data.map((d: any) => (
-        <div key={d.name}>
+        <Fragment key={d.name}>
           <CollapseLabel name={d.name} />
           {d.items.map((item: any) => (
             <div
@@ -55,7 +55,7 @@ const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
               {item.name}
             </div>
           ))}
-        </div>
+        </Fragment>
       ))}
     </div>
   );
