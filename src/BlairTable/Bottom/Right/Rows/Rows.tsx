@@ -19,7 +19,8 @@ const Rows = ({ columns, item, collapseName }: any) => {
               key={c.key}
               className={css({
                 width: c.width,
-                border: "1px solid red",
+                borderBottom: "1px solid #e2e2e2",
+                borderRight: "1px solid #e2e2e2",
                 boxSizing: "border-box",
                 display: "flex",
                 alignItems: "center",
