@@ -3,6 +3,7 @@ import { cols, rowLabelWidth, totalColLabelsWidth, rows } from "../consts";
 import Rows from "./Right/Rows/Rows";
 import CollapseRows from "./Right/CollapseRows/CollapseRows";
 import Left from "./Left/Left";
+import { Fragment } from "react";
 
 const Bottom = ({ columns, data }: any) => {
   return (
@@ -29,25 +30,22 @@ const Bottom = ({ columns, data }: any) => {
         {(() => {
           return (
             <div>
-              {/* Right */}
-              {data.map((d: any) => {
-                return (
-                  <>
-                    <CollapseRows columns={columns} name={d.name} />
-                    {d.items.map((item: any) => {
-                      return (
-                        <Rows
-                          // width: col.width, TODO
-                          key={item.valueName}
-                          columns={columns}
-                          item={item}
-                          collapseName={d.name}
-                        />
-                      );
-                    })}
-                  </>
-                );
-              })}
+              {data.map((d: any) => (
+                <Fragment key={d.name}>
+                  <CollapseRows columns={columns} name={d.name} />
+                  {d.items.map((item: any) => {
+                    return (
+                      <Rows
+                        // width: col.width, TODO
+                        key={item.valueName}
+                        columns={columns}
+                        item={item}
+                        collapseName={d.name}
+                      />
+                    );
+                  })}
+                </Fragment>
+              ))}
             </div>
           );
         })()}

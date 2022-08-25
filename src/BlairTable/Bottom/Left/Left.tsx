@@ -29,37 +29,33 @@ const Left = ({ data }: any) => {
         zIndex: baseZIndex,
       })}
     >
-      {data.map((d: any) => {
-        return (
-          <div key={d.key}>
-            <CollapseLabel name={d.name} />
-            {d.items.map((item: any) => {
-              return (
-                <div
-                  key={item.valueName}
-                  className={cx([
-                    css({
-                      height: "100px", // row.height TODO
-                      borderLeft: "1px solid #e2e2e2",
-                      borderBottom: "1px solid #e2e2e2",
-                      backgroundColor: "#ffffff",
-                      boxShadow: "3px 0px 2px rgba(0, 0, 0, 0.1)",
-                      boxSizing: "border-box",
-                      padding: "0 15px",
-                      display: "flex",
-                      alignItems: "center",
-                      transition: "height 200ms, opacity 200ms",
-                    }),
-                    `collapse-${d.name}`,
-                  ])}
-                >
-                  {item.name}
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
+      {data.map((d: any) => (
+        <div key={d.name}>
+          <CollapseLabel name={d.name} />
+          {d.items.map((item: any) => (
+            <div
+              key={item.valueName}
+              className={cx([
+                css({
+                  height: "100px", // row.height TODO
+                  borderLeft: "1px solid #e2e2e2",
+                  borderBottom: "1px solid #e2e2e2",
+                  backgroundColor: "#ffffff",
+                  boxShadow: "3px 0px 2px rgba(0, 0, 0, 0.1)",
+                  boxSizing: "border-box",
+                  padding: "0 15px",
+                  display: "flex",
+                  alignItems: "center",
+                  transition: "height 200ms, opacity 200ms",
+                }),
+                `collapse-${d.name}`,
+              ])}
+            >
+              {item.name}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
