@@ -37,7 +37,7 @@ const Top = ({ columns }: any) => {
             width: rowLabelWidth,
             float: "left",
             zIndex: baseZIndex,
-            backgroundColor: "rgb(232 121 249)", // TODO
+            backgroundColor: "#ffffff",
             boxSizing: "border-box",
             padding: "5px 15px",
             border: "1px solid red",
@@ -52,7 +52,7 @@ const Top = ({ columns }: any) => {
           className={css({
             width: totalColLabelsWidth,
             float: "left",
-            backgroundColor: "rgb(245 208 254)", // TODO
+            backgroundColor: "#ffffff",
             boxSizing: "border-box",
             display: "flex",
           })}
