@@ -1,10 +1,5 @@
 import { css, cx } from "@emotion/css";
-import {
-  cols,
-  baseZIndex,
-  rowLabelWidth,
-  totalColLabelsWidth,
-} from "../consts";
+import { baseZIndex, rowLabelWidth, totalColLabelsWidth } from "../consts";
 
 const Top = ({ columns }: any) => {
   return (
