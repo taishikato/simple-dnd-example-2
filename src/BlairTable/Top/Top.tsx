@@ -1,7 +1,8 @@
+import type { ColumnProps } from "../types";
 import { css, cx } from "@emotion/css";
 import { baseZIndex, rowLabelWidth, totalColLabelsWidth } from "../consts";
 
-const Top = ({ columns }: any) => (
+const Top = ({ columns }: { columns: ColumnProps[] }) => (
   <div
     className={cx([
       css({
@@ -52,7 +53,7 @@ const Top = ({ columns }: any) => (
         })}
       >
         <div className={css({ display: "flex" })}>
-          {columns.map((c: any, i: number) => {
+          {columns.map((c, i: number) => {
             if (i === 0) return;
 
             return (

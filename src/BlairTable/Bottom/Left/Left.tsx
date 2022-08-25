@@ -1,9 +1,10 @@
+import type { DataProps } from "../../types";
 import { cx, css } from "@emotion/css";
 import { useEffect, useState } from "react";
 import { baseZIndex } from "../../consts";
 import CollapseLabel from "./CollapseLabel/CollapseLabel";
 
-const Left = ({ data }: any) => {
+const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
   const [rowLabelWidth, setRowLabelWidth] = useState(0);
   useEffect(() => {
     let labelLength = 0;

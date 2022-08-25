@@ -1,8 +1,15 @@
+import type { ColumnProps } from "../../../types";
 import { css } from "@emotion/css";
 import { handleCollapse } from "../../../_utils/handleCollapse";
 import { collapseClassPrefix } from "../../../consts";
 
-const CollapseRows = ({ columns, name }: any) => {
+const CollapseRows = ({
+  columns,
+  name,
+}: {
+  columns: ColumnProps[];
+  name: string;
+}) => {
   const collapseName = `${collapseClassPrefix}${name}`;
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
@@ -13,7 +20,7 @@ const CollapseRows = ({ columns, name }: any) => {
       className={css({ height: 30, display: "flex" })}
       onClick={(e) => handleClick(e)}
     >
-      {columns.map((col: any, i: number) => {
+      {columns.map((col, i: number) => {
         if (i !== 0)
           return (
             <div

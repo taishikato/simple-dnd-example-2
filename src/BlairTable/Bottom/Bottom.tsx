@@ -1,11 +1,18 @@
+import type { DataProps, ColumnProps } from "../types";
 import { cx, css } from "@emotion/css";
-import { cols, rowLabelWidth, totalColLabelsWidth, rows } from "../consts";
+import { rowLabelWidth, totalColLabelsWidth } from "../consts";
 import Rows from "./Right/Rows/Rows";
 import CollapseRows from "./Right/CollapseRows/CollapseRows";
 import Left from "./Left/Left";
 import { Fragment } from "react";
 
-const Bottom = ({ columns, data }: any) => {
+const Bottom = <T extends string>({
+  columns,
+  data,
+}: {
+  columns: ColumnProps[];
+  data: DataProps<T>[];
+}) => {
   return (
     <div
       className={cx([
@@ -30,7 +37,7 @@ const Bottom = ({ columns, data }: any) => {
         {(() => {
           return (
             <div>
-              {data.map((d: any) => (
+              {data.map((d) => (
                 <Fragment key={d.name}>
                   <CollapseRows columns={columns} name={d.name} />
                   {d.items.map((item: any) => {

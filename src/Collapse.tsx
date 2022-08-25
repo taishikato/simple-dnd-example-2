@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { css } from "@emotion/css";
-import type { ColumnProps, DataProps } from "./Table/types";
+import type { ColumnProps, DataProps } from "./BlairTable/types";
 import moment from "moment";
 import "moment-timezone";
 import BlairTable from "./BlairTable/BlairTable";
@@ -26,7 +26,7 @@ const dates = [
 ];
 
 // const tableDataRaw: DataProps<BanyanValueType>[] = [
-const tableDataRaw = [
+const tableDataRaw: DataProps<BanyanValueType>[] = [
   {
     name: "temperature",
     items: [

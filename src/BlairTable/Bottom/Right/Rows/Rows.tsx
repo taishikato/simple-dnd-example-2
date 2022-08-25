@@ -1,6 +1,15 @@
+import type { ColumnProps, DataItemProps } from "../../../types";
 import { cx, css } from "@emotion/css";
 
-const Rows = ({ columns, item, collapseName }: any) => {
+const Rows = <T extends string>({
+  columns,
+  item,
+  collapseName,
+}: {
+  columns: ColumnProps[];
+  item: DataItemProps<T>;
+  collapseName: string;
+}) => {
   return (
     <div
       className={cx([
@@ -12,7 +21,7 @@ const Rows = ({ columns, item, collapseName }: any) => {
         `collapse-${collapseName}`,
       ])}
     >
-      {columns.map((c: any, i: number) => {
+      {columns.map((c, i: number) => {
         if (i !== 0)
           return (
             <div
