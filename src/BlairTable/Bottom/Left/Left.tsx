@@ -1,8 +1,24 @@
 import { cx, css } from "@emotion/css";
-import { rowLabelWidth, baseZIndex } from "../../consts";
+import { useEffect, useState } from "react";
+import { baseZIndex } from "../../consts";
 import CollapseLabel from "./CollapseLabel/CollapseLabel";
 
 const Left = ({ data }: any) => {
+  const [rowLabelWidth, setRowLabelWidth] = useState(0);
+  useEffect(() => {
+    let labelLength = 0;
+
+    data.forEach((d: any) => {
+      if (d.name.length > labelLength) labelLength = d.name.length;
+
+      d.items.forEach((item: any) => {
+        if (item.name.length > labelLength) labelLength = item.name.length;
+      });
+    });
+
+    setRowLabelWidth(labelLength + 150);
+  }, []);
+
   return (
     <div
       className={css({

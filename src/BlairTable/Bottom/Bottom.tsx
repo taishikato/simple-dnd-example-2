@@ -1,13 +1,6 @@
 import { cx, css } from "@emotion/css";
-import {
-  cols,
-  rowLabelWidth,
-  totalColLabelsWidth,
-  baseZIndex,
-  rows,
-} from "../consts";
+import { cols, rowLabelWidth, totalColLabelsWidth, rows } from "../consts";
 import Rows from "./Right/Rows/Rows";
-import CollapseLabel from "./Left/CollapseLabel/CollapseLabel";
 import CollapseRows from "./Right/CollapseRows/CollapseRows";
 import Left from "./Left/Left";
 
