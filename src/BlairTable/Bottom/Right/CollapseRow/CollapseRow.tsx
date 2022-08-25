@@ -3,7 +3,7 @@ import { css } from "@emotion/css";
 import { handleCollapse } from "../../../_utils/handleCollapse";
 import { collapseClassPrefix } from "../../../consts";
 
-const CollapseRows = ({
+const CollapseRow = ({
   columns,
   name,
 }: {
@@ -39,4 +39,4 @@ const CollapseRows = ({
   );
 };
 
-export default CollapseRows;
+export default CollapseRow;
