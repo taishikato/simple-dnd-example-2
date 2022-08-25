@@ -4,7 +4,7 @@ import CollapseArrow from "../../../assets/CollapseArrow.svg";
 import { collapseClassPrefix } from "../../../consts";
 import { handleCollapse } from "../../../_utils/handleCollapse";
 
-const CollapseLabel = ({ name }: { name: string }) => {
+const CollapseTriggerLabelCell = ({ name }: { name: string }) => {
   const [isOpen, setIsOpen] = useState(true);
   const collapseName = `${collapseClassPrefix}${name}`;
 
@@ -70,4 +70,4 @@ const CollapseLabel = ({ name }: { name: string }) => {
   );
 };
 
-export default CollapseLabel;
+export default CollapseTriggerLabelCell;

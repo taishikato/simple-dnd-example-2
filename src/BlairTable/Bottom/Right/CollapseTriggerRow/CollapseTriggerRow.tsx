@@ -2,8 +2,9 @@ import type { ColumnProps } from "../../../types";
 import { css } from "@emotion/css";
 import { handleCollapse } from "../../../_utils/handleCollapse";
 import { collapseClassPrefix } from "../../../consts";
+import CollapseTriggerCell from "./CollapseTriggerCell/CollapseTriggerCell";
 
-const CollapseRow = ({
+const CollapseTriggerRow = ({
   columns,
   name,
 }: {
@@ -21,22 +22,10 @@ const CollapseRow = ({
       onClick={(e) => handleClick(e)}
     >
       {columns.map((col, i: number) => {
-        if (i !== 0)
-          return (
-            <div
-              key={col.key}
-              className={css({
-                width: "100px",
-                border: "none",
-                cursor: "pointer",
-                boxSizing: "border-box",
-                backgroundColor: "#e2e2e2", // TODO
-              })}
-            />
-          );
+        if (i !== 0) return <CollapseTriggerCell key={col.key} />;
       })}
     </div>
   );
 };
 
-export default CollapseRow;
+export default CollapseTriggerRow;

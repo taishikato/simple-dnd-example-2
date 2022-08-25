@@ -2,7 +2,7 @@ import type { DataProps } from "../../types";
 import { css } from "@emotion/css";
 import { Fragment, useEffect, useState } from "react";
 import { baseZIndex } from "../../consts";
-import CollapseLabel from "./CollapseLabel/CollapseLabel";
+import CollapseTriggerLabelCell from "./CollapseTriggerLabelCell/CollapseTriggerLabelCell";
 import LabelCell from "./LabelCell/LabelCell";
 
 const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
@@ -33,7 +33,7 @@ const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
     >
       {data.map((d) => (
         <Fragment key={d.name}>
-          <CollapseLabel name={d.name} />
+          <CollapseTriggerLabelCell name={d.name} />
           {d.items.map((item) => (
             <LabelCell key={item.valueName} name={d.name}>
               {item.name}

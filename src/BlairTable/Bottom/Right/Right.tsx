@@ -2,8 +2,8 @@ import type { ColumnProps, DataProps } from "../../types";
 import { css } from "@emotion/css";
 import { Fragment } from "react";
 import { totalColLabelsWidth } from "../../consts";
-import CollapseRow from "./CollapseRow/CollapseRow";
-import Cell from "./Row/Row";
+import CollapseTriggerRow from "./CollapseTriggerRow/CollapseTriggerRow";
+import Row from "./Row/Row";
 
 const Right = <T extends string>({
   columns,
@@ -25,9 +25,9 @@ const Right = <T extends string>({
           <div>
             {data.map((d) => (
               <Fragment key={d.name}>
-                <CollapseRow columns={columns} name={d.name} />
+                <CollapseTriggerRow columns={columns} name={d.name} />
                 {d.items.map((item) => (
-                  <Cell
+                  <Row
                     // width: col.width, TODO
                     key={item.valueName}
                     columns={columns}
