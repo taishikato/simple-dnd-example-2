@@ -20,3 +20,5 @@ export const containerHeight = 600;
 export const collapseClassPrefix = "collapse-";
 
 export const collapseCloseClass = "collapse-close";
+
+export const widthToAdd = 150; // px

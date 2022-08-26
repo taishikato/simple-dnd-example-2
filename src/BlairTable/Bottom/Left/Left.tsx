@@ -1,12 +1,13 @@
 import type { DataProps } from "../../types";
 import { css } from "@emotion/css";
 import { Fragment, useEffect, useState } from "react";
-import { baseZIndex } from "../../consts";
+import { baseZIndex, widthToAdd } from "../../consts";
 import CollapseTriggerLabelCell from "./CollapseTriggerLabelCell/CollapseTriggerLabelCell";
 import LabelCell from "./LabelCell/LabelCell";
 
 const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
   const [rowLabelWidth, setRowLabelWidth] = useState(0);
+
   useEffect(() => {
     let labelLength = 0;
 
@@ -18,7 +19,7 @@ const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
       });
     });
 
-    setRowLabelWidth(labelLength + 150);
+    setRowLabelWidth(labelLength + widthToAdd);
   }, []);
 
   return (
