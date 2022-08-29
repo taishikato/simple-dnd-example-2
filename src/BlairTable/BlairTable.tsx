@@ -21,9 +21,9 @@ const BlairTable = <T extends string>({
    */
 
   // Maybe columns and data props have the same data structure?
-  // Calculate the height of each row with the language and the valueName
+  // Calculate the height of each row with the language and the valueType
   /*
-   * const calculateHeight = (valueName, lng) => {}
+   * const calculateHeight = (valueType, lng) => {}
    */
 
   // Get the width for the first column! (which is important for sticky feature)

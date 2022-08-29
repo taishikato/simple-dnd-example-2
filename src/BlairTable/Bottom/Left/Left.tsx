@@ -29,7 +29,7 @@ const Left = <T extends string>({
         <Fragment key={d.name}>
           <CollapseTriggerLabelCell name={d.name} />
           {d.items.map((item) => (
-            <LabelCell key={item.valueName} name={d.name}>
+            <LabelCell key={item.valueType} name={d.name}>
               {item.name}
             </LabelCell>
           ))}

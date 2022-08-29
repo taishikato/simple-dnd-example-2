@@ -33,7 +33,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
     items: [
       {
         name: "Above Canopy",
-        valueName: "temperature_c_above_max",
+        valueType: "temperature_c_above_max",
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "86.3°F",
@@ -44,7 +44,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
       {
         name: "In Canopy",
-        valueName: "temperature_c_in_max",
+        valueType: "temperature_c_in_max",
         values: {
           "2022-07-20T08:00:00.000Z": "86.3°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
@@ -55,7 +55,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
       {
         name: "Below Canopy",
-        valueName: "temperature_c_below_max",
+        valueType: "temperature_c_below_max",
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",
@@ -66,7 +66,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
       {
         name: "Inversion",
-        valueName: "temperature_inversion",
+        valueType: "temperature_inversion",
         values: {
           "2022-07-20T08:00:00.000Z": "-2.6°F",
           "2022-07-21T08:00:00.000Z": "-2.6°F",
@@ -82,7 +82,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
     items: [
       {
         name: "Above Canopy",
-        valueName: "humidity_c_above_max",
+        valueType: "humidity_c_above_max",
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "dfjsdk",
@@ -93,7 +93,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
       {
         name: "In Canopy",
-        valueName: "humidity_c_in_max",
+        valueType: "humidity_c_in_max",
         values: {
           "2022-07-20T08:00:00.000Z": "86.3°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
@@ -116,7 +116,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
       {
         name: "Below Canopy",
-        valueName: "humidity_c_below_max",
+        valueType: "humidity_c_below_max",
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",
@@ -132,7 +132,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
     items: [
       {
         name: "WetBulb - Above Canopy Max",
-        valueName: "wetbulb_c_above_max",
+        valueType: "wetbulb_c_above_max",
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "hello",
@@ -152,7 +152,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
       {
         name: "WetBulb - In Canopy Max",
-        valueName: "wetbulb_c_in_max",
+        valueType: "wetbulb_c_in_max",
         values: {
           "2022-07-20T08:00:00.000Z": (
             <img
@@ -171,7 +171,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
       {
         name: "WetBulb - Below Canopy Max",
-        valueName: "wetbulb_c_below_max",
+        valueType: "wetbulb_c_below_max",
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",
@@ -193,8 +193,8 @@ const calculateFirstColumnWidth = (lang: string = "en") => {
 const columns: ColumnProps[] = [
   (() => {
     return {
-      key: "valueName",
-      dataIndex: "valueName",
+      key: "valueType",
+      dataIndex: "valueType",
       title: "Last Update: June 14th, 10:00 AM",
       width: calculateFirstColumnWidth(),
       cellCSS: { padding: "12px" },

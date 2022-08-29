@@ -29,7 +29,7 @@ const Right = <T extends string>({
                 {d.items.map((item) => (
                   <Row
                     // width: col.width, //TODO
-                    key={item.valueName}
+                    key={item.valueType}
                     columns={columns}
                     item={item}
                     collapseName={d.name}

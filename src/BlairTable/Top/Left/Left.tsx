@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import { ColumnProps } from "../../../CollapseTable/types";
-import { baseZIndex, rowLabelWidth } from "../../consts";
+import { baseZIndex } from "../../consts";
 
 const Left = ({
   children,
@@ -14,6 +14,7 @@ const Left = ({
       left: "0",
       top: "0",
       position: "sticky",
+      fontWeight: 600,
       flexBasis: firstColumn.width,
       flexGrow: 0,
       flexShrink: 0,
