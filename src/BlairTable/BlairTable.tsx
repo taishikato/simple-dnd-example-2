@@ -7,9 +7,11 @@ import "./styles/style.css";
 const BlairTable = <T extends string>({
   columns,
   data,
+  height,
 }: {
   columns: ColumnProps[];
   data: DataProps<T>[];
+  height: number;
 }) => {
   /**
    * Think of this component like a 2 x 2 grid:
@@ -28,6 +30,7 @@ const BlairTable = <T extends string>({
   return (
     <div
       className={css({
+        height, // Need to set height here for a sticky header
         overflow: "auto",
         fontSize: "14px",
       })}

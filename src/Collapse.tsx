@@ -261,7 +261,7 @@ function Collapse() {
         <Link to="/">Go to the draggable table</Link>
       </div>
 
-      <BlairTable columns={columns} data={data} />
+      <BlairTable columns={columns} data={data} height={600} />
     </div>
   );
 }
