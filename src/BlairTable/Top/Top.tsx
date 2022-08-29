@@ -26,7 +26,7 @@ const Top = ({ columns }: { columns: ColumnProps[] }) => (
       ])}
     >
       {/*region TOP LEFT*/}
-      <Left>{columns[0].title}</Left>
+      <Left firstColumn={columns[0]}>{columns[0].title}</Left>
       {/*endregion*/}
       {/*region TOP RIGHT*/}
       <Right columns={columns} />

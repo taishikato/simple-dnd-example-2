@@ -45,6 +45,7 @@ const CollapseTriggerLabelCell = ({ name }: { name: string }) => {
     <div
       onClick={(e) => handleClick(e)}
       className={css({
+        width: "100%",
         height: 30,
         backgroundColor: "#e2e2e2", // TODO
         boxSizing: "border-box",

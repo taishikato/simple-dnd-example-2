@@ -1,33 +1,26 @@
-import type { DataProps } from "../../types";
+import type { ColumnProps, DataProps } from "../../types";
 import { css } from "@emotion/css";
 import { Fragment, useEffect, useState } from "react";
 import { baseZIndex, widthToAdd } from "../../consts";
 import CollapseTriggerLabelCell from "./CollapseTriggerLabelCell/CollapseTriggerLabelCell";
 import LabelCell from "./LabelCell/LabelCell";
 
-const Left = <T extends string>({ data }: { data: DataProps<T>[] }) => {
+const Left = <T extends string>({
+  data,
+  firstColumn,
+}: {
+  data: DataProps<T>[];
+  firstColumn: ColumnProps;
+}) => {
   const [rowLabelWidth, setRowLabelWidth] = useState(0);
-
-  useEffect(() => {
-    let labelLength = 0;
-
-    data.forEach((d: any) => {
-      if (d.name.length > labelLength) labelLength = d.name.length;
-
-      d.items.forEach((item: any) => {
-        if (item.name.length > labelLength) labelLength = item.name.length;
-      });
-    });
-
-    setRowLabelWidth(labelLength + widthToAdd);
-  }, []);
 
   return (
     <div
       className={css({
         position: "sticky",
         left: "0",
-        width: rowLabelWidth, // TODO
+        // width: rowLabelWidth, // TODO
+        width: firstColumn.width,
         float: "left",
         zIndex: baseZIndex,
       })}

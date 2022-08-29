@@ -15,7 +15,7 @@ const Right = <T extends string>({
   return (
     <div
       className={css({
-        width: totalColLabelsWidth,
+        // width: totalColLabelsWidth,
         float: "left",
         backgroundColor: "white",
       })}
@@ -28,7 +28,7 @@ const Right = <T extends string>({
                 <CollapseTriggerRow columns={columns} name={d.name} />
                 {d.items.map((item) => (
                   <Row
-                    // width: col.width, TODO
+                    // width: col.width, //TODO
                     key={item.valueName}
                     columns={columns}
                     item={item}

@@ -11,6 +11,7 @@ const LabelCell = ({
     <div
       className={cx([
         css({
+          width: "100%",
           height: "100px", // row.height TODO
           borderLeft: "1px solid #e2e2e2",
           borderBottom: "1px solid #e2e2e2",

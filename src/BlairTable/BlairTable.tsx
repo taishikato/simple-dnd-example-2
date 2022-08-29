@@ -2,7 +2,7 @@ import type { DataProps, ColumnProps } from "./types";
 import { css } from "@emotion/css";
 import Bottom from "./Bottom/Bottom";
 import Top from "./Top/Top";
-import { containerHeight, containerWidth } from "./consts";
+import { containerHeight, containerWidth, widthToAdd } from "./consts";
 import "./styles/style.css";
 
 const BlairTable = <T extends string>({
@@ -19,6 +19,25 @@ const BlairTable = <T extends string>({
    * - The bottom left is row labels which "stick" when horizontal scrolling
    * - The bottom right the row / col content cells
    */
+
+  // Maybe columns and data props have the same data structure?
+  // Calculate the height of each row with the language and the valueName
+  /*
+   * const calculateHeight = (valueName, lng) => {}
+   */
+
+  // Get the width for the first column! (which is important for sticky feature)
+  let labelLength = columns[0].title.length;
+
+  data.forEach((d) => {
+    if (d.name.length > labelLength) labelLength = d.name.length;
+
+    d.items.forEach((item: any) => {
+      if (item.name.length > labelLength) labelLength = item.name.length;
+    });
+  });
+
+  const firstColumnWidth = labelLength + widthToAdd;
 
   return (
     <div

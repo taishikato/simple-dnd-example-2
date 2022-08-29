@@ -25,7 +25,8 @@ const dates = [
   "2022-07-24T08:00:00.000Z",
 ];
 
-// const tableDataRaw: DataProps<BanyanValueType>[] = [
+const timezone = "America/Los_Angeles";
+
 const tableDataRaw: DataProps<BanyanValueType>[] = [
   {
     name: "temperature",
@@ -134,8 +135,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
         valueName: "wetbulb_c_above_max",
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
-          "2022-07-21T08:00:00.000Z":
-            "testfhdshfjkdshfjshfdsjfhdjshfjdshfjdshfjdshfkjhsdjkfhsdkjahfkjdsahfjdksahfjksdhfjksdahfjkdsahfjksdah",
+          "2022-07-21T08:00:00.000Z": "hello",
           "2022-07-22T08:00:00.000Z": (
             <img
               src="https://img.devrant.com/devrant/rant/r_3015646_HZCi4.jpg"
@@ -182,167 +182,7 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
       },
     ],
   },
-
-  // {
-  //   name: "Temperature - Above Canopy Max",
-  //   valueName: "temperature_c_above_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "85.5°F",
-  //     "2022-07-21T08:00:00.000Z": (
-  //       <img
-  //         src="https://media.npr.org/assets/img/2022/07/14/lofi-girl-picture_custom-27a34c6d0ca36f828940156e7bd3c964140cff9c.jpg"
-  //         className={css`
-  //           width: 300px;
-  //           border-radius: 10px;
-  //         `}
-  //       />
-  //     ),
-  //     "2022-07-22T08:00:00.000Z": "89.5°F",
-  //     "2022-07-23T08:00:00.000Z": "83.5°F",
-  //     "2022-07-24T08:00:00.000Z": "82.5°F",
-  //   },
-  // },
-  // {
-  //   name: "Temperature - In Canopy Max",
-  //   valueName: "temperature_c_in_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "86.3°F",
-  //     "2022-07-21T08:00:00.000Z": "85.5°F",
-  //     "2022-07-22T08:00:00.000Z": "86.2°F",
-  //     "2022-07-23T08:00:00.000Z": "87.5°F",
-  //     "2022-07-24T08:00:00.000Z": (
-  //       <div
-  //         className={css`
-  //           padding: 20px;
-  //           border-radius: 10px;
-  //           background-color: pink;
-  //         `}
-  //       >
-  //         div test
-  //       </div>
-  //     ),
-  //   },
-  // },
-  // {
-  //   name: "Temperature - Below Canopy Max",
-  //   valueName: "temperature_c_below_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "88.3°F",
-  //     "2022-07-21T08:00:00.000Z": "89.5°F",
-  //     "2022-07-22T08:00:00.000Z": "87.2°F",
-  //     "2022-07-23T08:00:00.000Z": 478237,
-  //     "2022-07-24T08:00:00.000Z": "84.2°F",
-  //   },
-  // },
-  // {
-  //   name: "Inversion",
-  //   valueName: "temperature_inversion",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "-2.6°F",
-  //     "2022-07-21T08:00:00.000Z": "-2.6°F",
-  //     "2022-07-22T08:00:00.000Z": "-2.6°F",
-  //     "2022-07-23T08:00:00.000Z": "-2.6°F",
-  //     "2022-07-24T08:00:00.000Z": "-2.6°F",
-  //   },
-  // },
-  // {
-  //   name: "Humidity - Above Canopy Max",
-  //   valueName: "humidity_c_above_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "85.5°F",
-  //     "2022-07-21T08:00:00.000Z": "dfjsdk",
-  //     "2022-07-22T08:00:00.000Z": "89.5°F",
-  //     "2022-07-23T08:00:00.000Z": "83.5°F",
-  //     "2022-07-24T08:00:00.000Z": "82.5°F",
-  //   },
-  // },
-  // {
-  //   name: "Humidity - In Canopy Max",
-  //   valueName: "humidity_c_in_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "86.3°F",
-  //     "2022-07-21T08:00:00.000Z": "85.5°F",
-  //     "2022-07-22T08:00:00.000Z": "86.2°F",
-  //     "2022-07-23T08:00:00.000Z": (
-  //       <div
-  //         className={css`
-  //           padding: 20px;
-  //           border-radius: 10px;
-  //           background-color: green;
-  //           width: 100px;
-  //           color: white;
-  //         `}
-  //       >
-  //         div test
-  //       </div>
-  //     ),
-  //     "2022-07-24T08:00:00.000Z": "hello",
-  //   },
-  // },
-  // {
-  //   name: "Humidity - Below Canopy Max",
-  //   valueName: "humidity_c_below_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "88.3°F",
-  //     "2022-07-21T08:00:00.000Z": "89.5°F",
-  //     "2022-07-22T08:00:00.000Z": "87.2°F",
-  //     "2022-07-23T08:00:00.000Z": 478237,
-  //     "2022-07-24T08:00:00.000Z": "84.2°F",
-  //   },
-  // },
-  // {
-  //   name: "WetBulb - Above Canopy Max",
-  //   valueName: "wetbulb_c_above_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "85.5°F",
-  //     "2022-07-21T08:00:00.000Z":
-  //       "testfhdshfjkdshfjshfdsjfhdjshfjdshfjdshfjdshfkjhsdjkfhsdkjahfkjdsahfjdksahfjksdhfjksdahfjkdsahfjksdah",
-  //     "2022-07-22T08:00:00.000Z": (
-  //       <img
-  //         src="https://img.devrant.com/devrant/rant/r_3015646_HZCi4.jpg"
-  //         className={css`
-  //           width: 200px;
-  //           border-radius: 10px;
-  //         `}
-  //       />
-  //     ),
-  //     "2022-07-23T08:00:00.000Z": "83.5°F",
-  //     "2022-07-24T08:00:00.000Z": "82.5°F",
-  //   },
-  // },
-  // {
-  //   name: "WetBulb - In Canopy Max",
-  //   valueName: "wetbulb_c_in_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": (
-  //       <img
-  //         src="https://res.cloudinary.com/practicaldev/image/fetch/s--iaqAI9Jj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://i.imgur.com/Q3cUg29.gif"
-  //         className={css`
-  //           width: 150px;
-  //           border-radius: 10px;
-  //         `}
-  //       />
-  //     ),
-  //     "2022-07-21T08:00:00.000Z": "85.5°F",
-  //     "2022-07-22T08:00:00.000Z": "86.2°F",
-  //     "2022-07-23T08:00:00.000Z": "87.5°F",
-  //     "2022-07-24T08:00:00.000Z": 47328,
-  //   },
-  // },
-  // {
-  //   name: "WetBulb - Below Canopy Max",
-  //   valueName: "wetbulb_c_below_max",
-  //   values: {
-  //     "2022-07-20T08:00:00.000Z": "88.3°F",
-  //     "2022-07-21T08:00:00.000Z": "89.5°F",
-  //     "2022-07-22T08:00:00.000Z": "87.2°F",
-  //     "2022-07-23T08:00:00.000Z": 478237,
-  //     "2022-07-24T08:00:00.000Z": "84.2°F",
-  //   },
-  // },
 ];
-
-const timezone = "America/Los_Angeles";
 
 const columns: ColumnProps[] = [
   (() => {
@@ -350,22 +190,7 @@ const columns: ColumnProps[] = [
       key: "valueName",
       dataIndex: "valueName",
       title: "Last Update: June 14th, 10:00 AM",
-      renderCell: (key, width, cellCSS) => (
-        <th
-          key={key}
-          className={css([
-            {
-              backgroundColor: "gray !important",
-              padding: "10px !important",
-            },
-            cellCSS && cellCSS,
-            width && { minWidth: width },
-          ])}
-        >
-          Custom component
-        </th>
-      ),
-      width: "100px",
+      width: "250px",
       cellCSS: { padding: "12px" },
     };
   })(),
@@ -373,7 +198,7 @@ const columns: ColumnProps[] = [
     const momentOfDate = moment.tz(d, timezone);
     const todayMoment = moment.tz(timezone);
 
-    const width = "100px";
+    const width = "80px";
 
     let cellCSS;
 

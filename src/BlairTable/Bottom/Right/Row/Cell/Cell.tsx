@@ -18,6 +18,8 @@ const Cell = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        wordBreak: "break-all",
+        padding: "8px",
       })}
     >
       {children}

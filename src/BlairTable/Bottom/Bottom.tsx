@@ -22,7 +22,7 @@ const Bottom = <T extends string>({
       ])}
     >
       {/*region BOTTOM LEFT*/}
-      <Left data={data} />
+      <Left data={data} firstColumn={columns[0]} />
       {/*endregion*/}
       {/*region BOTTOM RIGHT*/}
       <Right columns={columns} data={data} />
