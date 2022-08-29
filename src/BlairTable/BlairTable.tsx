@@ -26,19 +26,6 @@ const BlairTable = <T extends string>({
    * const calculateHeight = (valueType, lng) => {}
    */
 
-  // Get the width for the first column! (which is important for sticky feature)
-  let labelLength = columns[0].title.length;
-
-  data.forEach((d) => {
-    if (d.name.length > labelLength) labelLength = d.name.length;
-
-    d.items.forEach((item: any) => {
-      if (item.name.length > labelLength) labelLength = item.name.length;
-    });
-  });
-
-  const firstColumnWidth = labelLength + widthToAdd;
-
   return (
     <div
       className={css({

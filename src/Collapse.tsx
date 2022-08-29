@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import { css } from "@emotion/css";
 import type { ColumnProps, DataProps } from "./BlairTable/types";
+import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment-timezone";
+import { css } from "@emotion/css";
+import { widthToAdd } from "./BlairTable/consts";
 import BlairTable from "./BlairTable/BlairTable";
 
 export type BanyanValueType =
@@ -27,7 +28,7 @@ const dates = [
 
 const timezone = "America/Los_Angeles";
 
-const tableDataRaw: DataProps<BanyanValueType>[] = [
+const data: DataProps<BanyanValueType>[] = [
   {
     name: "temperature",
     items: [
@@ -184,20 +185,41 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
   },
 ];
 
-const calculateFirstColumnWidth = (lang: string = "en") => {
-  if (lang == "en") return 250;
+const firstColumnTitle = "Last Update: June 14th, 10:00 AM";
 
-  return 250;
+/**
+ * !Getting the width for the first column! (which is important for sticky feature)
+ */
+const calculateFirstColumnWidth = (
+  data: DataProps<BanyanValueType>[],
+  title: string
+) => {
+  let labelLength = title.length;
+
+  data.forEach((d) => {
+    if (d.name.length > labelLength) labelLength = d.name.length;
+
+    d.items.forEach((item: any) => {
+      if (item.name.length > labelLength) labelLength = item.name.length;
+    });
+  });
+
+  const firstColumnWidth = labelLength + widthToAdd;
+
+  return firstColumnWidth;
 };
 
+/**
+ * !columns prop is responsible for width for each row.
+ */
 const columns: ColumnProps[] = [
   (() => {
     return {
       key: "valueType",
       dataIndex: "valueType",
-      title: "Last Update: June 14th, 10:00 AM",
-      width: calculateFirstColumnWidth(),
+      title: firstColumnTitle,
       cellCSS: { padding: "12px" },
+      width: calculateFirstColumnWidth(data, firstColumnTitle),
     };
   })(),
   ...dates.map((d, index) => {
@@ -250,7 +272,7 @@ function Collapse() {
         <Link to="/">Go to the draggable table</Link>
       </div>
 
-      <BlairTable columns={columns} data={tableDataRaw} />
+      <BlairTable columns={columns} data={data} />
     </div>
   );
 }
