@@ -15,7 +15,7 @@ const Row = <T extends string>({
     <div
       className={cx([
         css({
-          height: 100,
+          height: item.height,
           display: "flex",
           transition: "height 200ms, opacity 200ms",
         }),

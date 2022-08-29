@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment-timezone";
 import { css } from "@emotion/css";
-import { widthToAdd } from "./BlairTable/consts";
+import { widthToAdd, HeightForOneLine } from "./BlairTable/consts";
 import BlairTable from "./BlairTable/BlairTable";
 
 export type BanyanValueType =
@@ -35,6 +35,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Above Canopy",
         valueType: "temperature_c_above_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "86.3°F",
@@ -46,6 +47,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "In Canopy",
         valueType: "temperature_c_in_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "86.3°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
@@ -57,6 +59,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Below Canopy",
         valueType: "temperature_c_below_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",
@@ -68,6 +71,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Inversion",
         valueType: "temperature_inversion",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "-2.6°F",
           "2022-07-21T08:00:00.000Z": "-2.6°F",
@@ -84,6 +88,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Above Canopy",
         valueType: "humidity_c_above_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "dfjsdk",
@@ -95,29 +100,19 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "In Canopy",
         valueType: "humidity_c_in_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "86.3°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
           "2022-07-22T08:00:00.000Z": "86.2°F",
-          "2022-07-23T08:00:00.000Z": (
-            <div
-              className={css`
-                padding: 20px;
-                border-radius: 10px;
-                background-color: green;
-                width: 100px;
-                color: white;
-              `}
-            >
-              div test
-            </div>
-          ),
+          "2022-07-23T08:00:00.000Z": "85.5°F",
           "2022-07-24T08:00:00.000Z": "hello",
         },
       },
       {
         name: "Below Canopy",
         valueType: "humidity_c_below_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",
@@ -132,38 +127,23 @@ const data: DataProps<BanyanValueType>[] = [
     name: "WetBulb",
     items: [
       {
-        name: "WetBulb - Above Canopy Max",
+        name: "Above Canopy Max",
         valueType: "wetbulb_c_above_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "hello",
-          "2022-07-22T08:00:00.000Z": (
-            <img
-              src="https://img.devrant.com/devrant/rant/r_3015646_HZCi4.jpg"
-              className={css`
-                width: 100%;
-                height: 100%;
-                border-radius: 10px;
-              `}
-            />
-          ),
+          "2022-07-22T08:00:00.000Z": "85.5°F",
           "2022-07-23T08:00:00.000Z": "83.5°F",
           "2022-07-24T08:00:00.000Z": "82.5°F",
         },
       },
       {
-        name: "WetBulb - In Canopy Max",
+        name: "In Canopy Max",
         valueType: "wetbulb_c_in_max",
+        height: HeightForOneLine,
         values: {
-          "2022-07-20T08:00:00.000Z": (
-            <img
-              src="https://res.cloudinary.com/practicaldev/image/fetch/s--iaqAI9Jj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://i.imgur.com/Q3cUg29.gif"
-              className={css`
-                width: 100%;
-                border-radius: 10px;
-              `}
-            />
-          ),
+          "2022-07-20T08:00:00.000Z": "86.2°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
           "2022-07-22T08:00:00.000Z": "86.2°F",
           "2022-07-23T08:00:00.000Z": "87.5°F",
@@ -171,8 +151,9 @@ const data: DataProps<BanyanValueType>[] = [
         },
       },
       {
-        name: "WetBulb - Below Canopy Max",
+        name: "Below Canopy Max",
         valueType: "wetbulb_c_below_max",
+        height: HeightForOneLine,
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",

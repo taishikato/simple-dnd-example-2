@@ -12,6 +12,7 @@ const Cell = ({
     <div
       className={css({
         width: column.width,
+        height: "100%",
         borderBottom: "1px solid #e2e2e2",
         borderRight: "1px solid #e2e2e2",
         boxSizing: "border-box",

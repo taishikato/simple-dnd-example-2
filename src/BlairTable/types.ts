@@ -49,5 +49,6 @@ export type DataProps<T extends string> = Readonly<{
 export type DataItemProps<VN extends string> = Readonly<{
   name: string;
   valueType: VN;
+  height: number;
   values: { [index: string]: string | number | JSX.Element };
 }>;

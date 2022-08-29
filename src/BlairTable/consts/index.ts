@@ -21,4 +21,6 @@ export const collapseClassPrefix = "collapse-";
 
 export const collapseCloseClass = "collapse-close";
 
-export const widthToAdd = 220; // px
+export const widthToAdd = 220;
+
+export const HeightForOneLine = 50;
