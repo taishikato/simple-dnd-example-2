@@ -184,13 +184,19 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
   },
 ];
 
+const calculateFirstColumnWidth = (lang: string = "en") => {
+  if (lang == "en") return 250;
+
+  return 250;
+};
+
 const columns: ColumnProps[] = [
   (() => {
     return {
       key: "valueName",
       dataIndex: "valueName",
       title: "Last Update: June 14th, 10:00 AM",
-      width: "250px",
+      width: calculateFirstColumnWidth(),
       cellCSS: { padding: "12px" },
     };
   })(),
@@ -198,7 +204,7 @@ const columns: ColumnProps[] = [
     const momentOfDate = moment.tz(d, timezone);
     const todayMoment = moment.tz(timezone);
 
-    const width = "80px";
+    const width = 80;
 
     let cellCSS;
 

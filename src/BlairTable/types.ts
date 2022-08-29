@@ -38,7 +38,7 @@ export type ColumnProps = Readonly<{
   dataIndex: string;
   renderCell?: (...params: any[]) => any;
   render?: (...params: any[]) => any;
-  width?: string;
+  width: number;
 }>;
 
 export type DataProps<T extends string> = Readonly<{
