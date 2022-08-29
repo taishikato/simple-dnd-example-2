@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { ColumnProps } from "../../../CollapseTable/types";
+import { ColumnProps } from "../../types";
 import { baseZIndex } from "../../consts";
 
 const Left = ({
