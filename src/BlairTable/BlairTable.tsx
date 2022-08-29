@@ -2,7 +2,6 @@ import type { DataProps, ColumnProps } from "./types";
 import { css } from "@emotion/css";
 import Bottom from "./Bottom/Bottom";
 import Top from "./Top/Top";
-import { containerHeight, containerWidth, widthToAdd } from "./consts";
 import "./styles/style.css";
 
 const BlairTable = <T extends string>({
@@ -29,8 +28,6 @@ const BlairTable = <T extends string>({
   return (
     <div
       className={css({
-        width: containerWidth,
-        height: containerHeight,
         overflow: "auto",
         fontSize: "14px",
       })}
