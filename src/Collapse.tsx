@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment-timezone";
 import { css } from "@emotion/css";
-import { widthToAdd, HeightForOneLine } from "./BlairTable/consts";
+import { widthToAdd, heightForOneLine } from "./BlairTable/consts";
 import BlairTable from "./BlairTable/BlairTable";
 
 export type BanyanValueType =
@@ -28,6 +28,14 @@ const dates = [
 
 const timezone = "America/Los_Angeles";
 
+const calculateRowHeight = (valueType: BanyanValueType, lang: string) => {
+  if (valueType === "temperature_c_above_max") {
+    if (lang === "en") return heightForOneLine;
+  }
+
+  return heightForOneLine;
+};
+
 const data: DataProps<BanyanValueType>[] = [
   {
     name: "temperature",
@@ -35,7 +43,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Above Canopy",
         valueType: "temperature_c_above_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("temperature_c_above_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "86.3°F",
@@ -47,7 +55,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "In Canopy",
         valueType: "temperature_c_in_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("temperature_c_in_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "86.3°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
@@ -59,7 +67,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Below Canopy",
         valueType: "temperature_c_below_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("temperature_c_below_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",
@@ -71,7 +79,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Inversion",
         valueType: "temperature_inversion",
-        height: HeightForOneLine,
+        height: calculateRowHeight("temperature_inversion", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "-2.6°F",
           "2022-07-21T08:00:00.000Z": "-2.6°F",
@@ -88,7 +96,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Above Canopy",
         valueType: "humidity_c_above_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("humidity_c_above_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "dfjsdk",
@@ -100,7 +108,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "In Canopy",
         valueType: "humidity_c_in_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("humidity_c_in_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "86.3°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
@@ -112,7 +120,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Below Canopy",
         valueType: "humidity_c_below_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("humidity_c_below_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",
@@ -129,7 +137,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Above Canopy Max",
         valueType: "wetbulb_c_above_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("wetbulb_c_above_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
           "2022-07-21T08:00:00.000Z": "hello",
@@ -141,7 +149,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "In Canopy Max",
         valueType: "wetbulb_c_in_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("wetbulb_c_in_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "86.2°F",
           "2022-07-21T08:00:00.000Z": "85.5°F",
@@ -153,7 +161,7 @@ const data: DataProps<BanyanValueType>[] = [
       {
         name: "Below Canopy Max",
         valueType: "wetbulb_c_below_max",
-        height: HeightForOneLine,
+        height: calculateRowHeight("wetbulb_c_below_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "88.3°F",
           "2022-07-21T08:00:00.000Z": "89.5°F",

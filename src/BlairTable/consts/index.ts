@@ -17,4 +17,4 @@ export const collapseCloseClass = "collapse-close";
 
 export const widthToAdd = 220;
 
-export const HeightForOneLine = 50;
+export const heightForOneLine = 50;
