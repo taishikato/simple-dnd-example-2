@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment-timezone";
 import { css } from "@emotion/css";
-import { widthToAdd, heightForOneLine } from "./CollapseTable2/consts";
+import { heightForOneLine } from "./CollapseTable2/consts";
 import CollapseTable2 from "./CollapseTable2/CollapseTable2";
+
+const widthToAdd = 220;
 
 export type BanyanValueType =
   | "temperature_c_above_max"

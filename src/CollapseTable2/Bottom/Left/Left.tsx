@@ -1,7 +1,7 @@
 import type { ColumnProps, DataProps } from "../../types";
 import { css } from "@emotion/css";
 import { Fragment, useEffect, useState } from "react";
-import { baseZIndex, widthToAdd } from "../../consts";
+import { baseZIndex } from "../../consts";
 import CollapseTriggerLabelCell from "./CollapseTriggerLabelCell/CollapseTriggerLabelCell";
 import LabelCell from "./LabelCell/LabelCell";
 
