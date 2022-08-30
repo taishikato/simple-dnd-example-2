@@ -22,13 +22,17 @@ const Row = <T extends string>({
         `collapse-${collapseName}`,
       ])}
     >
-      {columns.map((c, i: number) => {
-        if (i !== 0)
+      {columns.map((column, i: number) => {
+        // No need to render a Cell when i === 0 bc it should be rendered on Bottom left body.
+        if (i !== 0) {
+          if (column.renderCell) return column.renderCell();
+
           return (
-            <Cell key={c.key} column={c}>
-              {item.values[c.dataIndex]}
+            <Cell key={column.key} column={column}>
+              {item.values[column.dataIndex]}
             </Cell>
           );
+        }
       })}
     </div>
   );
