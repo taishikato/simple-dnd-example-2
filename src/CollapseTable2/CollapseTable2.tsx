@@ -27,6 +27,12 @@ const CollapseTable2 = <T extends string>({
    * const calculateHeight = (valueType, lng) => {}
    */
 
+  const tableWidth = columns.reduce((acc, column) => {
+    acc += column.width;
+
+    return acc;
+  }, 0);
+
   return (
     <div
       className={css({
@@ -35,8 +41,8 @@ const CollapseTable2 = <T extends string>({
         fontSize: "14px",
       })}
     >
-      <Top columns={columns} />
-      <Bottom columns={columns} data={data} />
+      <Top columns={columns} tableWidth={tableWidth} />
+      <Bottom columns={columns} data={data} tableWidth={tableWidth} />
     </div>
   );
 };

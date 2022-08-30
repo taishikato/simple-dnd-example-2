@@ -22,7 +22,8 @@ const CollapseTriggerRow = ({
       onClick={(e) => handleClick(e)}
     >
       {columns.map((col, i: number) => {
-        if (i !== 0) return <CollapseTriggerCell key={col.key} />;
+        if (i !== 0)
+          return <CollapseTriggerCell key={col.key} width={col.width} />;
       })}
     </div>
   );

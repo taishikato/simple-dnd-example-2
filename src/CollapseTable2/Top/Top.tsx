@@ -1,10 +1,16 @@
 import type { ColumnProps } from "../types";
 import { css, cx } from "@emotion/css";
-import { baseZIndex, rowLabelWidth, totalColLabelsWidth } from "../consts";
+import { baseZIndex } from "../consts";
 import Left from "./Left/Left";
 import Right from "./Right/Right";
 
-const Top = ({ columns }: { columns: ColumnProps[] }) => (
+const Top = ({
+  columns,
+  tableWidth,
+}: {
+  columns: ColumnProps[];
+  tableWidth: number;
+}) => (
   <div
     className={cx([
       css({
@@ -12,7 +18,6 @@ const Top = ({ columns }: { columns: ColumnProps[] }) => (
         top: 0,
         zIndex: baseZIndex + 1,
       }),
-      "clearfix",
     ])}
   >
     <div
@@ -20,7 +25,7 @@ const Top = ({ columns }: { columns: ColumnProps[] }) => (
         css({
           display: "flex",
           clear: "both",
-          width: rowLabelWidth + totalColLabelsWidth,
+          width: tableWidth,
         }),
         "clearfix",
       ])}

@@ -1,12 +1,10 @@
 import type { ColumnProps } from "../../types";
 import { css } from "@emotion/css";
-import { totalColLabelsWidth } from "../../consts";
 import Cell from "./Cell/Cell";
 
 const Right = ({ columns }: { columns: ColumnProps[] }) => (
   <div
     className={css({
-      width: totalColLabelsWidth,
       float: "left",
       backgroundColor: "#ffffff",
       boxSizing: "border-box",

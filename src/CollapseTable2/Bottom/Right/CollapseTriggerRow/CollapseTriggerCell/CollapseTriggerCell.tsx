@@ -1,9 +1,9 @@
 import { css } from "@emotion/css";
 
-const CollapseTriggerCell = () => (
+const CollapseTriggerCell = ({ width }: { width: number }) => (
   <div
     className={css({
-      width: "100px",
+      width,
       border: "none",
       cursor: "pointer",
       boxSizing: "border-box",

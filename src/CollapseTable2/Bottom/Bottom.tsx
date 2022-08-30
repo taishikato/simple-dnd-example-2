@@ -1,22 +1,23 @@
 import type { DataProps, ColumnProps } from "../types";
 import { cx, css } from "@emotion/css";
-import { rowLabelWidth, totalColLabelsWidth } from "../consts";
 import Left from "./Left/Left";
 import Right from "./Right/Right";
 
 const Bottom = <T extends string>({
   columns,
   data,
+  tableWidth,
 }: {
   columns: ColumnProps[];
   data: DataProps<T>[];
+  tableWidth: number;
 }) => {
   return (
     <div
       className={cx([
         css({
           clear: "both",
-          width: rowLabelWidth + totalColLabelsWidth,
+          width: tableWidth,
         }),
         "clearfix",
       ])}
