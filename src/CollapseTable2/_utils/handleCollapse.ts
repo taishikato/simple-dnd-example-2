@@ -1,4 +1,4 @@
-import { collapseCloseClass } from "./../consts/index";
+import { collapseCloseClass } from "../consts/index";
 
 export const handleCollapse = ({
   e,

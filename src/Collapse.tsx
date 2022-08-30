@@ -1,10 +1,10 @@
-import type { ColumnProps, DataProps } from "./BlairTable/types";
+import type { ColumnProps, DataProps } from "./CollapseTable2/types";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment-timezone";
 import { css } from "@emotion/css";
-import { widthToAdd, heightForOneLine } from "./BlairTable/consts";
-import BlairTable from "./BlairTable/BlairTable";
+import { widthToAdd, heightForOneLine } from "./CollapseTable2/consts";
+import CollapseTable2 from "./CollapseTable2/CollapseTable2";
 
 export type BanyanValueType =
   | "temperature_c_above_max"
@@ -36,6 +36,10 @@ const calculateRowHeight = (valueType: BanyanValueType, lang: string) => {
   return heightForOneLine;
 };
 
+/**
+ * ! data prop has a height prop for each row
+ * ! You have to calculate height for each by yourself
+ */
 const data: DataProps<BanyanValueType>[] = [
   {
     name: "temperature",
@@ -261,7 +265,7 @@ function Collapse() {
         <Link to="/">Go to the draggable table</Link>
       </div>
 
-      <BlairTable columns={columns} data={data} height={600} />
+      <CollapseTable2 columns={columns} data={data} height={600} />
     </div>
   );
 }

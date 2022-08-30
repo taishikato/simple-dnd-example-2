@@ -4,7 +4,7 @@ import Bottom from "./Bottom/Bottom";
 import Top from "./Top/Top";
 import "./styles/style.css";
 
-const BlairTable = <T extends string>({
+const CollapseTable2 = <T extends string>({
   columns,
   data,
   height,
@@ -41,4 +41,4 @@ const BlairTable = <T extends string>({
   );
 };
 
-export default BlairTable;
+export default CollapseTable2;
