@@ -24,7 +24,6 @@ const Top = ({
       className={cx([
         css({
           display: "flex",
-          clear: "both",
           width: tableWidth,
         }),
         "clearfix",

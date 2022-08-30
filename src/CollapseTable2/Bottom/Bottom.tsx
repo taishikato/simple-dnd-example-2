@@ -16,7 +16,6 @@ const Bottom = <T extends string>({
     <div
       className={cx([
         css({
-          clear: "both",
           width: tableWidth,
         }),
         "clearfix",
