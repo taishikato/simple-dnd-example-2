@@ -37,7 +37,6 @@ const CollapseTable2 = <T extends string>({
     <div
       className={css({
         height, // ! Need to set height here for a sticky header
-        overflow: "auto",
         fontSize: "14px",
       })}
     >
