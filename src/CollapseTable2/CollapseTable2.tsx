@@ -8,8 +8,8 @@ const CollapseTable2 = <T extends string>({
   columns,
   data,
   height,
-  isHeaderSticky = true,
-  isFirstColumnSticky = true,
+  isHeaderSticky = false,
+  isFirstColumnSticky = false,
 }: {
   columns: ColumnProps[];
   data: DataProps<T>[];
