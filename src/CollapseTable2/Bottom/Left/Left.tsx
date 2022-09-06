@@ -37,6 +37,7 @@ const Left = <T extends string>({
               name={d.name}
               height={item.height}
               cellCSS={firstColumn.cellCSS}
+              isFirstColumnSticky={isFirstColumnSticky}
             >
               {item.name}
             </LabelCell>
