@@ -8,22 +8,27 @@ import LabelCell from "./LabelCell/LabelCell";
 const Left = <T extends string>({
   data,
   firstColumn,
+  isFirstColumnSticky,
 }: {
   data: DataProps<T>[];
   firstColumn: ColumnProps;
+  isFirstColumnSticky: boolean;
 }) => {
   const [rowLabelWidth, setRowLabelWidth] = useState(0);
 
   return (
     <div
-      className={css({
-        position: "sticky",
-        left: "0",
-        // width: rowLabelWidth, // TODO
-        width: firstColumn.width,
-        float: "left",
-        zIndex: baseZIndex,
-      })}
+      className={css([
+        {
+          width: firstColumn.width,
+          float: "left",
+          zIndex: baseZIndex,
+        },
+        isFirstColumnSticky && {
+          position: "sticky",
+          left: "0",
+        },
+      ])}
     >
       {data.map((d) => (
         <Fragment key={d.name}>

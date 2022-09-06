@@ -8,10 +8,14 @@ const CollapseTable2 = <T extends string>({
   columns,
   data,
   height,
+  isHeaderSticky = true,
+  isFirstColumnSticky = true,
 }: {
   columns: ColumnProps[];
   data: DataProps<T>[];
   height: number;
+  isHeaderSticky?: boolean;
+  isFirstColumnSticky?: boolean;
 }) => {
   /**
    * Think of this component like a 2 x 2 grid:
@@ -40,8 +44,18 @@ const CollapseTable2 = <T extends string>({
         fontSize: "14px",
       })}
     >
-      <Top columns={columns} tableWidth={tableWidth} />
-      <Bottom columns={columns} data={data} tableWidth={tableWidth} />
+      <Top
+        columns={columns}
+        tableWidth={tableWidth}
+        isHeaderSticky={isHeaderSticky}
+        isFirstColumnSticky={isFirstColumnSticky}
+      />
+      <Bottom
+        columns={columns}
+        data={data}
+        tableWidth={tableWidth}
+        isFirstColumnSticky={isFirstColumnSticky}
+      />
     </div>
   );
 };

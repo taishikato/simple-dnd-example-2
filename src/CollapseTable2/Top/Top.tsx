@@ -7,17 +7,21 @@ import Right from "./Right/Right";
 const Top = ({
   columns,
   tableWidth,
+  isHeaderSticky,
+  isFirstColumnSticky,
 }: {
   columns: ColumnProps[];
   tableWidth: number;
+  isHeaderSticky: boolean;
+  isFirstColumnSticky: boolean;
 }) => (
   <div
-    className={cx([
-      css({
+    className={css([
+      isHeaderSticky && {
         position: "sticky",
         top: 0,
         zIndex: baseZIndex + 1,
-      }),
+      },
     ])}
   >
     <div
@@ -30,7 +34,9 @@ const Top = ({
       ])}
     >
       {/*region TOP LEFT*/}
-      <Left firstColumn={columns[0]}>{columns[0].title}</Left>
+      <Left firstColumn={columns[0]} isFirstColumnSticky={isFirstColumnSticky}>
+        {columns[0].title}
+      </Left>
       {/*endregion*/}
       {/*region TOP RIGHT*/}
       <Right columns={columns} />

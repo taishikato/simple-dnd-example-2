@@ -7,10 +7,12 @@ const Bottom = <T extends string>({
   columns,
   data,
   tableWidth,
+  isFirstColumnSticky,
 }: {
   columns: ColumnProps[];
   data: DataProps<T>[];
   tableWidth: number;
+  isFirstColumnSticky: boolean;
 }) => {
   return (
     <div
@@ -22,7 +24,11 @@ const Bottom = <T extends string>({
       ])}
     >
       {/*region BOTTOM LEFT*/}
-      <Left data={data} firstColumn={columns[0]} />
+      <Left
+        data={data}
+        firstColumn={columns[0]}
+        isFirstColumnSticky={isFirstColumnSticky}
+      />
       {/*endregion*/}
       {/*region BOTTOM RIGHT*/}
       <Right columns={columns} data={data} />
