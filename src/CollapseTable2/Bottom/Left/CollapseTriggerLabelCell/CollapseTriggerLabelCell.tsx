@@ -8,9 +8,8 @@ const CollapseTriggerLabelCell = ({ name }: { name: string }) => {
   const collapseName = `${collapseClassPrefix}${name}`;
   const { isOpen } = useCollapseStatus(collapseName);
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
     handleCollapse({ e, collapseClassName: collapseName });
-  };
 
   return (
     <div
