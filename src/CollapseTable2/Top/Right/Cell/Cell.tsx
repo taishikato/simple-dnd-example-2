@@ -9,18 +9,21 @@ const Cell = ({
   column: ColumnProps;
 }) => (
   <div
-    className={css({
-      width: column.width,
-      flexGrow: 0,
-      flexShrink: 0,
-      textAlign: "center",
-      boxSizing: "border-box",
-      padding: "10px 0",
-      border: "1px solid #e2e2e2",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    })}
+    className={css([
+      {
+        width: column.width,
+        flexGrow: 0,
+        flexShrink: 0,
+        textAlign: "center",
+        boxSizing: "border-box",
+        padding: "10px 0",
+        border: "1px solid #e2e2e2",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+      column.headerCellCSS && column.headerCellCSS,
+    ])}
   >
     {children}
   </div>

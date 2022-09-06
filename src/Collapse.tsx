@@ -213,7 +213,11 @@ const columns: ColumnProps[] = [
       key: "valueType",
       dataIndex: "valueType",
       title: firstColumnTitle,
-      cellCSS: { padding: "12px" },
+      cellCSS: { textDecoration: "underline", textDecorationStyle: "wavy" },
+      headerCellCSS: {
+        textDecoration: "underline",
+        textDecorationStyle: "double",
+      },
       width: calculateFirstColumnWidth(data, firstColumnTitle),
     };
   })(),
@@ -228,7 +232,7 @@ const columns: ColumnProps[] = [
     // if (todayMoment.isSame(momentOfDate, "day")) customClass = "blueBg";
     if (index === 1)
       cellCSS = {
-        backgroundColor: "blue",
+        backgroundColor: "rgb(248 113 113)",
         color: "white",
       };
 
@@ -237,7 +241,7 @@ const columns: ColumnProps[] = [
     if (index === 2)
       headerCellCSS = {
         color: "white",
-        backgroundColor: "purple",
+        backgroundColor: "rgb(52 211 153)",
       };
 
     return {
@@ -267,7 +271,21 @@ function Collapse() {
         <Link to="/">Go to the draggable table</Link>
       </div>
 
-      <CollapseTable2 columns={columns} data={data} height={600} />
+      <div
+        className={css`
+          width: 400px;
+          height: 300px;
+          overflow: auto;
+        `}
+      >
+        <CollapseTable2
+          columns={columns}
+          data={data}
+          height={600}
+          isHeaderSticky
+          isFirstColumnSticky
+        />
+      </div>
     </div>
   );
 }
