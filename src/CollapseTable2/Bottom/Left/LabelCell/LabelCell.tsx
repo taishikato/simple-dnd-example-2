@@ -1,13 +1,16 @@
 import { cx, css } from "@emotion/css";
+import { ColumnProps } from "../../../types";
 
 const LabelCell = ({
   children,
   name,
   height,
+  cellCSS,
 }: {
   children: JSX.Element | string | number;
   name: string;
   height: number;
+  cellCSS: ColumnProps["cellCSS"];
 }) => {
   return (
     <div
@@ -26,6 +29,7 @@ const LabelCell = ({
           transition: "height 200ms, opacity 200ms",
         }),
         `collapse-${name}`,
+        cellCSS && css(cellCSS),
       ])}
     >
       {children}

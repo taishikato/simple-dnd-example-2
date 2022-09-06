@@ -1,6 +1,6 @@
 import type { ColumnProps, DataProps } from "../../types";
 import { css } from "@emotion/css";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { baseZIndex } from "../../consts";
 import CollapseTriggerLabelCell from "./CollapseTriggerLabelCell/CollapseTriggerLabelCell";
 import LabelCell from "./LabelCell/LabelCell";
@@ -14,8 +14,6 @@ const Left = <T extends string>({
   firstColumn: ColumnProps;
   isFirstColumnSticky: boolean;
 }) => {
-  const [rowLabelWidth, setRowLabelWidth] = useState(0);
-
   return (
     <div
       className={css([
@@ -34,7 +32,12 @@ const Left = <T extends string>({
         <Fragment key={d.name}>
           <CollapseTriggerLabelCell name={d.name} />
           {d.items.map((item) => (
-            <LabelCell key={item.valueType} name={d.name} height={item.height}>
+            <LabelCell
+              key={item.valueType}
+              name={d.name}
+              height={item.height}
+              cellCSS={firstColumn.cellCSS}
+            >
               {item.name}
             </LabelCell>
           ))}

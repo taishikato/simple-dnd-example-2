@@ -30,6 +30,7 @@ const Left = ({
         top: "0",
         position: "sticky",
       },
+      firstColumn.headerCellCSS && firstColumn.headerCellCSS,
     ])}
   >
     {children}
