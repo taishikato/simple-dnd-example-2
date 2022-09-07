@@ -3,13 +3,13 @@ import type {
   DataItemProps,
   DataProps,
   DataValue,
-} from "./CollapseTable2/types";
+} from "./GridTable/types";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment-timezone";
 import { css } from "@emotion/css";
-import { heightForOneLine } from "./CollapseTable2/consts";
-import CollapseTable2 from "./CollapseTable2/CollapseTable2";
+import { heightForOneLine } from "./GridTable/consts";
+import GridTable from "./GridTable/GridTable";
 
 const widthToAdd = 220;
 
@@ -314,7 +314,7 @@ function Collapse() {
           overflow: auto;
         `}
       >
-        <CollapseTable2
+        <GridTable
           columns={columns}
           data={data}
           height={600}

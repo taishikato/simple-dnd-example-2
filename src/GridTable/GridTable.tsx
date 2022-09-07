@@ -4,7 +4,7 @@ import Bottom from "./Bottom/Bottom";
 import Top from "./Top/Top";
 import "./styles/style.css";
 
-const CollapseTable2 = <T extends string>({
+const GridTable = <T extends string>({
   columns,
   data,
   height,
@@ -60,4 +60,4 @@ const CollapseTable2 = <T extends string>({
   );
 };
 
-export default CollapseTable2;
+export default GridTable;
