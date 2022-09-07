@@ -262,8 +262,6 @@ const columns: ColumnProps<BanyanValueType>[] = [
 
         const previousValue = row[previousDate];
 
-        console.log({ previousValue });
-
         return (
           <div
             className={css([
