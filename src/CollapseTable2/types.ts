@@ -1,12 +1,14 @@
-export type ColumnProps = Readonly<{
+export type ColumnProps<T extends string> = Readonly<{
   key: string;
   title: string;
   dataIndex: string;
   width: number;
   cellCSS?: Record<string, string | number>;
   headerCellCSS?: Record<string, string | number>;
-  renderCell?: (...params: any[]) => any;
-  render?: (...params: any[]) => any;
+  renderCell?: (
+    val: DataValue,
+    rowData: DataItemProps<T>["values"]
+  ) => JSX.Element;
 }>;
 
 export type DataProps<T extends string> = Readonly<{
@@ -14,9 +16,11 @@ export type DataProps<T extends string> = Readonly<{
   items: DataItemProps<T>[];
 }>;
 
-export type DataItemProps<VN extends string> = Readonly<{
+export type DataItemProps<VT extends string> = Readonly<{
   name: string;
-  valueType: VN;
+  valueType: VT;
   height: number;
-  values: { [index: string]: string | number | JSX.Element };
+  values: { [index: string]: DataValue };
 }>;
+
+export type DataValue = string | number | JSX.Element;

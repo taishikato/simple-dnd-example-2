@@ -11,7 +11,7 @@ const CollapseTable2 = <T extends string>({
   isHeaderSticky = false,
   isFirstColumnSticky = false,
 }: {
-  columns: ColumnProps[];
+  columns: ColumnProps<T>[];
   data: DataProps<T>[];
   height: number;
   isHeaderSticky?: boolean;

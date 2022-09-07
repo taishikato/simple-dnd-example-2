@@ -8,7 +8,7 @@ const Right = <T extends string>({
   columns,
   data,
 }: {
-  columns: ColumnProps[];
+  columns: ColumnProps<T>[];
   data: DataProps<T>[];
 }) => {
   return (

@@ -1,4 +1,9 @@
-import type { ColumnProps, DataProps } from "./CollapseTable2/types";
+import type {
+  ColumnProps,
+  DataItemProps,
+  DataProps,
+  DataValue,
+} from "./CollapseTable2/types";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment-timezone";
@@ -105,7 +110,7 @@ const data: DataProps<BanyanValueType>[] = [
         height: calculateRowHeight("humidity_c_above_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
-          "2022-07-21T08:00:00.000Z": "dfjsdk",
+          "2022-07-21T08:00:00.000Z": "85.5°F",
           "2022-07-22T08:00:00.000Z": "89.5°F",
           "2022-07-23T08:00:00.000Z": "83.5°F",
           "2022-07-24T08:00:00.000Z": "82.5°F",
@@ -146,7 +151,7 @@ const data: DataProps<BanyanValueType>[] = [
         height: calculateRowHeight("wetbulb_c_above_max", "en"),
         values: {
           "2022-07-20T08:00:00.000Z": "85.5°F",
-          "2022-07-21T08:00:00.000Z": "hello",
+          "2022-07-21T08:00:00.000Z": "84.5°F",
           "2022-07-22T08:00:00.000Z": "85.5°F",
           "2022-07-23T08:00:00.000Z": "83.5°F",
           "2022-07-24T08:00:00.000Z": "82.5°F",
@@ -207,7 +212,7 @@ const calculateFirstColumnWidth = (
 /**
  * !columns prop is responsible for width for each row.
  */
-const columns: ColumnProps[] = [
+const columns: ColumnProps<BanyanValueType>[] = [
   (() => {
     return {
       key: "valueType",
@@ -244,6 +249,38 @@ const columns: ColumnProps[] = [
         backgroundColor: "rgb(52 211 153)",
       };
 
+    let renderCell = undefined;
+
+    if (index === 1)
+      renderCell = (
+        val: DataValue,
+        row: DataItemProps<BanyanValueType>["values"]
+      ) => {
+        const indexOrder = Object.keys(row).findIndex((i) => i === d);
+
+        const previousDate = Object.keys(row)[indexOrder - 1];
+
+        const previousValue = row[previousDate];
+
+        console.log({ previousValue });
+
+        return (
+          <div
+            className={css([
+              {
+                boxSizing: "border-box",
+              },
+              val > previousValue && {
+                backgroundColor: "rgb(232 121 249)",
+                border: "1px solid #000000",
+              },
+            ])}
+          >
+            {val}
+          </div>
+        );
+      };
+
     return {
       key: d,
       dataIndex: d,
@@ -251,6 +288,7 @@ const columns: ColumnProps[] = [
       cellCSS,
       headerCellCSS,
       width,
+      renderCell,
     };
   }),
 ];

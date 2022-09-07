@@ -1,12 +1,12 @@
 import { css } from "@emotion/css";
 import { ColumnProps } from "../../../../types";
 
-const Cell = ({
+const Cell = <T extends string>({
   children,
   column,
 }: {
   children: JSX.Element | number | string;
-  column: ColumnProps;
+  column: ColumnProps<T>;
 }) => (
   <div
     className={css([

@@ -2,13 +2,13 @@ import { css } from "@emotion/css";
 import { ColumnProps } from "../../types";
 import { baseZIndex } from "../../consts";
 
-const Left = ({
+const Left = <T extends string>({
   children,
   firstColumn,
   isFirstColumnSticky,
 }: {
   children: JSX.Element | string | number;
-  firstColumn: ColumnProps;
+  firstColumn: ColumnProps<T>;
   isFirstColumnSticky: boolean;
 }) => (
   <div

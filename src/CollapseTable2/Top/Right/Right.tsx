@@ -2,7 +2,11 @@ import type { ColumnProps } from "../../types";
 import { css } from "@emotion/css";
 import Cell from "./Cell/Cell";
 
-const Right = ({ columns }: { columns: ColumnProps[] }) => (
+const Right = <T extends string>({
+  columns,
+}: {
+  columns: ColumnProps<T>[];
+}) => (
   <div
     className={css({
       float: "left",

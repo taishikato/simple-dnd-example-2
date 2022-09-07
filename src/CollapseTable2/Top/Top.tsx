@@ -4,13 +4,13 @@ import { baseZIndex } from "../consts";
 import Left from "./Left/Left";
 import Right from "./Right/Right";
 
-const Top = ({
+const Top = <T extends string>({
   columns,
   tableWidth,
   isHeaderSticky,
   isFirstColumnSticky,
 }: {
-  columns: ColumnProps[];
+  columns: ColumnProps<T>[];
   tableWidth: number;
   isHeaderSticky: boolean;
   isFirstColumnSticky: boolean;

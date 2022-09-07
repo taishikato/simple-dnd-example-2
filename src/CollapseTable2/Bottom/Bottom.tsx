@@ -9,7 +9,7 @@ const Bottom = <T extends string>({
   tableWidth,
   isFirstColumnSticky,
 }: {
-  columns: ColumnProps[];
+  columns: ColumnProps<T>[];
   data: DataProps<T>[];
   tableWidth: number;
   isFirstColumnSticky: boolean;

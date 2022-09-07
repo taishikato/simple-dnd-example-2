@@ -11,7 +11,7 @@ const Left = <T extends string>({
   isFirstColumnSticky,
 }: {
   data: DataProps<T>[];
-  firstColumn: ColumnProps;
+  firstColumn: ColumnProps<T>;
   isFirstColumnSticky: boolean;
 }) => {
   return (
