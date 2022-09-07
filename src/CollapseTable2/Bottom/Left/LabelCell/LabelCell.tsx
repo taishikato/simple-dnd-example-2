@@ -1,7 +1,7 @@
 import { cx, css } from "@emotion/css";
 import { ColumnProps } from "../../../types";
 
-const LabelCell = ({
+const LabelCell = <T extends string>({
   children,
   name,
   height,
@@ -11,7 +11,7 @@ const LabelCell = ({
   children: JSX.Element | string | number;
   name: string;
   height: number;
-  cellCSS: ColumnProps["cellCSS"];
+  cellCSS: ColumnProps<T>["cellCSS"];
   isFirstColumnSticky: boolean;
 }) => {
   return (

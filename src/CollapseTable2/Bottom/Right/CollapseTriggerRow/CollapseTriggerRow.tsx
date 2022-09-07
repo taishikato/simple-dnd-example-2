@@ -5,11 +5,11 @@ import { collapseClassPrefix } from "../../../consts";
 import CollapseTriggerCell from "./CollapseTriggerCell/CollapseTriggerCell";
 import useCollapseStatus from "../../../hooks/useCollapseStatus";
 
-const CollapseTriggerRow = ({
+const CollapseTriggerRow = <T extends string>({
   columns,
   name,
 }: {
-  columns: ColumnProps[];
+  columns: ColumnProps<T>[];
   name: string;
 }) => {
   const collapseName = `${collapseClassPrefix}${name}`;
