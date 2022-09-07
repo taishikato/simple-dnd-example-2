@@ -32,8 +32,10 @@ const Row = <T extends string>({
                * so we don't have to set a width to our custom component that column.renderCell() method will return.
                */
               <div
+                key={column.key}
                 className={css({
                   width: column.width,
+                  height: "100%",
                   boxSizing: "border-box",
                   "& > *": {
                     height: "100%",
